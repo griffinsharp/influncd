@@ -49,7 +49,7 @@ Files bundling correctly and able to be viewed locally in the browser.
 Teach myself enough D3 to render a simple pie chart.
 Have a few pictures stored on Firebase and proper interaction with the API.
 
-Day 2: This day will primarily be for the learning of D3 and connecting my project to firebase. I need to make sure all the slices are taking up their appropriate space, as well as rendering their picture correctly, both in the slice and full states. Basic animations should be implemented, but not yet the main focus. Interaction with firebase is important to keep my project lightweight, so making sure this resource is being utilized correctly before proceeding is important.
+Day 2: This day will primarily be for the learning of D3 and connecting my project to firebase. I need to make sure all the slices are taking up their appropriate space, as well as rendering their picture correctly, both in the slice and full states. Basic animations should be implemented, but not yet the main focus. Interaction with firebase is important to keep my project lightweight (rendering 100 high quality images), so making sure this resource is being utilized correctly before proceeding is important.
 
 Goals for the day:
 
@@ -77,7 +77,7 @@ If all goes well, I would like to eventually have the following featured impleme
 - [ ] A 'light' and 'dark' mode via CSS listeners.
 
 ## Links (for development purposes only, will be removed in production...)
-Sunburst Diagram - https://observablehq.com/@d3/zoomable-sunburst
-Data Article - https://qz.com/1094962/a-definitive-list-of-the-musicians-who-influenced-our-lives-most/
+- Sunburst Diagram - https://observablehq.com/@d3/zoomable-sunburst
+- Data Article - https://qz.com/1094962/a-definitive-list-of-the-musicians-who-influenced-our-lives-most/
 https://www.theatlas.com/charts/S1QdKOZ3-
-Data - https://www.theatlas.com/charts/S1QdKOZ3-
+- Data - https://www.theatlas.com/charts/S1QdKOZ3-
