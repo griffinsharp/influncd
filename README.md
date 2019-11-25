@@ -68,7 +68,7 @@ Goals for the day:
 
 Goals for the day:
 
-- Project should be navigatable between the full pie and a slice of the pie, able to go back and forth by clicking on the center of the chart.
+- Project should be navigatable between the full pie and a slice of the pie, able to go back and forth by clicking on a slice to navigate to an artist page, and clicking outside the graph to navigate back to the full graph. 
 - Project at this point will have most of the functionality, just left to be styled.  
 
 **Day 4**: Add the about modal and social links. More styling to the frontend, making it presentable and eye-catching. Add more animation, and overall improve the UI and UX.
