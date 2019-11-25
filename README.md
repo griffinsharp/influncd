@@ -4,16 +4,16 @@ Data is a beautiful, incredibly powerful thing, but is far too often not present
 ## Functionality & MVP
 With this data visualization of the 100 Most Influential Artists, users will be able to:
 
-Represent each of the 100 artists as a 'slice' of the chart, with size representative of the # of artists influenced. 
-Clicking on a 'slice' of the chart reveals a picture, a short artist bio, and a link to the artists Apple Music page. 
-Hovering over a 'slice' and clicking the 'slice' will trigger animations.
-Utilize the D3.js library and Wikipedia API.
-Utilize Google Firebase for data persistence.
+- [ ] Represent each of the 100 artists as a 'slice' of the chart, with size representative of the # of artists influenced. 
+- [ ] Clicking on a 'slice' of the chart reveals a picture, a short artist bio, and a link to the artists Apple Music page. 
+- [ ] Hovering over a 'slice' and clicking the 'slice' will trigger animations.
+- [ ] Utilize the D3.js library and Wikipedia API.
+- [ ] Utilize Google Firebase for data persistence.
 
 In addition, this project will include:
 
-An 'about' modal for a brief explanation and source concerning the data used. 
-A production README.
+- [ ] An 'about' modal for a brief explanation and source concerning the data used. 
+- [ ] A production README.
 
 ## Wireframes
 This visualization will be a single page, with the circular data visualization in the center, with my social links (gitHub, linkedIn, etc.) and about modal to the left side. The goal is to gear all attention towards the chart representation, without having to navigate away to various artist pages, instead letting D3 present this information as it is requested. Since this is not as graphically intensive as a game, I would like to have as much animation as possible. This includes, at the very least, when a user arrives to the page, when a graph slice is hovered, and when a graph slice is clicked. 
@@ -25,23 +25,23 @@ NB: one of the main things you should be researching and deciding upon while you
 
 This project will be implemented with the following technologies:
 
-Vanilla JavaScript for underlying logic,
-D3.js for data based DOM manipulation,
-Browserify to bundle js for the web,
-Webpack to bundle js files,
-Babel for backwards compatility for non-ECMAScript 2015+ engines.
+  - Vanilla JavaScript for underlying logic and functionality,
+  - D3.js for data based DOM manipulation,
+  - Browserify to bundle js for the web,
+  - Webpack to bundle js files,
+  - Babel for backwards compatility for non-ECMAScript 2015+ engines,
+  - Wikipedia API for artist bios,
+  - Google Firebase for persistent of backend data.
 
 
 In addition to the entry file, there will be three scripts involved in this project:
 
-graph.js: logic
-
-automata.js: not sure yet
-
-cell.js: not sure yet
+`graph.js`: logic
+`EDIT.js`: not sure yet
+`EDIT.js`: not sure yet
 
 ## Implementation Timeline
-Day1: Basic setup of project. This includes installing all needed node modules, the basic js entry files, and making sure my bundlers are in working order. Prior to this, I have never used D3, so I will learn the basics needed to atleast get my project up and working. Peristence of picture and artist data to Google Firebase backend. 
+Day 1: Basic setup of project. This includes installing all needed node modules, the basic js entry files, and making sure my bundlers are in working order. Prior to this, I have never used D3, so I will learn the basics needed to atleast get my project up and working. Peristence of picture and artist data to Google Firebase backend. 
 
 Goals for the day:
 Have my project outlined and ready to go.
@@ -57,8 +57,7 @@ Have the slices represent their proper size according to level of influence.
 Have some basic animations of the pie slices upon user interaction. 
 Have most pictures stored to database and rendering on their corresponding slice. 
 
-Day 3: Work on each artist's bio. Implement the Wikipedia API and learn how to parse the first paragraph of each artist's page. Grab the artist's Apple Music/Spotify pages.
-Create more complex animations upon human interaction, such as the full swipe from 1/100 of the pie to the whole pie. 
+Day 3: Work on each artist's bio. Implement the Wikipedia API and learn how to parse the first paragraph of each artist's page. Grab the artist's Apple Music/Spotify pages. Create more complex animations upon human interaction, such as the full swipe from 1/100 of the pie to the whole pie. 
 
 Goals for the day:
 
@@ -66,14 +65,19 @@ Project should be navigatable between the full pie and a slice of the pie, able 
 
 Day 4: Add the about modal and social links. More styling to the frontend, making it presentable and eye-catching. Add more animation, and overall improve the UI and UX.
 
-Goals for the day:
-
+Goals for the day: Fix any major bugs concerning JS and D3 functionality. Style to fit and reflect all wireframes/mockups. Links and modal with no broken links. 
 
 
 
 ## Bonus features
 If all goes well, I would like to eventually have the following featured implemented in INFLUNCD:
 
-Optionally tune the results to most influential by genre and US city.
-Show a random slice of the pie with a spinning 'prize wheel' animation.
-A 'light' and 'dark' mode via CSS listeners. 
+- [ ] Optionally tune the results to most influential by genre and US city.
+- [ ] Show a random slice of the pie with a spinning 'prize wheel' animation.
+- [ ] A 'light' and 'dark' mode via CSS listeners.
+
+## Links (for development purposes only, will be removed in production...)
+Sunburst Diagram - https://observablehq.com/@d3/zoomable-sunburst
+Data Article - https://qz.com/1094962/a-definitive-list-of-the-musicians-who-influenced-our-lives-most/
+https://www.theatlas.com/charts/S1QdKOZ3-
+Data - https://www.theatlas.com/charts/S1QdKOZ3-
