@@ -25,8 +25,6 @@ This visualization will be a single page, with the circular data visualization i
 
 
 ## Architecture and Technologies
-NB: one of the main things you should be researching and deciding upon while you write this proposal is what technologies you plan to use. Identify and create a plan of attack for the major technical challenges in your project.
-
 This project will be implemented with the following technologies:
 
   - Vanilla JavaScript for underlying logic and functionality,
