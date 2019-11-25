@@ -1,0 +1,32 @@
+{
+  "name": "npm-install-parcel",
+  "version": "1.0.0",
+  "description": "Data is a beautiful, incredibly powerful thing, but is far too often not presented as such. INFLUNCD hopes to help better visually represent who influenced, and to what degree, the current landscape of popular music in Western culture. Discovering more about your favorite musician's favorite musician in just a few clicks away.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html",
+    "watch": "parcel watch index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/griffinsharp/INFLUNCD.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/griffinsharp/INFLUNCD/issues"
+  },
+  "homepage": "https://github.com/griffinsharp/INFLUNCD#readme",
+  "dependencies": {
+    "d3": "^5.14.2",
+    "firebase": "^7.5.0",
+    "node": "^13.1.0"
+  },
+  "devDependencies": {
+    "parcel": "^1.12.4"
+  }
+}
