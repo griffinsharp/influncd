@@ -1,1 +1,1 @@
-import main from './main';
+import graph from './graph.js';

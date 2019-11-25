@@ -4,13 +4,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>INFLUNCD</title>
+    <link rel="stylesheet" href="./stylesheets/reset.css">
+    <link rel="stylesheet" href="./stylesheets/general.css">
+    <link rel="stylesheet" href="./stylesheets/sidebar.css">
+    <link rel="stylesheet" href="./stylesheets/graph.css">
 </head>
 <body>
-
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script>
-    
     <script>
         // Your web app's Firebase configuration
         var firebaseConfig = {
@@ -28,9 +30,19 @@
         const db = firebase.firestore();
         const settings = { timestampsInSnapshots: true };
         db.settings(settings);
-        
     </script>
+    <!-- other stylesheets, bundled by parcel -->
     <script src="./index.js"></script>
-    <script src="./graph.js"></script>
+
+    <div class="project-section">
+        <div class="project-container">
+            <div class="sidebar-container">
+                
+            </div>
+            <div class="graph-container">
+            
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,0 +1,1 @@
+{"version":3,"sources":["stylesheets/general.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA","file":"general.d708bcec.css","sourceRoot":"../src","sourcesContent":[".project-container {\n    display: flex;\n    flex-direction: row;\n    height: 1000px;\n    width: auto;\n}"]}

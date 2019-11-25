@@ -28909,7 +28909,13 @@ var cent = {
 }; // svg container
 
 var svg = d3.select();
-},{"d3":"../node_modules/d3/index.js"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"d3":"../node_modules/d3/index.js"}],"index.js":[function(require,module,exports) {
+"use strict";
+
+var _graph = _interopRequireDefault(require("./graph.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+},{"./graph.js":"graph.js"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -29113,5 +29119,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel/src/builtins/hmr-runtime.js","graph.js"], null)
-//# sourceMappingURL=/graph.458e45bf.js.map
+},{}]},{},["../node_modules/parcel/src/builtins/hmr-runtime.js","index.js"], null)
+//# sourceMappingURL=/src.e31bb0bc.js.map

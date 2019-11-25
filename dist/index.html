@@ -4,9 +4,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>INFLUNCD</title>
-<link rel="stylesheet" href="/influenced.e31bb0bc.css"></head>
+    <link rel="stylesheet" href="/reset.6d6ae66e.css">
+    <link rel="stylesheet" href="/general.d708bcec.css">
+    <link rel="stylesheet" href="/sidebar.d3c4e038.css">
+    <link rel="stylesheet" href="/graph.b915dc80.css">
+<script src="/reset.6d6ae66e.js"></script><script src="/general.d708bcec.js"></script><script src="/sidebar.d3c4e038.js"></script><script src="/graph.b915dc80.js"></script></head>
 <body>
-    <script src="/influenced.e31bb0bc.js"></script>
-    <script src="/graph.458e45bf.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script>
+    <script>// Your web app's Firebase configuration
+var firebaseConfig = {
+  apiKey: "AIzaSyAtRHXwpRacMgxrIxk7YHxtHEp8_Ws7BXI",
+  authDomain: "influncd.firebaseapp.com",
+  databaseURL: "https://influncd.firebaseio.com",
+  projectId: "influncd",
+  storageBucket: "influncd.appspot.com",
+  messagingSenderId: "492237214107",
+  appId: "1:492237214107:web:8819fd9db9c6b2e66e913e",
+  measurementId: "G-RJ5C0VGYVH"
+}; // Initialize Firebase
+
+firebase.initializeApp(firebaseConfig);
+var db = firebase.firestore();
+var settings = {
+  timestampsInSnapshots: true
+};
+db.settings(settings);</script>
+    <!-- other stylesheets, bundled by parcel -->
+    <script src="/src.e31bb0bc.js"></script>
+
+    <div class="project-section">
+        <div class="project-container">
+            <div class="sidebar-container">
+                
+            </div>
+            <div class="graph-container">
+            
+            </div>
+        </div>
+    </div>
 </body>
 </html>
