@@ -18,7 +18,11 @@ In addition, this project will include:
 ## Wireframes
 This visualization will be a single page, with the circular data visualization in the center, with my social links (gitHub, linkedIn, etc.) and about modal to the left side. The goal is to gear all attention towards the chart representation, without having to navigate away to various artist pages, instead letting D3 present this information as it is requested. Since this is not as graphically intensive as a game, I would like to have as much animation as possible. This includes, at the very least, when a user arrives to the page, when a graph slice is hovered, and when a graph slice is clicked. 
 
-~ wireframe pics ~
+![wireframe 1](https://github.com/griffinsharp/INFLUNCD/blob/master/assets/Window1.png)
+![wireframe 2](https://github.com/griffinsharp/INFLUNCD/blob/master/assets/Window2.png)
+![wireframe 3](https://github.com/griffinsharp/INFLUNCD/blob/master/assets/Window3.png)
+![wireframe 4](https://github.com/griffinsharp/INFLUNCD/blob/master/assets/Window4.png)
+
 
 ## Architecture and Technologies
 NB: one of the main things you should be researching and deciding upon while you write this proposal is what technologies you plan to use. Identify and create a plan of attack for the major technical challenges in your project.
