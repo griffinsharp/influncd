@@ -74,9 +74,9 @@ Goals for the day:
 **Day 4**: Add the about modal and social links. More styling to the frontend, making it presentable and eye-catching. Add more animation, and overall improve the UI and UX.
 
 Goals for the day:
--Fix any major bugs concerning `javascript` and `D3` functionality.
--Style to fit and reflect all wireframes/mockups.
--Links and modal with no broken links. 
+- Fix any major bugs concerning `javascript` and `D3` functionality.
+- Style to fit and reflect all wireframes/mockups.
+- Links and modal with no broken links. 
 
 
 
