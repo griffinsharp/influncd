@@ -45,13 +45,15 @@ In addition to the entry file, there will be three scripts involved in this proj
 `EDIT.js`: not sure yet
 
 ## Implementation Timeline
-Day 1: Basic setup of project. This includes installing all needed node modules, the basic js entry files, and making sure my bundlers are in working order. Prior to this, I have never used D3, so I will learn the basics needed to atleast get my project up and working. Peristence of picture and artist data to Google Firebase backend. 
+Day 1: Basic setup of project. This includes installing all needed node modules, the basic js entry files, and making sure my bundlers are in working order. Prior to this, I have never used D3, so I will learn the basics needed to atleast get my project up and working. Peristence of picture and artist data to Google Firebase backend. Finish ReadMe and wireframes.
 
 Goals for the day:
+
 Have my project outlined and ready to go.
 Files bundling correctly and able to be viewed locally in the browser.
 Teach myself enough D3 to render a simple pie chart.
 Have a few pictures stored on Firebase and proper interaction with the API.
+Production level ReadMe and wireframes. 
 
 Day 2: This day will primarily be for the learning of D3 and connecting my project to firebase. I need to make sure all the slices are taking up their appropriate space, as well as rendering their picture correctly, both in the slice and full states. Basic animations should be implemented, but not yet the main focus. Interaction with firebase is important to keep my project lightweight (rendering 100 high quality images), so making sure this resource is being utilized correctly before proceeding is important.
 
