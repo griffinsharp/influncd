@@ -29,13 +29,14 @@ This visualization will be a single page, with the circular data visualization i
 ## Architecture and Technologies
 This project will be implemented with the following technologies:
 
-  - Vanilla JavaScript for underlying logic and functionality,
-  - D3.js for data based DOM manipulation,
-  - Browserify to bundle js for the web,
-  - Webpack to bundle js files,
-  - Babel for backwards compatility for non-ECMAScript 2015+ engines,
-  - Wikipedia API for artist bios,
-  - Google Firebase for persistent of backend data.
+  - Vanilla `JavaScript` for underlying logic and functionality,
+  - `D3.js` for data based DOM manipulation,
+  - `Browserify` to bundle js for the web,
+  - `Webpack` to bundle js files,
+  - `Babel` for backwards compatility for non-ECMAScript 2015+ engines,
+  - `Wikipedia API` for artist bios,
+  - `Google Firebase` for persistent of backend data,
+  - `HTML` and `CSS`
 
 
 In addition to the entry file, there will be three scripts involved in this project:
@@ -45,17 +46,17 @@ In addition to the entry file, there will be three scripts involved in this proj
 `EDIT.js`: not sure yet
 
 ## Implementation Timeline
-Day 1: Basic setup of project. This includes installing all needed node modules, the basic js entry files, and making sure my bundlers are in working order. Prior to this, I have never used D3, so I will learn the basics needed to atleast get my project up and working. Peristence of picture and artist data to Google Firebase backend. Finish ReadMe and wireframes.
+Day 1: Basic setup of project. This includes installing all needed node modules, the basic `javascript` entry files, and making sure my bundlers are in working order. Prior to this, I have never used `D3`, so I will learn the basics needed to atleast get my project up and working. Peristence of picture and artist data to `Google Firebase` backend. Finish ReadMe and wireframes.
 
 Goals for the day:
 
 Have my project outlined and ready to go.
 Files bundling correctly and able to be viewed locally in the browser.
-Teach myself enough D3 to render a simple pie chart.
-Have a few pictures stored on Firebase and proper interaction with the API.
+Teach myself enough `D3` to render a simple pie chart.
+Have a few pictures stored on `Firebase` and proper interaction with the API.
 Production level ReadMe and wireframes. 
 
-Day 2: This day will primarily be for the learning of D3 and connecting my project to firebase. I need to make sure all the slices are taking up their appropriate space, as well as rendering their picture correctly, both in the slice and full states. Basic animations should be implemented, but not yet the main focus. Interaction with firebase is important to keep my project lightweight (rendering 100 high quality images), so making sure this resource is being utilized correctly before proceeding is important.
+Day 2: This day will primarily be for the learning of `D3` and connecting my project to `Firebase.` I need to make sure all the slices are taking up their appropriate space, as well as rendering their picture correctly, both in the slice and full states. Basic animations should be implemented, but not yet the main focus. Interaction with firebase is important to keep my project lightweight (rendering 100 high quality images), so making sure this resource is being utilized correctly before proceeding is important.
 
 Goals for the day:
 
@@ -63,7 +64,7 @@ Have the slices represent their proper size according to level of influence.
 Have some basic animations of the pie slices upon user interaction. 
 Have most pictures stored to database and rendering on their corresponding slice. 
 
-Day 3: Work on each artist's bio. Implement the Wikipedia API and learn how to parse the first paragraph of each artist's page. Grab the artist's Apple Music/Spotify pages. Create more complex animations upon human interaction, such as the full swipe from 1/100 of the pie to the whole pie. 
+Day 3: Work on each artist's bio. Implement the `Wikipedia API` and learn how to parse the first paragraph of each artist's page. Grab the artist's Apple Music/Spotify pages. Create more complex animations upon human interaction, such as the full swipe from 1/100 of the pie to the whole pie. 
 
 Goals for the day:
 
@@ -71,7 +72,7 @@ Project should be navigatable between the full pie and a slice of the pie, able 
 
 Day 4: Add the about modal and social links. More styling to the frontend, making it presentable and eye-catching. Add more animation, and overall improve the UI and UX.
 
-Goals for the day: Fix any major bugs concerning JS and D3 functionality. Style to fit and reflect all wireframes/mockups. Links and modal with no broken links. 
+Goals for the day: Fix any major bugs concerning `javascript` and `D3` functionality. Style to fit and reflect all wireframes/mockups. Links and modal with no broken links. 
 
 
 
@@ -80,7 +81,7 @@ If all goes well, I would like to eventually have the following featured impleme
 
 - [ ] Optionally tune the results to most influential by genre and US city.
 - [ ] Show a random slice of the pie with a spinning 'prize wheel' animation.
-- [ ] A 'light' and 'dark' mode via CSS listeners.
+- [ ] A 'light' and 'dark' mode via `CSS` listeners.
 
 ## Links (for development purposes only, will be removed in production...)
 - Sunburst Diagram - https://observablehq.com/@d3/zoomable-sunburst
