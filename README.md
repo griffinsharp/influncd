@@ -80,7 +80,7 @@ Goals for the day:
 
 
 
-## Bonus features
+## Bonus Features
 If all goes well, I would like to eventually have the following featured implemented in INFLUNCD:
 
 - [ ] Optionally tune the results to most influential by genre and US city.
