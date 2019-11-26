@@ -26,16 +26,69 @@ function graph () {
     // takes in our data and determines how big each slice should be automatically
     const pie = d3.pie()
         .sort(null)
-        .value(data => data.cost);
+        .value(data => data.influence);
 
     // ARC GENERATOR
         // arc generator created path "d" attribute we can use to make d3 paths
         // need to tell d3 how long to make our slices
     const arcPath = d3.arc()
-    .outerRadius(dims.radius);
-
-    // Listener on firebase collection
+    .outerRadius(dims.radius)
+    .innerRadius(0);
     
+    // UDPATE FUNCTION - where I want to draw paths.
+    // will be called everytime our data changes
+    // d is passed into arcPath to generate the path for every slice based on data
+    const update = data => {
+        
+        const paths = graph.selectAll('path')
+            .data(pie(data));
+
+        paths.enter()
+            .append('path')
+                .attr('class', 'arc')
+                .attr('d', arcPath)
+                .attr('stroke', '#fff')
+                .attr('stroke-width', 3);
+    };  
+
+    // DATA ARRAY AND FIRESTONE
+    // Listener on firebase collection:
+        // - onShapshot real-time listener on db collection to tell when it changes
+        // - Cycling through each change
+        // - Each change gets a doc object
+        // - Each contain data of the change, and randomly generated document id
+        // - If change type is added, add (push) to array of data.
+        // - If its removed, remove. if updated, update.
+        // - All will be added originally, and will auto update accordingly.
+        // - For removed, .filter will check every item in the array, and will
+        // return a new array with everu item that passes the test function.
+
+    let data = [];
+    db.collection('musicians').onSnapshot(res => {
+        res.docChanges().forEach(change => {
+            const doc = {...change.doc.data(), id: change.doc.id};
+
+            switch (change.type) {
+                case 'added':
+                    data.push(doc);
+                    break;
+                case 'modified':
+                    const index = data.findIndex(item => item.id == doc.id);
+                    data[index] = doc;
+                    break;
+                case 'removed':
+                    data = data.filter(item => item.id !== doc.id);
+                    break;
+                default:
+                    break;    
+            }    
+
+        });
+        
+        update(data);
+
+    });
+
 }
 
 export default graph;
