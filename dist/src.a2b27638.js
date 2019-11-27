@@ -30642,6 +30642,7 @@ function graph() {
   var svg = d3.select("div.graph-container").append('svg').attr('width', dims.width + 50).attr('height', dims.height + 50); // adding a group, which has all graph elements that we will append to svg
   // translate to the center of the svg container
 
+  var defs = svg.append('defs');
   var graph = svg.append('g').attr('transform', "translate(".concat(cent.x, ", ").concat(cent.y, ")")); // pie generator for slices 
   // returns a function which will generate the angles for our slices
   // don't re-sort data (null)
@@ -30666,17 +30667,18 @@ function graph() {
   };
 
   var update = function update(data) {
-    // console.log(data);
-    console.log(data);
-    getImg(data[0].image).then(function (url) {
-      var paths = graph.selectAll('path').data(pie(data));
-      var color = d3.scaleOrdinal(["".concat(url)]);
-      color.domain(data.map(function (d) {
-        return d.artist;
-      }));
-      var nodeEnter = paths.enter().append('path').attr('class', 'arc').attr('d', arcPath).attr('stroke', '#ffffff').attr('stroke-width', 3).attr('fill', "url(#".concat(url, ")"));
-      var images = nodeEnter.append('svg:image').attr('id', url).attr('x', -9).attr('y', -12).attr("height", 50).attr("width", 50).attr('xlink:href', function (d) {
-        return url;
+    data.forEach(function (artist) {
+      var art = artist;
+      getImg(artist.image).then(function (url) {
+        var paths = graph.selectAll('path').data(pie(data));
+        var pattern = defs.append('pattern').attr('id', url).attr('x', 0).attr('y', 0).attr('width', 100).attr('height', 100).attr('patternUnits', 'userSpaceOnUse');
+        var image = pattern.append('svg:image').attr('xlink:href', function (d) {
+          return url;
+        }).attr("height", 50).attr("width", 50);
+        var nodeEnter = paths.enter().append('path').attr("id", function (d) {
+          return d.data.id;
+        });
+        graph.selectAll("#".concat(art.id)).attr('fill', "url(#".concat(url, ")")).attr('class', 'arc').attr('d', arcPath).attr('stroke', '#ffffff').attr('stroke-width', 3);
       });
     });
   }; // DATA ARRAY AND FIRESTONE

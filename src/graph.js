@@ -18,8 +18,13 @@ function graph () {
 
     // adding a group, which has all graph elements that we will append to svg
     // translate to the center of the svg container
+
+    const defs = svg.append('defs')
+
     const graph = svg.append('g')
     .attr('transform', `translate(${cent.x}, ${cent.y})`);
+
+    
 
     // pie generator for slices 
     // returns a function which will generate the angles for our slices
@@ -52,31 +57,41 @@ function graph () {
     };
 
     const update = data => {
-        // console.log(data);
-        console.log(data)
-        getImg(data[0].image).then(url => {
-            const paths = graph.selectAll('path')
-                .data(pie(data));
 
-               let color = d3.scaleOrdinal([`${url}`]);
-               color.domain(data.map(d => d.artist))
+        data.forEach(artist => {
+            let art = artist;
+            getImg(artist.image).then(url => {
+                const paths = graph.selectAll('path')
+                    .data(pie(data));
 
-            let nodeEnter = paths.enter()
-                .append('path')
-                .attr('class', 'arc')
-                .attr('d', arcPath)
-                .attr('stroke', '#ffffff')
-                .attr('stroke-width', 3)
-                .attr('fill', `url(#${url})`);
+                let pattern = defs.append('pattern')
+                    .attr('id', url)
+                    .attr('x', 0)
+                    .attr('y', 0)
+                    .attr('width', 100)
+                    .attr('height', 100)
+                    .attr('patternUnits', 'userSpaceOnUse')
 
-            let images = nodeEnter.append('svg:image')
-                .attr('id', url)
-                .attr('x', -9)
-                .attr('y', -12)
-                .attr("height", 50)
-                .attr("width", 50)
-                .attr('xlink:href', d => url);
-        });
+                let image = pattern.append('svg:image')
+                    .attr('xlink:href', d => url)
+                    .attr("height", 50)
+                    .attr("width", 50)
+                
+                let nodeEnter = paths.enter()
+                    .append('path')
+                    .attr("id", function(d) {return d.data.id;});
+                   
+                graph.selectAll(`#${art.id}`)
+                    .attr('fill', `url(#${url})`)
+                    .attr('class', 'arc')
+                    .attr('d', arcPath)
+                    .attr('stroke', '#ffffff')
+                    .attr('stroke-width', 3);
+                
+            });
+
+        })
+    
         
            
     };  
