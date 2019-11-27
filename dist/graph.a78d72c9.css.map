@@ -1,0 +1,1 @@
+{"version":3,"sources":["src/stylesheets/graph.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA","file":"graph.a78d72c9.css","sourceRoot":"..","sourcesContent":[".graph-container {\n    height: 100%;\n    flex-basis: 80%;\n    background-color: lightgrey;\n    min-width: 1020px;\n}"]}

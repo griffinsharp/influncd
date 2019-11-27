@@ -1,0 +1,1 @@
+{"version":3,"sources":["graph.css"],"names":[],"mappings":"AAAA,iBACI,WAAY,CACZ,cAAe,CACf,wBAA2B,CAC3B,gBACJ","file":"graph.9eade2d1.css","sourceRoot":"../src","sourcesContent":[".graph-container {\n    height: 100%;\n    flex-basis: 80%;\n    background-color: lightgrey;\n    min-width: 1020px;\n}"]}

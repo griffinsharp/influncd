@@ -1,4 +1,5 @@
 import * as d3 from 'd3';
+import axios from 'axios';
 
     // notes as I learn d3...
 
@@ -38,18 +39,49 @@ function graph () {
     // UDPATE FUNCTION - where I want to draw paths.
     // will be called everytime our data changes
     // d is passed into arcPath to generate the path for every slice based on data
-    const update = data => {
-        
-        const paths = graph.selectAll('path')
-            .data(pie(data));
 
-        paths.enter()
-            .append('path')
+
+
+    const getImg = function(imgPath) {
+    
+       return storage.refFromURL(`${imgPath}`).getDownloadURL().then( function (url) {
+            return axios.get(url)
+            .then(res =>  res.config.url);
+        })
+        
+    };
+
+    const update = data => {
+        // console.log(data);
+        console.log(data)
+        getImg(data[0].image).then(url => {
+            const paths = graph.selectAll('path')
+                .data(pie(data));
+
+               let color = d3.scaleOrdinal([`${url}`]);
+               color.domain(data.map(d => d.artist))
+
+            let nodeEnter = paths.enter()
+                .append('path')
                 .attr('class', 'arc')
                 .attr('d', arcPath)
-                .attr('stroke', '#fff')
-                .attr('stroke-width', 3);
+                .attr('stroke', '#ffffff')
+                .attr('stroke-width', 3)
+                .attr('fill', `url(#${url})`);
+
+            let images = nodeEnter.append('svg:image')
+                .attr('id', url)
+                .attr('x', -9)
+                .attr('y', -12)
+                .attr("height", 50)
+                .attr("width", 50)
+                .attr('xlink:href', d => url);
+        });
+        
+           
     };  
+
+
 
     // DATA ARRAY AND FIRESTONE
     // Listener on firebase collection:

@@ -28890,31 +28890,43 @@ Object.keys(_d3Zoom).forEach(function (key) {
 },{"./dist/package.js":"../node_modules/d3/dist/package.js","d3-array":"../node_modules/d3-array/src/index.js","d3-axis":"../node_modules/d3-axis/src/index.js","d3-brush":"../node_modules/d3-brush/src/index.js","d3-chord":"../node_modules/d3-chord/src/index.js","d3-collection":"../node_modules/d3-collection/src/index.js","d3-color":"../node_modules/d3-color/src/index.js","d3-contour":"../node_modules/d3-contour/src/index.js","d3-dispatch":"../node_modules/d3-dispatch/src/index.js","d3-drag":"../node_modules/d3-drag/src/index.js","d3-dsv":"../node_modules/d3-dsv/src/index.js","d3-ease":"../node_modules/d3-ease/src/index.js","d3-fetch":"../node_modules/d3-fetch/src/index.js","d3-force":"../node_modules/d3-force/src/index.js","d3-format":"../node_modules/d3-format/src/index.js","d3-geo":"../node_modules/d3-geo/src/index.js","d3-hierarchy":"../node_modules/d3-hierarchy/src/index.js","d3-interpolate":"../node_modules/d3-interpolate/src/index.js","d3-path":"../node_modules/d3-path/src/index.js","d3-polygon":"../node_modules/d3-polygon/src/index.js","d3-quadtree":"../node_modules/d3-quadtree/src/index.js","d3-random":"../node_modules/d3-random/src/index.js","d3-scale":"../node_modules/d3-scale/src/index.js","d3-scale-chromatic":"../node_modules/d3-scale-chromatic/src/index.js","d3-selection":"../node_modules/d3-selection/src/index.js","d3-shape":"../node_modules/d3-shape/src/index.js","d3-time":"../node_modules/d3-time/src/index.js","d3-time-format":"../node_modules/d3-time-format/src/index.js","d3-timer":"../node_modules/d3-timer/src/index.js","d3-transition":"../node_modules/d3-transition/src/index.js","d3-voronoi":"../node_modules/d3-voronoi/src/index.js","d3-zoom":"../node_modules/d3-zoom/src/index.js"}],"graph.js":[function(require,module,exports) {
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
 var d3 = _interopRequireWildcard(require("d3"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+// svg container, set width and height of container (with extra space of 50px)
 // dimensions of graph
-var dims = {
-  height: 300,
-  width: 300,
-  radius: 150
-}; // center of graph, with space for border
+function graph() {
+  var dims = {
+    height: 300,
+    width: 300,
+    radius: 150
+  }; // center of graph, with space for border
 
-var cent = {
-  x: dims.width / 2 + 5,
-  y: dims.height / 2 + 5
-}; // svg container
+  var cent = {
+    x: dims.width / 2 + 5,
+    y: dims.height / 2 + 5
+  };
+  var svg = d3.select("div.graph-container").append('svg').attr('width', dims.width + 50).attr('height', dims.height + 50);
+}
 
-var svg = d3.select();
+var _default = graph;
+exports.default = _default;
 },{"d3":"../node_modules/d3/index.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _graph = _interopRequireDefault(require("./graph.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _graph.default)();
 },{"./graph.js":"graph.js"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -28943,7 +28955,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52983" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52040" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

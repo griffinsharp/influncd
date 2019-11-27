@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "dev": "parcel ./src/index.html",
+    "start": "parcel index.html",
     "build": "parcel build index.html",
     "watch": "parcel watch index.html"
   },
@@ -22,10 +22,12 @@
   },
   "homepage": "https://github.com/griffinsharp/INFLUNCD#readme",
   "dependencies": {
+    "axios": "^0.19.0",
     "d3": "^5.14.2",
     "firebase": "^7.5.0",
     "node": "^13.1.0",
-    "reset.css": "^2.0.2"
+    "reset.css": "^2.0.2",
+    "storage": "^0.2.0"
   },
   "devDependencies": {
     "parcel": "^1.12.4"
