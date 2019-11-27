@@ -5,4 +5,18 @@
     min-width: 1020px;
 }
 
+.artist {
+    height: 170%;
+    width: 150%;
+   
+    position: absolute;
+    transform: translate(-50%, -20%);
+    
+    
+}
+
+path:hover {
+    opacity: 90%;
+}
+
 /*# sourceMappingURL=/graph.a78d72c9.css.map */

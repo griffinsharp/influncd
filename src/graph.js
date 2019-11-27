@@ -6,7 +6,7 @@ import axios from 'axios';
 function graph () {
     // svg container, set width and height of container (with extra space of 50px)
     // dimensions of graph
-    const dims = { height: 300, width: 300, radius: 150 };
+    const dims = { height: 1000, width: 1000, radius: 500 };
 
     // ANGLE GENERATOR
         // center of graph, with space for border
@@ -68,14 +68,13 @@ function graph () {
                     .attr('id', url)
                     .attr('x', 0)
                     .attr('y', 0)
-                    .attr('width', 100)
-                    .attr('height', 100)
-                    .attr('patternUnits', 'userSpaceOnUse')
+                    .attr('width', 1)
+                    .attr('height', 1)
+                    // .attr('patternUnits', 'userSpaceOnUse')
 
                 let image = pattern.append('svg:image')
                     .attr('xlink:href', d => url)
-                    .attr("height", 50)
-                    .attr("width", 50)
+                    .attr("class", "artist")
                 
                 let nodeEnter = paths.enter()
                     .append('path')

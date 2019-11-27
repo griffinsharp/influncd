@@ -30629,9 +30629,9 @@ function graph() {
   // svg container, set width and height of container (with extra space of 50px)
   // dimensions of graph
   var dims = {
-    height: 300,
-    width: 300,
-    radius: 150
+    height: 1000,
+    width: 1000,
+    radius: 500
   }; // ANGLE GENERATOR
   // center of graph, with space for border
 
@@ -30671,10 +30671,11 @@ function graph() {
       var art = artist;
       getImg(artist.image).then(function (url) {
         var paths = graph.selectAll('path').data(pie(data));
-        var pattern = defs.append('pattern').attr('id', url).attr('x', 0).attr('y', 0).attr('width', 100).attr('height', 100).attr('patternUnits', 'userSpaceOnUse');
+        var pattern = defs.append('pattern').attr('id', url).attr('x', 0).attr('y', 0).attr('width', 1).attr('height', 1); // .attr('patternUnits', 'userSpaceOnUse')
+
         var image = pattern.append('svg:image').attr('xlink:href', function (d) {
           return url;
-        }).attr("height", 50).attr("width", 50);
+        }).attr("class", "artist");
         var nodeEnter = paths.enter().append('path').attr("id", function (d) {
           return d.data.id;
         });
