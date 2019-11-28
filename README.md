@@ -31,12 +31,11 @@ This project will be implemented with the following technologies:
 
   - Vanilla `JavaScript` for underlying logic and functionality,
   - `D3.js` for data based DOM manipulation,
-  - `Browserify` to bundle js for the web,
-  - `Webpack` to bundle js files,
+  - `Parcel` to bundle js files for the web,
   - `Babel` for backwards compatility for non-ECMAScript 2015+ engines,
   - `Wikipedia API` for artist bios,
-  - `Google Firebase` for persistent of backend data,
-  - `HTML` and `CSS`
+  - `Google Firebase` for persistent of backend data and asset storage,
+  - `SASS`, `CSS3`, and `HTML5`
 
 
 In addition to the entry file, there will be three scripts involved in this project:
@@ -77,8 +76,6 @@ Goals for the day:
 - Fix any major bugs concerning `javascript` and `D3` functionality.
 - Style to fit and reflect all wireframes/mockups.
 - Links and modal with no broken links. 
-
-
 
 ## Bonus Features
 If all goes well, I would like to eventually have the following featured implemented in INFLUNCD:
