@@ -35,7 +35,7 @@ This project will be implemented with the following technologies:
   - `Babel` for backwards compatility for non-ECMAScript 2015+ engines,
   - `Wikipedia API` for artist bios,
   - `Google Firebase` for persistent of backend data and asset storage,
-  - `SASS`, `CSS3`, and `HTML5`
+  - `SASS` (adhering to AirBnB's [styleguide](https://github.com/airbnb/css#sass)), `CSS3`, and `HTML5`
 
 
 In addition to the entry file, there will be three scripts involved in this project:
