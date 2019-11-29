@@ -30679,7 +30679,8 @@ function graph() {
         var nodeEnter = paths.enter().append('path').attr("id", function (d) {
           return d.data.id;
         });
-        graph.selectAll("#".concat(art.id)).attr('fill', "url(#".concat(url, ")")).attr('class', 'arc').attr('d', arcPath).attr('stroke', '#ffffff').attr('stroke-width', 3);
+        graph.selectAll("#".concat(art.id)).attr('fill', "url(#".concat(url, ")")).attr('class', 'arc') // .attr('d', arcPath)
+        .attr('stroke', '#ffffff').attr('stroke-width', 3).transition().duration(7000).attrTween("d", arcTweenEnter);
       });
     });
   }; // DATA ARRAY AND FIRESTONE
@@ -30725,7 +30726,17 @@ function graph() {
       }
     });
     update(data);
-  });
+  }); // TWEEN ENTER ANIMATIONS
+  // generate the angles (interpolate them) we need and update them overtime
+  // this animates them in the brower
+
+  var arcTweenEnter = function arcTweenEnter(d) {
+    var i = d3.interpolate(d.endAngle, d.startAngle);
+    return function (t) {
+      d.startAngle = i(t);
+      return arcPath(d);
+    };
+  };
 }
 
 var _default = graph;
@@ -30768,7 +30779,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49872" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52456" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

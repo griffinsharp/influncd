@@ -83,18 +83,17 @@ function graph () {
                 graph.selectAll(`#${art.id}`)
                     .attr('fill', `url(#${url})`)
                     .attr('class', 'arc')
-                    .attr('d', arcPath)
+                    // .attr('d', arcPath)
                     .attr('stroke', '#ffffff')
-                    .attr('stroke-width', 3);
+                    .attr('stroke-width', 3)
+                    .transition().duration(7000)
+                    .attrTween("d", arcTweenEnter);
                 
             });
 
         })
-    
-        
            
     };  
-
 
 
     // DATA ARRAY AND FIRESTONE
@@ -134,6 +133,21 @@ function graph () {
         update(data);
 
     });
+
+
+    // TWEEN ENTER ANIMATIONS
+    // generate the angles (interpolate them) we need and update them overtime
+    // this animates them in the brower
+    const arcTweenEnter = (d) => {
+        let i = d3.interpolate(d.endAngle, d.startAngle);
+
+        return function (t) {
+            d.startAngle = i(t);
+            return arcPath(d);
+        };
+    };
+
+
 
 }
 
