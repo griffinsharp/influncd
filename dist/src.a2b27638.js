@@ -30629,9 +30629,9 @@ function graph() {
   // svg container, set width and height of container (with extra space of 50px)
   // dimensions of graph
   var dims = {
-    height: 1000,
-    width: 1000,
-    radius: 500
+    height: 600,
+    width: 600,
+    radius: 300
   }; // ANGLE GENERATOR
   // center of graph, with space for border
 
@@ -30730,28 +30730,17 @@ function graph() {
 
 var _default = graph;
 exports.default = _default;
-},{"d3":"node_modules/d3/index.js","axios":"node_modules/axios/index.js"}],"src/upload.js":[function(require,module,exports) {
-// import artists from '../artists.json';
-// function upload () {
-// artists.forEach((artist) => {
-//     let docRef = db.collection("musicians").doc();
-//     batch.set(docRef, artist);
-// });
-// batch.commit();
-// }
-// export default upload;
-},{}],"src/index.js":[function(require,module,exports) {
+},{"d3":"node_modules/d3/index.js","axios":"node_modules/axios/index.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _graph = _interopRequireDefault(require("./graph.js"));
 
-var _upload = _interopRequireDefault(require("./upload.js"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _graph.default)();
-(0, _upload.default)();
-},{"./graph.js":"src/graph.js","./upload.js":"src/upload.js"}],"node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+// import upload from './upload.js';
+(0, _graph.default)(); // Upload is just for initial firebase DB seed!
+// upload();
+},{"./graph.js":"src/graph.js"}],"node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -30779,7 +30768,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49754" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49872" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

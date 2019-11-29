@@ -1,16 +1,16 @@
-import artists from '../artists.json';
+// import artists from '../artists.json';
 
 
-function upload () {
+// function upload () {
 
-artists.forEach((artist) => {
-    let docRef = db.collection("musicians").doc();
-    batch.set(docRef, artist);
-});
+// artists.forEach((artist) => {
+//     let docRef = db.collection("musicians").doc();
+//     batch.set(docRef, artist);
+// });
 
-batch.commit();
+// batch.commit();
 
-}
+// }
 
-export default upload;
+// export default upload;
 

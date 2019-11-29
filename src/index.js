@@ -1,5 +1,6 @@
 import graph from './graph.js';
-import upload from './upload.js';
+// import upload from './upload.js';
 
 graph();
-upload();
+// Upload is just for initial firebase DB seed!
+// upload();

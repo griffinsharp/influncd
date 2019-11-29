@@ -6,15 +6,22 @@
 }
 
 .artist {
-    height: 170%;
-    width: 150%;
    
     position: absolute;
-    transform: translate(-50%, -20%);
+    transform: translate(-10%, -0%);
     
     
 }
 
 path:hover {
     opacity: 90%;
+    display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+  transform: translateY(-8px)
 }

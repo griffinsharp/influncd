@@ -6,7 +6,7 @@ import axios from 'axios';
 function graph () {
     // svg container, set width and height of container (with extra space of 50px)
     // dimensions of graph
-    const dims = { height: 1000, width: 1000, radius: 500 };
+    const dims = { height: 600, width: 600, radius: 300 };
 
     // ANGLE GENERATOR
         // center of graph, with space for border
