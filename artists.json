@@ -1,0 +1,602 @@
+[
+    {
+        "artist": "ACDC",
+        "image": "gs://influncd.appspot.com/ACDC.jpg",
+        "influence": 121,
+        "percentinfluence": 0.554994955
+    },
+    {
+        "artist": "Aretha Franklin",
+        "image": "gs://influncd.appspot.com/Aretha_Franklin.jpg",
+        "influence": 140,
+        "percentinfluence": 0.642142923
+    },
+    {
+        "artist": "B.B. King",
+        "image": "gs://influncd.appspot.com/B.B._King.jpg",
+        "influence": 121,
+        "percentinfluence": 0.554994955
+    },
+    {
+        "artist": "Big Star",
+        "image": "gs://influncd.appspot.com/Big_Star.jpg",
+        "influence": 189,
+        "percentinfluence": 0.866892946
+    },
+    {
+        "artist": "Billie Holiday",
+        "image": "gs://influncd.appspot.com/Billie_Holiday.jpg",
+        "influence": 177,
+        "percentinfluence": 0.811852124
+    },
+    {
+        "artist": "Bjork",
+        "image": "gs://influncd.appspot.com/Bjork.jpg",
+        "influence": 123,
+        "percentinfluence": 0.564168425
+    },
+    {
+        "artist": "Black Flag",
+        "image": "gs://influncd.appspot.com/Black_Flag.jpg",
+        "influence": 161,
+        "percentinfluence": 0.738464361
+    },
+    {
+        "artist": "Black Sabbath",
+        "image": "gs://influncd.appspot.com/Black_Sabbath.jpg",
+        "influence": 276,
+        "percentinfluence": 1.265938905
+    },
+    {
+        "artist": "Blondie",
+        "image": "gs://influncd.appspot.com/Black_Sabbath.jpg",
+        "influence": 129,
+        "percentinfluence": 0.591688836
+    },
+    {
+        "artist": "Bob Dylan",
+        "image": "gs://influncd.appspot.com/Bob_Dylan.jpg",
+        "influence": 669,
+        "percentinfluence": 3.068525823
+    },
+    {
+        "artist": "Bob Marley",
+        "image": "gs://influncd.appspot.com/Bob_Marley.jpg",
+        "influence": 165,
+        "percentinfluence": 0.756811302
+    },
+    {
+        "artist": "Brian Eno",
+        "image": "gs://influncd.appspot.com/Brian Eno.jpg",
+        "influence": 327,
+        "percentinfluence": 1.499862398
+    },
+    {
+        "artist": "Bruce Springsteen",
+        "image": "gs://influncd.appspot.com/Bruce_Springsteen.jpg",
+        "influence": 132,
+        "percentinfluence": 0.605449041
+    },
+    {
+        "artist": "Buddy Holly",
+        "image": "gs://influncd.appspot.com/Buddy_Holly.jpg",
+        "influence": 139,
+        "percentinfluence": 0.637556188
+    },
+    {
+        "artist": "Buzzcocks",
+        "image": "gs://influncd.appspot.com/Buzzcocks.jpg",
+        "influence": 132,
+        "percentinfluence": 0.605449041
+    },
+    {
+        "artist": "Can",
+        "image": "gs://influncd.appspot.com/Can.jpg",
+        "influence": 192,
+        "percentinfluence": 0.880653151
+    },
+    {
+        "artist": "Captain Beefheart",
+        "image": "gs://influncd.appspot.com/Captain_Beefheart.jpg",
+        "influence": 127,
+        "percentinfluence": 0.582515366
+    },
+    {
+        "artist": "Charlie Parker",
+        "image": "gs://influncd.appspot.com/Charlie_Parker.jpg",
+        "influence": 215,
+        "percentinfluence": 0.98614806
+    },
+    {
+        "artist": "Cheap Trick",
+        "image": "gs://influncd.appspot.com/Cheap_Trick.jpg",
+        "influence": 131,
+        "percentinfluence": 0.600862306
+    },
+    {
+        "artist": "Chuck Berry",
+        "image": "gs://influncd.appspot.com/Chuck_Berry.jpg",
+        "influence": 228,
+        "percentinfluence": 1.045775617
+    },
+    {
+        "artist": "Cocteau Twins",
+        "image": "gs://influncd.appspot.com/Cocteau_Twins.jpg",
+        "influence": 124,
+        "percentinfluence": 0.56875516
+    },
+    {
+        "artist": "Cream",
+        "image": "gs://influncd.appspot.com/Cream.jpg",
+        "influence": 139,
+        "percentinfluence": 0.637556188
+    },
+    {
+        "artist": "Curtis Mayfield",
+        "image": "gs://influncd.appspot.com/Curtis_Mayfield.jpg",
+        "influence": 121,
+        "percentinfluence": 0.554994955
+    },
+    {
+        "artist": "David Bowie",
+        "image": "gs://influncd.appspot.com/David_Bowie.jpg",
+        "influence": 432,
+        "percentinfluence": 1.98146959
+    },
+    {
+        "artist": "Deep Purple",
+        "image": "gs://influncd.appspot.com/Deep_Purple.jpg",
+        "influence": 120,
+        "percentinfluence": 0.550408219
+    },
+    {
+        "artist": "Depeche Mode",
+        "image": "gs://influncd.appspot.com/Depeche_Mode.jpg",
+        "influence": 120,
+        "percentinfluence": 0.550408219
+    },
+    {
+        "artist": "Duke Ellington",
+        "image": "gs://influncd.appspot.com/Duke_Ellington.jpg",
+        "influence": 208,
+        "percentinfluence": 0.954040914
+    },
+    {
+        "artist": "Ella Fitzgerald",
+        "image": "gs://influncd.appspot.com/Ella_Fitzgerald.jpg",
+        "influence": 131,
+        "percentinfluence": 0.600862306
+    },
+    {
+        "artist": "Elvis Costello",
+        "image": "gs://influncd.appspot.com/Elvis_Costello.jpg",
+        "influence": 153,
+        "percentinfluence": 0.70177048
+    },
+    {
+        "artist": "Elvis Presley",
+        "image": "gs://influncd.appspot.com/Elvis_Presley.jpg",
+        "influence": 273,
+        "percentinfluence": 1.252178699
+    },
+    {
+        "artist": "Frank Zappa",
+        "image": "gs://influncd.appspot.com/Frank_Zappa.jpg",
+        "influence": 161,
+        "percentinfluence": 0.738464361
+    },
+    {
+        "artist": "Funkadelic",
+        "image": "gs://influncd.appspot.com/Funkadelic.jpg",
+        "influence": 129,
+        "percentinfluence": 0.591688836
+    },
+    {
+        "artist": "Gram Parsons",
+        "image": "gs://influncd.appspot.com/Gram_Parsons.jpg",
+        "influence": 131,
+        "percentinfluence": 0.600862306
+    },
+    {
+        "artist": "Hank Williams",
+        "image": "gs://influncd.appspot.com/Hank_Williams.jpg",
+        "influence": 275,
+        "percentinfluence": 1.26135217
+    },
+    {
+        "artist": "Howlin' Wolf",
+        "image": "gs://influncd.appspot.com/Howlin'_Wolf.jpg",
+        "influence": 136,
+        "percentinfluence": 0.623795982
+    },
+    {
+        "artist": "James Brown",
+        "image": "gs://influncd.appspot.com/James_Brown.jpg",
+        "influence": 299,
+        "percentinfluence": 1.371433813
+    },
+    {
+        "artist": "Jimi Hendrix",
+        "image": "gs://influncd.appspot.com/Jimi_Hendrix.jpg",
+        "influence": 371,
+        "percentinfluence": 1.701678745
+    },
+    {
+        "artist": "John Cage",
+        "image": "gs://influncd.appspot.com/John_Cage.jpg",
+        "influence": 148,
+        "percentinfluence": 0.678836804
+    },
+    {
+        "artist": "John Coltrane",
+        "image": "gs://influncd.appspot.com/John_Coltrane.jpg",
+        "influence": 315,
+        "percentinfluence": 1.444821576
+    },
+    {
+        "artist": "Johnny Cash",
+        "image": "gs://influncd.appspot.com/Johnny_Cash.jpg",
+        "influence": 194,
+        "percentinfluence": 0.889826621
+    },
+    {
+        "artist": "Joni Mitchell",
+        "image": "gs://influncd.appspot.com/Joni_Mitchell.jpg",
+        "influence": 252,
+        "percentinfluence": 1.155857261
+    },
+    {
+        "artist": "Joy Division",
+        "image": "gs://influncd.appspot.com/Joy_Division.jpg",
+        "influence": 187,
+        "percentinfluence": 0.857719475
+    },
+    {
+        "artist": "Kiss",
+        "image": "gs://influncd.appspot.com/Kiss.jpg",
+        "influence": 128,
+        "percentinfluence": 0.587102101
+    },
+    {
+        "artist": "Kraftwerk",
+        "image": "gs://influncd.appspot.com/Kraftwerk.jpg",
+        "influence": 323,
+        "percentinfluence": 1.481515457
+    },
+    {
+        "artist": "Led Zeppelin",
+        "image": "gs://influncd.appspot.com/Led_Zeppelin.jpg",
+        "influence": 355,
+        "percentinfluence": 1.628290982
+    },
+    {
+        "artist": "Leonard Cohen",
+        "image": "gs://influncd.appspot.com/Leonard_Cohen.jpg",
+        "influence": 164,
+        "percentinfluence": 0.752224567
+    },
+    {
+        "artist": "Louis Armstrong",
+        "image": "gs://influncd.appspot.com/Louis_Armstrong.jpg",
+        "influence": 183,
+        "percentinfluence": 0.839372535
+    },
+    {
+        "artist": "Madonna",
+        "image": "gs://influncd.appspot.com/Madonna.jpg",
+        "influence": 145,
+        "percentinfluence": 0.665076598
+    },
+    {
+        "artist": "Marvin Gaye",
+        "image": "gs://influncd.appspot.com/Marvin_Gaye.jpg",
+        "influence": 224,
+        "percentinfluence": 1.027428676
+    },
+    {
+        "artist": "MC5",
+        "image": "gs://influncd.appspot.com/MC5.jpg",
+        "influence": 160,
+        "percentinfluence": 0.733877626
+    },
+    {
+        "artist": "Merle Haggard",
+        "image": "gs://influncd.appspot.com/Merle_Haggard.jpg",
+        "influence": 143,
+        "percentinfluence": 0.655903128
+    },
+    {
+        "artist": "Metallica",
+        "image": "gs://influncd.appspot.com/Metallica.jpg",
+        "influence": 180,
+        "percentinfluence": 0.825612329
+    },
+    {
+        "artist": "Michael Jackson",
+        "image": "gs://influncd.appspot.com/Michael_Jackson.jpg",
+        "influence": 176,
+        "percentinfluence": 0.807265388
+    },
+    {
+        "artist": "Miles Davis",
+        "image": "gs://influncd.appspot.com/Miles_Davis.jpg",
+        "influence": 342,
+        "percentinfluence": 1.568663425
+    },
+    {
+        "artist": "Muddy Waters",
+        "image": "gs://influncd.appspot.com/Muddy_Waters.jpg",
+        "influence": 200,
+        "percentinfluence": 0.917347032
+    },
+    {
+        "artist": "My Bloody Valentine",
+        "image": "gs://influncd.appspot.com/My_Bloody_Valentine.jpg",
+        "influence": 253,
+        "percentinfluence": 1.160443996
+    },
+    {
+        "artist": "N.W.A",
+        "image": "gs://influncd.appspot.com/N.W.A.jpg",
+        "influence": 203,
+        "percentinfluence": 0.931107238
+    },
+    {
+        "artist": "Neil Young",
+        "image": "gs://influncd.appspot.com/Neil Young.jpg",
+        "influence": 374,
+        "percentinfluence": 1.715438951
+    },
+    {
+        "artist": "New Order",
+        "image": "gs://influncd.appspot.com/New_Order.jpg",
+        "influence": 182,
+        "percentinfluence": 0.834785799
+    },
+    {
+        "artist": "Nick Drake",
+        "image": "gs://influncd.appspot.com/Nick_Drake.jpg",
+        "influence": 190,
+        "percentinfluence": 0.871479681
+    },
+    {
+        "artist": "Nirvana",
+        "image": "gs://influncd.appspot.com/Nirvana.jpg",
+        "influence": 204,
+        "percentinfluence": 0.935693973
+    },
+    {
+        "artist": "Ornette Coleman",
+        "image": "gs://influncd.appspot.com/Ornette_Coleman.jpg",
+        "influence": 151,
+        "percentinfluence": 0.692597009
+    },
+    {
+        "artist": "Otis Redding",
+        "image": "gs://influncd.appspot.com/Otis_Redding.jpg",
+        "influence": 140,
+        "percentinfluence": 0.642142923
+    },
+    {
+        "artist": "Parliament",
+        "image": "gs://influncd.appspot.com/Parliament.jpg",
+        "influence": 139,
+        "percentinfluence": 0.637556188
+    },
+    {
+        "artist": "Pink Floyd",
+        "image": "gs://influncd.appspot.com/Pink_Floyd.jpg",
+        "influence": 281,
+        "percentinfluence": 1.28887258
+    },
+    {
+        "artist": "Pixies",
+        "image": "gs://influncd.appspot.com/Pixies.jpg",
+        "influence": 179,
+        "percentinfluence": 0.821025594
+    },
+    {
+        "artist": "Prince",
+        "image": "gs://influncd.appspot.com/Prince.jpg",
+        "influence": 228,
+        "percentinfluence": 1.045775617
+    },
+    {
+        "artist": "R.E.M.",
+        "image": "gs://influncd.appspot.com/R.E.M..jpg",
+        "influence": 188,
+        "percentinfluence": 0.86230621
+    },
+    {
+        "artist": "Radiohead",
+        "image": "gs://influncd.appspot.com/Radiohead.jpg",
+        "influence": 163,
+        "percentinfluence": 0.747637831
+    },
+    {
+        "artist": "Ramones",
+        "image": "gs://influncd.appspot.com/Ramones.jpg",
+        "influence": 258,
+        "percentinfluence": 1.183377672
+    },
+    {
+        "artist": "Ray Charles",
+        "image": "gs://influncd.appspot.com/Ray_Charles.jpg",
+        "influence": 153,
+        "percentinfluence": 0.70177048
+    },
+    {
+        "artist": "Roxy Music",
+        "image": "gs://influncd.appspot.com/Roxy_Music.jpg",
+        "influence": 160,
+        "percentinfluence": 0.733877626
+    },
+    {
+        "artist": "Run-D.M.C.",
+        "image": "gs://influncd.appspot.com/Run-D.M.C..jpg",
+        "influence": 126,
+        "percentinfluence": 0.57792863
+    },
+    {
+        "artist": "Sam Cooke",
+        "image": "gs://influncd.appspot.com/Sam_Cooke.jpg",
+        "influence": 178,
+        "percentinfluence": 0.816438859
+    },
+    {
+        "artist": "Sex Pistols",
+        "image": "gs://influncd.appspot.com/Sex_Pistols.jpg",
+        "influence": 239,
+        "percentinfluence": 1.096229704
+    },
+    {
+        "artist": "Slayer",
+        "image": "gs://influncd.appspot.com/Slayer.jpg",
+        "influence": 134,
+        "percentinfluence": 0.614622512
+    },
+    {
+        "artist": "Sly & the Family Stone",
+        "image": "gs://influncd.appspot.com/Sly_&_the_Family_Stone.jpg",
+        "influence": 130,
+        "percentinfluence": 0.596275571
+    },
+    {
+        "artist": "Sonic Youth",
+        "image": "gs://influncd.appspot.com/Sonic_Youth.jpg",
+        "influence": 282,
+        "percentinfluence": 1.293459316
+    },
+    {
+        "artist": "Stevie Wonder",
+        "image": "gs://influncd.appspot.com/Stevie_Wonder.jpg",
+        "influence": 246,
+        "percentinfluence": 1.12833685
+    },
+    {
+        "artist": "T. Rex",
+        "image": "gs://influncd.appspot.com/T._Rex.jpg",
+        "influence": 149,
+        "percentinfluence": 0.683423539
+    },
+    {
+        "artist": "Talking Heads",
+        "image": "gs://influncd.appspot.com/Talking_Heads.jpg",
+        "influence": 142,
+        "percentinfluence": 0.651316393
+    },
+    {
+        "artist": "The Band",
+        "image": "gs://influncd.appspot.com/The_Band.jpg",
+        "influence": 145,
+        "percentinfluence": 0.665076598
+    },
+    {
+        "artist": "The Beach Boys",
+        "image": "gs://influncd.appspot.com/The_Beach_Boys.jpg",
+        "influence": 422,
+        "percentinfluence": 1.935602238
+    },
+    {
+        "artist": "The Beatles",
+        "image": "gs://influncd.appspot.com/The_Beatles.jpg",
+        "influence": 1230,
+        "percentinfluence": 5.641684249
+    },
+    {
+        "artist": "The Byrds",
+        "image": "gs://influncd.appspot.com/The_Byrds.jpg",
+        "influence": 360,
+        "percentinfluence": 1.651224658
+    },
+    {
+        "artist": "The Carter Family",
+        "image": "gs://influncd.appspot.com/The_Carter_Family.jpg",
+        "influence": 122,
+        "percentinfluence": 0.55958169
+    },
+    {
+        "artist": "The Clash",
+        "image": "gs://influncd.appspot.com/The_Clash.jpg",
+        "influence": 273,
+        "percentinfluence": 1.252178699
+    },
+    {
+        "artist": "The Cure",
+        "image": "gs://influncd.appspot.com/The_Cure.jpg",
+        "influence": 193,
+        "percentinfluence": 0.885239886
+    },
+    {
+        "artist": "The Kinks",
+        "image": "gs://influncd.appspot.com/The_Kinks.jpg",
+        "influence": 384,
+        "percentinfluence": 1.761306302
+    },
+    {
+        "artist": "The Replacements",
+        "image": "gs://influncd.appspot.com/The_Replacements.jpg",
+        "influence": 137,
+        "percentinfluence": 0.628382717
+    },
+    {
+        "artist": "The Rolling Stones",
+        "image": "gs://influncd.appspot.com/The_Rolling_Stones.jpg",
+        "influence": 557,
+        "percentinfluence": 2.554811485
+    },
+    {
+        "artist": "The Smiths",
+        "image": "gs://influncd.appspot.com/The_Smiths.png",
+        "influence": 193,
+        "percentinfluence": 0.885239886
+    },
+    {
+        "artist": "The Stooges",
+        "image": "gs://influncd.appspot.com/The_Stooges.jpg",
+        "influence": 285,
+        "percentinfluence": 1.307219521
+    },
+    {
+        "artist": "The Velvet Underground",
+        "image": "gs://influncd.appspot.com/The_Velvet_Underground.jpg",
+        "influence": 425,
+        "percentinfluence": 1.949362444
+    },
+    {
+        "artist": "The Who",
+        "image": "gs://influncd.appspot.com/The_Who.jpg",
+        "influence": 278,
+        "percentinfluence": 1.275112375
+    },
+    {
+        "artist": "The Yardbirds",
+        "image": "gs://influncd.appspot.com/The_Yardbirds.jpg",
+        "influence": 142,
+        "percentinfluence": 0.651316393
+    },
+    {
+        "artist": "Tom Waits",
+        "image": "gs://influncd.appspot.com/Tom_Waits.jpg",
+        "influence": 134,
+        "percentinfluence": 0.614622512
+    },
+    {
+        "artist": "U2",
+        "image": "gs://influncd.appspot.com/U2.png",
+        "influence": 155,
+        "percentinfluence": 0.71094395
+    },
+    {
+        "artist": "Wire",
+        "image": "gs://influncd.appspot.com/Wire.jpg",
+        "influence": 125,
+        "percentinfluence": 0.573341895
+    },
+    {
+        "artist": "Woody Guthrie",
+        "image": "gs://influncd.appspot.com/Woody_Guthrie.jpg",
+        "influence": 134,
+        "percentinfluence": 0.614622512
+    }
+]

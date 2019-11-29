@@ -30730,15 +30730,28 @@ function graph() {
 
 var _default = graph;
 exports.default = _default;
-},{"d3":"node_modules/d3/index.js","axios":"node_modules/axios/index.js"}],"src/index.js":[function(require,module,exports) {
+},{"d3":"node_modules/d3/index.js","axios":"node_modules/axios/index.js"}],"src/upload.js":[function(require,module,exports) {
+// import artists from '../artists.json';
+// function upload () {
+// artists.forEach((artist) => {
+//     let docRef = db.collection("musicians").doc();
+//     batch.set(docRef, artist);
+// });
+// batch.commit();
+// }
+// export default upload;
+},{}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _graph = _interopRequireDefault(require("./graph.js"));
 
+var _upload = _interopRequireDefault(require("./upload.js"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _graph.default)();
-},{"./graph.js":"src/graph.js"}],"node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+(0, _upload.default)();
+},{"./graph.js":"src/graph.js","./upload.js":"src/upload.js"}],"node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -30766,7 +30779,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54040" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49754" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

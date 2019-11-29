@@ -40,8 +40,9 @@
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
+        let db = firebase.firestore();
         let storage = firebase.storage();
+        let batch = db.batch();
         
     </script>
     <script src="https://d3js.org/d3.v5.js"></script>
