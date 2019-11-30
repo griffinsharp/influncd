@@ -28887,7 +28887,340 @@ Object.keys(_d3Zoom).forEach(function (key) {
     }
   });
 });
-},{"./dist/package.js":"node_modules/d3/dist/package.js","d3-array":"node_modules/d3-array/src/index.js","d3-axis":"node_modules/d3-axis/src/index.js","d3-brush":"node_modules/d3-brush/src/index.js","d3-chord":"node_modules/d3-chord/src/index.js","d3-collection":"node_modules/d3-collection/src/index.js","d3-color":"node_modules/d3-color/src/index.js","d3-contour":"node_modules/d3-contour/src/index.js","d3-dispatch":"node_modules/d3-dispatch/src/index.js","d3-drag":"node_modules/d3-drag/src/index.js","d3-dsv":"node_modules/d3-dsv/src/index.js","d3-ease":"node_modules/d3-ease/src/index.js","d3-fetch":"node_modules/d3-fetch/src/index.js","d3-force":"node_modules/d3-force/src/index.js","d3-format":"node_modules/d3-format/src/index.js","d3-geo":"node_modules/d3-geo/src/index.js","d3-hierarchy":"node_modules/d3-hierarchy/src/index.js","d3-interpolate":"node_modules/d3-interpolate/src/index.js","d3-path":"node_modules/d3-path/src/index.js","d3-polygon":"node_modules/d3-polygon/src/index.js","d3-quadtree":"node_modules/d3-quadtree/src/index.js","d3-random":"node_modules/d3-random/src/index.js","d3-scale":"node_modules/d3-scale/src/index.js","d3-scale-chromatic":"node_modules/d3-scale-chromatic/src/index.js","d3-selection":"node_modules/d3-selection/src/index.js","d3-shape":"node_modules/d3-shape/src/index.js","d3-time":"node_modules/d3-time/src/index.js","d3-time-format":"node_modules/d3-time-format/src/index.js","d3-timer":"node_modules/d3-timer/src/index.js","d3-transition":"node_modules/d3-transition/src/index.js","d3-voronoi":"node_modules/d3-voronoi/src/index.js","d3-zoom":"node_modules/d3-zoom/src/index.js"}],"node_modules/axios/lib/helpers/bind.js":[function(require,module,exports) {
+},{"./dist/package.js":"node_modules/d3/dist/package.js","d3-array":"node_modules/d3-array/src/index.js","d3-axis":"node_modules/d3-axis/src/index.js","d3-brush":"node_modules/d3-brush/src/index.js","d3-chord":"node_modules/d3-chord/src/index.js","d3-collection":"node_modules/d3-collection/src/index.js","d3-color":"node_modules/d3-color/src/index.js","d3-contour":"node_modules/d3-contour/src/index.js","d3-dispatch":"node_modules/d3-dispatch/src/index.js","d3-drag":"node_modules/d3-drag/src/index.js","d3-dsv":"node_modules/d3-dsv/src/index.js","d3-ease":"node_modules/d3-ease/src/index.js","d3-fetch":"node_modules/d3-fetch/src/index.js","d3-force":"node_modules/d3-force/src/index.js","d3-format":"node_modules/d3-format/src/index.js","d3-geo":"node_modules/d3-geo/src/index.js","d3-hierarchy":"node_modules/d3-hierarchy/src/index.js","d3-interpolate":"node_modules/d3-interpolate/src/index.js","d3-path":"node_modules/d3-path/src/index.js","d3-polygon":"node_modules/d3-polygon/src/index.js","d3-quadtree":"node_modules/d3-quadtree/src/index.js","d3-random":"node_modules/d3-random/src/index.js","d3-scale":"node_modules/d3-scale/src/index.js","d3-scale-chromatic":"node_modules/d3-scale-chromatic/src/index.js","d3-selection":"node_modules/d3-selection/src/index.js","d3-shape":"node_modules/d3-shape/src/index.js","d3-time":"node_modules/d3-time/src/index.js","d3-time-format":"node_modules/d3-time-format/src/index.js","d3-timer":"node_modules/d3-timer/src/index.js","d3-transition":"node_modules/d3-transition/src/index.js","d3-voronoi":"node_modules/d3-voronoi/src/index.js","d3-zoom":"node_modules/d3-zoom/src/index.js"}],"node_modules/d3-tip/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+var _d3Collection = require("d3-collection");
+
+var _d3Selection = require("d3-selection");
+
+/**
+ * d3.tip
+ * Copyright (c) 2013-2017 Justin Palmer
+ *
+ * Tooltips for d3.js SVG visualizations
+ */
+// eslint-disable-next-line no-extra-semi
+function _default() {
+  var direction = d3TipDirection,
+      offset = d3TipOffset,
+      html = d3TipHTML,
+      rootElement = document.body,
+      node = initNode(),
+      svg = null,
+      point = null,
+      target = null;
+
+  function tip(vis) {
+    svg = getSVGNode(vis);
+    if (!svg) return;
+    point = svg.createSVGPoint();
+    rootElement.appendChild(node);
+  } // Public - show the tooltip on the screen
+  //
+  // Returns a tip
+
+
+  tip.show = function () {
+    var args = Array.prototype.slice.call(arguments);
+    if (args[args.length - 1] instanceof SVGElement) target = args.pop();
+    var content = html.apply(this, args),
+        poffset = offset.apply(this, args),
+        dir = direction.apply(this, args),
+        nodel = getNodeEl(),
+        i = directions.length,
+        coords,
+        scrollTop = document.documentElement.scrollTop || rootElement.scrollTop,
+        scrollLeft = document.documentElement.scrollLeft || rootElement.scrollLeft;
+    nodel.html(content).style('opacity', 1).style('pointer-events', 'all');
+
+    while (i--) nodel.classed(directions[i], false);
+
+    coords = directionCallbacks.get(dir).apply(this);
+    nodel.classed(dir, true).style('top', coords.top + poffset[0] + scrollTop + 'px').style('left', coords.left + poffset[1] + scrollLeft + 'px');
+    return tip;
+  }; // Public - hide the tooltip
+  //
+  // Returns a tip
+
+
+  tip.hide = function () {
+    var nodel = getNodeEl();
+    nodel.style('opacity', 0).style('pointer-events', 'none');
+    return tip;
+  }; // Public: Proxy attr calls to the d3 tip container.
+  // Sets or gets attribute value.
+  //
+  // n - name of the attribute
+  // v - value of the attribute
+  //
+  // Returns tip or attribute value
+  // eslint-disable-next-line no-unused-vars
+
+
+  tip.attr = function (n, v) {
+    if (arguments.length < 2 && typeof n === 'string') {
+      return getNodeEl().attr(n);
+    }
+
+    var args = Array.prototype.slice.call(arguments);
+
+    _d3Selection.selection.prototype.attr.apply(getNodeEl(), args);
+
+    return tip;
+  }; // Public: Proxy style calls to the d3 tip container.
+  // Sets or gets a style value.
+  //
+  // n - name of the property
+  // v - value of the property
+  //
+  // Returns tip or style property value
+  // eslint-disable-next-line no-unused-vars
+
+
+  tip.style = function (n, v) {
+    if (arguments.length < 2 && typeof n === 'string') {
+      return getNodeEl().style(n);
+    }
+
+    var args = Array.prototype.slice.call(arguments);
+
+    _d3Selection.selection.prototype.style.apply(getNodeEl(), args);
+
+    return tip;
+  }; // Public: Set or get the direction of the tooltip
+  //
+  // v - One of n(north), s(south), e(east), or w(west), nw(northwest),
+  //     sw(southwest), ne(northeast) or se(southeast)
+  //
+  // Returns tip or direction
+
+
+  tip.direction = function (v) {
+    if (!arguments.length) return direction;
+    direction = v == null ? v : functor(v);
+    return tip;
+  }; // Public: Sets or gets the offset of the tip
+  //
+  // v - Array of [x, y] offset
+  //
+  // Returns offset or
+
+
+  tip.offset = function (v) {
+    if (!arguments.length) return offset;
+    offset = v == null ? v : functor(v);
+    return tip;
+  }; // Public: sets or gets the html value of the tooltip
+  //
+  // v - String value of the tip
+  //
+  // Returns html value or tip
+
+
+  tip.html = function (v) {
+    if (!arguments.length) return html;
+    html = v == null ? v : functor(v);
+    return tip;
+  }; // Public: sets or gets the root element anchor of the tooltip
+  //
+  // v - root element of the tooltip
+  //
+  // Returns root node of tip
+
+
+  tip.rootElement = function (v) {
+    if (!arguments.length) return rootElement;
+    rootElement = v == null ? v : functor(v);
+    return tip;
+  }; // Public: destroys the tooltip and removes it from the DOM
+  //
+  // Returns a tip
+
+
+  tip.destroy = function () {
+    if (node) {
+      getNodeEl().remove();
+      node = null;
+    }
+
+    return tip;
+  };
+
+  function d3TipDirection() {
+    return 'n';
+  }
+
+  function d3TipOffset() {
+    return [0, 0];
+  }
+
+  function d3TipHTML() {
+    return ' ';
+  }
+
+  var directionCallbacks = (0, _d3Collection.map)({
+    n: directionNorth,
+    s: directionSouth,
+    e: directionEast,
+    w: directionWest,
+    nw: directionNorthWest,
+    ne: directionNorthEast,
+    sw: directionSouthWest,
+    se: directionSouthEast
+  }),
+      directions = directionCallbacks.keys();
+
+  function directionNorth() {
+    var bbox = getScreenBBox(this);
+    return {
+      top: bbox.n.y - node.offsetHeight,
+      left: bbox.n.x - node.offsetWidth / 2
+    };
+  }
+
+  function directionSouth() {
+    var bbox = getScreenBBox(this);
+    return {
+      top: bbox.s.y,
+      left: bbox.s.x - node.offsetWidth / 2
+    };
+  }
+
+  function directionEast() {
+    var bbox = getScreenBBox(this);
+    return {
+      top: bbox.e.y - node.offsetHeight / 2,
+      left: bbox.e.x
+    };
+  }
+
+  function directionWest() {
+    var bbox = getScreenBBox(this);
+    return {
+      top: bbox.w.y - node.offsetHeight / 2,
+      left: bbox.w.x - node.offsetWidth
+    };
+  }
+
+  function directionNorthWest() {
+    var bbox = getScreenBBox(this);
+    return {
+      top: bbox.nw.y - node.offsetHeight,
+      left: bbox.nw.x - node.offsetWidth
+    };
+  }
+
+  function directionNorthEast() {
+    var bbox = getScreenBBox(this);
+    return {
+      top: bbox.ne.y - node.offsetHeight,
+      left: bbox.ne.x
+    };
+  }
+
+  function directionSouthWest() {
+    var bbox = getScreenBBox(this);
+    return {
+      top: bbox.sw.y,
+      left: bbox.sw.x - node.offsetWidth
+    };
+  }
+
+  function directionSouthEast() {
+    var bbox = getScreenBBox(this);
+    return {
+      top: bbox.se.y,
+      left: bbox.se.x
+    };
+  }
+
+  function initNode() {
+    var div = (0, _d3Selection.select)(document.createElement('div'));
+    div.style('position', 'absolute').style('top', 0).style('opacity', 0).style('pointer-events', 'none').style('box-sizing', 'border-box');
+    return div.node();
+  }
+
+  function getSVGNode(element) {
+    var svgNode = element.node();
+    if (!svgNode) return null;
+    if (svgNode.tagName.toLowerCase() === 'svg') return svgNode;
+    return svgNode.ownerSVGElement;
+  }
+
+  function getNodeEl() {
+    if (node == null) {
+      node = initNode(); // re-add node to DOM
+
+      rootElement.appendChild(node);
+    }
+
+    return (0, _d3Selection.select)(node);
+  } // Private - gets the screen coordinates of a shape
+  //
+  // Given a shape on the screen, will return an SVGPoint for the directions
+  // n(north), s(south), e(east), w(west), ne(northeast), se(southeast),
+  // nw(northwest), sw(southwest).
+  //
+  //    +-+-+
+  //    |   |
+  //    +   +
+  //    |   |
+  //    +-+-+
+  //
+  // Returns an Object {n, s, e, w, nw, sw, ne, se}
+
+
+  function getScreenBBox(targetShape) {
+    var targetel = target || targetShape;
+
+    while (targetel.getScreenCTM == null && targetel.parentNode != null) {
+      targetel = targetel.parentNode;
+    }
+
+    var bbox = {},
+        matrix = targetel.getScreenCTM(),
+        tbbox = targetel.getBBox(),
+        width = tbbox.width,
+        height = tbbox.height,
+        x = tbbox.x,
+        y = tbbox.y;
+    point.x = x;
+    point.y = y;
+    bbox.nw = point.matrixTransform(matrix);
+    point.x += width;
+    bbox.ne = point.matrixTransform(matrix);
+    point.y += height;
+    bbox.se = point.matrixTransform(matrix);
+    point.x -= width;
+    bbox.sw = point.matrixTransform(matrix);
+    point.y -= height / 2;
+    bbox.w = point.matrixTransform(matrix);
+    point.x += width;
+    bbox.e = point.matrixTransform(matrix);
+    point.x -= width / 2;
+    point.y -= height / 2;
+    bbox.n = point.matrixTransform(matrix);
+    point.y += height;
+    bbox.s = point.matrixTransform(matrix);
+    return bbox;
+  } // Private - replace D3JS 3.X d3.functor() function
+
+
+  function functor(v) {
+    return typeof v === 'function' ? v : function () {
+      return v;
+    };
+  }
+
+  return tip;
+}
+},{"d3-collection":"node_modules/d3-collection/src/index.js","d3-selection":"node_modules/d3-selection/src/index.js"}],"node_modules/axios/lib/helpers/bind.js":[function(require,module,exports) {
 'use strict';
 
 module.exports = function bind(fn, thisArg) {
@@ -30610,6 +30943,8 @@ exports.default = void 0;
 
 var d3 = _interopRequireWildcard(require("d3"));
 
+var _d3Tip = _interopRequireDefault(require("d3-tip"));
+
 var _axios = _interopRequireDefault(require("axios"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -30639,7 +30974,7 @@ function graph() {
     x: dims.width / 2 + 5,
     y: dims.height / 2 + 5
   };
-  var svg = d3.select("div.graph-container").append('svg').attr('width', dims.width + 50).attr('height', dims.height + 50); // adding a group, which has all graph elements that we will append to svg
+  var svg = d3.select("div.graph-container").append('svg').attr('width', dims.width + 50).attr('height', dims.height + 50).attr('class', 'circle-svg'); // adding a group, which has all graph elements that we will append to svg
   // translate to the center of the svg container
 
   var defs = svg.append('defs');
@@ -30654,7 +30989,16 @@ function graph() {
   // arc generator created path "d" attribute we can use to make d3 paths
   // need to tell d3 how long to make our slices
 
-  var arcPath = d3.arc().outerRadius(dims.radius).innerRadius(0); // UDPATE FUNCTION - where I want to draw paths.
+  var arcPath = d3.arc().outerRadius(dims.radius).innerRadius(0); // tip generator - have access to library
+
+  var tip = (0, _d3Tip.default)().attr('class', 'tip card').html(function (d) {
+    var artistName = d.data.artist.includes("_") ? d.data.artist.split("_").join(" ") : d.data.artist;
+    var percentInfluence = d.data.percentinfluence.toFixed(4);
+    var content = "<div class=\"name\">".concat(artistName, "</div>");
+    content += "<div class=\"influence\">".concat(percentInfluence, " %</div>");
+    return content;
+  });
+  graph.call(tip); // UDPATE FUNCTION - where I want to draw paths.
   // will be called everytime our data changes
   // d is passed into arcPath to generate the path for every slice based on data
 
@@ -30684,7 +31028,7 @@ function graph() {
         var render = graph.selectAll("#".concat(art.id)).attr('fill', "url(#".concat(url, ")")).attr('class', 'arc') // no longer need bc of our Tween for arcEnter 
         // .attr('d', arcPath)
         .attr('stroke', '#ffffff').attr('stroke-width', 3).transition().duration(7000).attrTween("d", arcTweenEnter);
-        graph.selectAll('path').on('mouseover', function (d, i, n) {
+        graph.selectAll('path').on('click', function (d, i, n) {
           this.parentNode.appendChild(this);
           d3.select(n[i]).transition().duration(7000).attrTween("d", function (d) {
             console.log(d.startAngle);
@@ -30695,14 +31039,20 @@ function graph() {
               return arcPath(d);
             };
           });
+        }).on('mouseover', function (d, i, n) {
+          tip.show(d, n[i]);
+          handleMouseOver(d, i, n);
+        }).on('mouseout', function (d, i, n) {
+          tip.hide();
+          handleMouseOut(d, i, n);
         }); // .on("mouseout", function(d, i, n ) {
         //     d3.select(n[i])
         //         .transition().duration(7000)
         //         .attrTween("d", (d) => { 
-        //             let i = d3.interpolate(this._current.d.endAngle, this._current.d.endAngle - 360);
+        //             let i = d3.interpolate(d.endAngle, d.endAngle - 360);
         //             return function (t) {
-        //                 this._current.d.endAngle = i(t);
-        //                 return arcPath(this_current.d);
+        //                 d.endAngle = i(t);
+        //                 return arcPath(d);
         //             };
         //         });
         // })
@@ -30763,12 +31113,21 @@ function graph() {
       d.startAngle = i(t);
       return arcPath(d);
     };
+  }; // EVENT HANDLERS
+
+
+  var handleMouseOver = function handleMouseOver(d, i, n) {
+    d3.select(n[i]);
+  };
+
+  var handleMouseOut = function handleMouseOut(d, i, n) {
+    d3.select(n[i]);
   };
 }
 
 var _default = graph;
 exports.default = _default;
-},{"d3":"node_modules/d3/index.js","axios":"node_modules/axios/index.js"}],"src/index.js":[function(require,module,exports) {
+},{"d3":"node_modules/d3/index.js","d3-tip":"node_modules/d3-tip/index.js","axios":"node_modules/axios/index.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _graph = _interopRequireDefault(require("./graph.js"));
@@ -30806,7 +31165,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55145" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50900" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

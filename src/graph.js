@@ -1,4 +1,5 @@
 import * as d3 from 'd3';
+import d3Tip from "d3-tip";
 import axios from 'axios';
 
     // notes as I learn d3...
@@ -14,7 +15,8 @@ function graph () {
     const svg = d3.select("div.graph-container")
         .append('svg')
         .attr('width', dims.width + 50)
-        .attr('height', dims.height + 50);
+        .attr('height', dims.height + 50)
+        .attr('class', 'circle-svg');
 
     // adding a group, which has all graph elements that we will append to svg
     // translate to the center of the svg container
@@ -43,12 +45,23 @@ function graph () {
     .outerRadius(dims.radius)
     .innerRadius(0);
 
+
+    // tip generator - have access to library
+    const tip = d3Tip()
+    .attr('class', 'tip card')
+    .html(d => {
+        let artistName = d.data.artist.includes("_") ? d.data.artist.split("_").join(" ") : d.data.artist;
+        let percentInfluence = (d.data.percentinfluence).toFixed(4);
+        let content = `<div class="name">${artistName}</div>`;
+        content += `<div class="influence">${percentInfluence} %</div>`
+        return content;
+    });
+
+    graph.call(tip);
     
     // UDPATE FUNCTION - where I want to draw paths.
     // will be called everytime our data changes
     // d is passed into arcPath to generate the path for every slice based on data
-
-
 
     const getImg = function(imgPath) {
     
@@ -78,10 +91,6 @@ function graph () {
                 let image = pattern.append('svg:image')
                     .attr('xlink:href', d => url)
                     .attr("class", "artist")
-
-                paths.attr('d', arcPatch)
-                    .transition().duration(750)
-                    .attrTween('d', arcTweenUpdate)
                 
                 let nodeEnter = paths.enter()
                     .append('path')
@@ -101,7 +110,7 @@ function graph () {
             
                 graph.selectAll('path')
                     
-                    .on('mouseover', function (d, i, n) {
+                    .on('click', function (d, i, n) {
                         this.parentNode.appendChild(this);
                         d3.select(n[i])
                             .transition().duration(7000)
@@ -115,6 +124,14 @@ function graph () {
                                     return arcPath(d);
                                 };
                             });
+                    })
+                    .on('mouseover', (d, i, n) => {
+                        tip.show(d, n[i])
+                        handleMouseOver(d, i, n)
+                    })
+                    .on('mouseout', (d, i, n) => {
+                        tip.hide();
+                        handleMouseOut(d, i, n);
                     })
                     // .on("mouseout", function(d, i, n ) {
                     //     d3.select(n[i])
@@ -189,6 +206,16 @@ function graph () {
         };
     };
 
+    // EVENT HANDLERS
+
+    const handleMouseOver = (d, i, n) => {
+        d3.select(n[i])
+            
+    }
+
+    const handleMouseOut = (d, i, n) => {
+        d3.select(n[i])
+    }
 
 }
 
