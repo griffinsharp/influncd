@@ -1,6 +1,8 @@
 import * as d3 from 'd3';
 import d3Tip from "d3-tip";
 import axios from 'axios';
+import { strict } from 'assert';
+import { async } from 'q';
 
     // notes as I learn d3...
 
@@ -111,12 +113,12 @@ function graph () {
                 graph.selectAll('path')
                     
                     .on('click', function (d, i, n) {
+                       
                         this.parentNode.appendChild(this);
                         d3.select(n[i])
                             .transition().duration(7000)
                             .attrTween("d", (d) => {
-                                console.log(d.startAngle)
-                                console.log(d.endAngle)
+                           
 
                                 let i = d3.interpolate(d.endAngle, d.endAngle + 360);
                                 return function (t) {
@@ -124,6 +126,34 @@ function graph () {
                                     return arcPath(d);
                                 };
                             });
+
+                        let nameDiv = document.createElement('div');
+                        nameDiv.className = 'name-box';
+                        let artistName = d.data.artist.includes("_") ? d.data.artist.split("_").join(" ") : d.data.artist;
+                        nameDiv.innerHTML = `${artistName}`;
+                        document.querySelector("div.graph-container")
+                            .append(nameDiv);
+
+                        let textBoxDiv = document.createElement('div');
+                        textBoxDiv.className = 'text-box';
+                        let artistUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${d.data.artist}`;
+    
+        
+                            axios({
+                                method: 'get',
+                                url: artistUrl,
+                                responseType: 'json'
+
+                            })
+
+                                    .then(function (response) {
+                                        textBoxDiv.innerHTML = `${response.data.extract}`;
+                                    });
+                
+
+                        document.querySelector("div.graph-container")
+                            .append(textBoxDiv);
+
                     })
                     .on('mouseover', (d, i, n) => {
                         tip.show(d, n[i])

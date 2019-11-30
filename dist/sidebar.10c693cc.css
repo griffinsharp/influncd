@@ -1,9 +1,7 @@
 .sidebar-container {
     height: 100%;
-    flex-basis: 20%;
-    background-color: grey;
     min-width: 255px;
-
+    background-color: grey;
 }
 
 /*# sourceMappingURL=/sidebar.10c693cc.css.map */
