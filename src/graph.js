@@ -34,12 +34,15 @@ function graph () {
         .sort(null)
         .value(data => data.influence);
 
+
+
     // ARC GENERATOR
         // arc generator created path "d" attribute we can use to make d3 paths
         // need to tell d3 how long to make our slices
     const arcPath = d3.arc()
     .outerRadius(dims.radius)
     .innerRadius(0);
+
     
     // UDPATE FUNCTION - where I want to draw paths.
     // will be called everytime our data changes
@@ -75,19 +78,56 @@ function graph () {
                 let image = pattern.append('svg:image')
                     .attr('xlink:href', d => url)
                     .attr("class", "artist")
+
+                paths.attr('d', arcPatch)
+                    .transition().duration(750)
+                    .attrTween('d', arcTweenUpdate)
                 
                 let nodeEnter = paths.enter()
                     .append('path')
-                    .attr("id", function(d) {return d.data.id;});
+                    .attr("id", function(d) {return d.data.id;})
+                    .each(function(d){ this._current = d; });
                    
-                graph.selectAll(`#${art.id}`)
+                let render = graph.selectAll(`#${art.id}`)
                     .attr('fill', `url(#${url})`)
                     .attr('class', 'arc')
+                    // no longer need bc of our Tween for arcEnter 
                     // .attr('d', arcPath)
                     .attr('stroke', '#ffffff')
                     .attr('stroke-width', 3)
                     .transition().duration(7000)
                     .attrTween("d", arcTweenEnter);
+                
+            
+                graph.selectAll('path')
+                    
+                    .on('mouseover', function (d, i, n) {
+                        this.parentNode.appendChild(this);
+                        d3.select(n[i])
+                            .transition().duration(7000)
+                            .attrTween("d", (d) => {
+                                console.log(d.startAngle)
+                                console.log(d.endAngle)
+
+                                let i = d3.interpolate(d.endAngle, d.endAngle + 360);
+                                return function (t) {
+                                    d.endAngle = i(t);
+                                    return arcPath(d);
+                                };
+                            });
+                    })
+                    // .on("mouseout", function(d, i, n ) {
+                    //     d3.select(n[i])
+                    //         .transition().duration(7000)
+                    //         .attrTween("d", (d) => { 
+                           
+                    //             let i = d3.interpolate(d.endAngle, d.endAngle - 360);
+                    //             return function (t) {
+                    //                 d.endAngle = i(t);
+                    //                 return arcPath(d);
+                    //             };
+                    //         });
+                    // })
                 
             });
 
@@ -137,7 +177,9 @@ function graph () {
 
     // TWEEN ENTER ANIMATIONS
     // generate the angles (interpolate them) we need and update them overtime
-    // this animates them in the brower
+    // this animates them in the brower.
+    // actually starts at endAngle and startAngle being the same...
+    // startAngle then grows overtime to its final value.
     const arcTweenEnter = (d) => {
         let i = d3.interpolate(d.endAngle, d.startAngle);
 
@@ -146,7 +188,6 @@ function graph () {
             return arcPath(d);
         };
     };
-
 
 
 }

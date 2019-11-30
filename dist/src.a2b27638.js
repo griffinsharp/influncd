@@ -30678,9 +30678,34 @@ function graph() {
         }).attr("class", "artist");
         var nodeEnter = paths.enter().append('path').attr("id", function (d) {
           return d.data.id;
+        }).each(function (d) {
+          this._current = d;
         });
-        graph.selectAll("#".concat(art.id)).attr('fill', "url(#".concat(url, ")")).attr('class', 'arc') // .attr('d', arcPath)
+        var render = graph.selectAll("#".concat(art.id)).attr('fill', "url(#".concat(url, ")")).attr('class', 'arc') // no longer need bc of our Tween for arcEnter 
+        // .attr('d', arcPath)
         .attr('stroke', '#ffffff').attr('stroke-width', 3).transition().duration(7000).attrTween("d", arcTweenEnter);
+        graph.selectAll('path').on('mouseover', function (d, i, n) {
+          this.parentNode.appendChild(this);
+          d3.select(n[i]).transition().duration(7000).attrTween("d", function (d) {
+            console.log(d.startAngle);
+            console.log(d.endAngle);
+            var i = d3.interpolate(d.endAngle, d.endAngle + 360);
+            return function (t) {
+              d.endAngle = i(t);
+              return arcPath(d);
+            };
+          });
+        }); // .on("mouseout", function(d, i, n ) {
+        //     d3.select(n[i])
+        //         .transition().duration(7000)
+        //         .attrTween("d", (d) => { 
+        //             let i = d3.interpolate(this._current.d.endAngle, this._current.d.endAngle - 360);
+        //             return function (t) {
+        //                 this._current.d.endAngle = i(t);
+        //                 return arcPath(this_current.d);
+        //             };
+        //         });
+        // })
       });
     });
   }; // DATA ARRAY AND FIRESTONE
@@ -30728,7 +30753,9 @@ function graph() {
     update(data);
   }); // TWEEN ENTER ANIMATIONS
   // generate the angles (interpolate them) we need and update them overtime
-  // this animates them in the brower
+  // this animates them in the brower.
+  // actually starts at endAngle and startAngle being the same...
+  // startAngle then grows overtime to its final value.
 
   var arcTweenEnter = function arcTweenEnter(d) {
     var i = d3.interpolate(d.endAngle, d.startAngle);
@@ -30779,7 +30806,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52456" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55145" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

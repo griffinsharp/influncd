@@ -13,15 +13,21 @@
     
 }
 
+/* path {
+  opacity: 70%;
+   backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: opacity;
+  transition-timing-function: ease;
+  
+}
+
 path:hover {
-    opacity: 90%;
-    display: inline-block;
-  vertical-align: middle;
-  transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  opacity: 100%;
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
   transition-duration: 0.3s;
-  transition-timing-function: ease-out;
-  transform: translateY(-8px)
-}
+  transition-property: opacity;
+  transition-timing-function: ease;
+} */
