@@ -34501,9 +34501,9 @@ function graph() {
                 responseType: 'json'
               }).then(function (response) {
                 if (response.data.extract.length > 678) {
-                  textBoxDiv.innerHTML = "".concat(response.data.extract.substring(0, 678), "... ") + "<a target=\"_blank\" href=https://en.wikipedia.org/wiki/".concat(d.data.artist, "> Read More</a>");
+                  textBoxDiv.innerHTML = "".concat(response.data.extract.substring(0, 678), "... ") + "<a class=\"bio-link\" target=\"_blank\" href=https://en.wikipedia.org/wiki/".concat(d.data.artist, "> Read More</a>");
                 } else {
-                  textBoxDiv.innerHTML = "".concat(response.data.extract, " ") + "<a target=\"_blank\" href=https://en.wikipedia.org/wiki/".concat(d.data.artist, "> Read More</a>");
+                  textBoxDiv.innerHTML = "".concat(response.data.extract, " ") + "<a class=\"bio-link\" target=\"_blank\" href=https://en.wikipedia.org/wiki/".concat(d.data.artist, "> Read More</a>");
                 }
               }); // Append this text box in the graph container below the artist's name
 
@@ -34668,7 +34668,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52520" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60449" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

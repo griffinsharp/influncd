@@ -28,7 +28,7 @@ position: absolute;
 
 .circle-svg {
     /* just to center circle up a tad */
-    margin-left: 200px;
+    margin-left: 100px;
     margin-top: 100px;
 }
 
@@ -82,11 +82,11 @@ position: absolute;
     -webkit-animation: fadeout 1s;
 }
 
-a {
+.bio-link {
     color: white;
 }
 
-a:hover {
+.bio-link:hover {
     color: #fafafa;
 }
 
