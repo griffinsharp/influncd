@@ -112,6 +112,7 @@ function graph () {
             
                 graph.selectAll('path')
                     
+                // handle first onClick
                     .on('click', function (d, i, n) {
                        
                         this.parentNode.appendChild(this);
@@ -126,7 +127,7 @@ function graph () {
                                     return arcPath(d);
                                 };
                             });
-
+                        // Create div, set contents to artist name.
                         let nameDiv = document.createElement('div');
                         nameDiv.className = 'name-box';
                         let artistName = d.data.artist.includes("_") ? d.data.artist.split("_").join(" ") : d.data.artist;
@@ -134,30 +135,48 @@ function graph () {
                         document.querySelector("div.graph-container")
                             .append(nameDiv);
 
+                        // Create div, fetch bio from Wikipedia API, set contents to response.
                         let textBoxDiv = document.createElement('div');
                         textBoxDiv.className = 'text-box';
+
+                        // Dynamically create the API endpoint for each artist.
                         let artistUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${d.data.artist}`;
-    
-        
+
+                        // Specify axios request formatting (get, to artist url, response in json)
+                        // Specify how to handle response once promise resolves.
+
                             axios({
                                 method: 'get',
                                 url: artistUrl,
                                 responseType: 'json'
 
-                            })
+                            }).then((response) => textBoxDiv.innerHTML = `${response.data.extract}`);
 
-                                    .then(function (response) {
-                                        textBoxDiv.innerHTML = `${response.data.extract}`;
-                                    });
-                
-
+                        // Append this text box in the graph container below the artist's name
                         document.querySelector("div.graph-container")
                             .append(textBoxDiv);
 
+                        // Making remove button
+                        let removeDiv = document.createElement('div');
+                        removeDiv.className = 'remove-box';
+
+                        removeDiv.innerHTML = `Click to go back to chart`;
+                        document.querySelector("div.graph-container").append(removeDiv);
+                        
+                        let el = document.querySelector('div.remove-box');
+
+                        // Handling removal of text-box, name-box, and remove-box itself.
+                        el.addEventListener("click", function() {
+                            document.querySelector("div.text-box").remove();
+                            document.querySelector("div.name-box").remove();
+                            document.querySelector('div.remove-box').remove();
+                        });
+
+                                      
                     })
                     .on('mouseover', (d, i, n) => {
                         tip.show(d, n[i])
-                        handleMouseOver(d, i, n)
+                        handleMouseOver(d, i, n);
                     })
                     .on('mouseout', (d, i, n) => {
                         tip.hide();
@@ -175,6 +194,7 @@ function graph () {
                     //             };
                     //         });
                     // })
+
                 
             });
 
