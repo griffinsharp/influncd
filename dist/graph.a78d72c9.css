@@ -4,6 +4,19 @@
     height: 100%;
 }
 
+path {
+    -webkit-animation: fadein 1s;
+    transition: transform 0.5s;
+    
+}
+
+path:hover {
+   position: relative; 
+  transform: scale(1.02);
+  transition: transform 0.5s;
+  
+}
+
 .artist {
    
 position: absolute;
@@ -24,25 +37,6 @@ position: absolute;
    left: 400px !important;
    -webkit-animation: fadetip 5s;
 }
-
-/* path {
-  opacity: 100%;
-   backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  transition-duration: 0.3s;
-  transition-property: opacity;
-  transition-timing-function: ease;
-  
-}
-
-path:hover {
-  opacity: 0%;
-  backface-visibility: hidden;
-  -mo`-osx-font-smoothing: grayscale;
-  transition-duration: 0.3s;
-  transition-property: opacity;
-  transition-timing-function: ease;
-}  */
 
 .text-box {
     position: absolute;
@@ -92,7 +86,7 @@ a {
 }
 
 a:hover {
-    color: grey;
+    color: #fafafa;
 }
 
 
