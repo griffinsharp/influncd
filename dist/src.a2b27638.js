@@ -34461,13 +34461,21 @@ function graph() {
         var render = graph.selectAll("#".concat(art.id)).attr('fill', "url(#".concat(url, ")")).attr('class', 'arc') // no longer need bc of our Tween for arcEnter 
         // .attr('d', arcPath)
         .attr('stroke', '#ffffff').attr('stroke-width', 3).transition().duration(7000).attrTween("d", arcTweenEnter);
+        var prevEnd;
         var trigger = 'true';
         graph.selectAll('path').on('click', function (d, i, n) {
+          var node = d3.select(n[i]);
+          var nextNode = n[i + 1];
+
           if (trigger === 'true') {
             trigger = 'false';
+            var that = this;
             this.parentNode.appendChild(this);
-            d3.select(n[i]).transition().duration(20000).attrTween("d", function (d) {
-              var i = d3.interpolate(d.endAngle, d.endAngle + 360);
+            d3.select(n[i]).transition().duration(10000).attrTween("d", function (d) {
+              var i = d3.interpolate(d.endAngle, d.endAngle + 6.25);
+              prevEnd = d.endAngle;
+              console.log(d.endAngle);
+              console.log(d.startAngle);
               return function (t) {
                 d.endAngle = i(t);
                 return arcPath(d);
@@ -34504,12 +34512,30 @@ function graph() {
               var el = document.querySelector('div.remove-box'); // Handling removal of text-box, name-box, and remove-box itself.
 
               el.addEventListener("click", function () {
-                document.querySelector("div.text-box").remove();
-                document.querySelector("div.name-box").remove();
-                document.querySelector('div.remove-box').remove();
-                trigger = 'true';
+                document.querySelector("div.text-box").classList.add("fade-out");
+                document.querySelector("div.name-box").classList.add("fade-out");
+                setTimeout(function () {
+                  document.querySelector("div.text-box").remove();
+                  document.querySelector("div.name-box").remove();
+                  document.querySelector('div.remove-box').remove();
+                  trigger = 'true';
+                }, 1000);
+                node.transition().duration(20000).attrTween("d", function (d) {
+                  console.log(d.endAngle);
+                  console.log(d.startAngle);
+                  var i = d3.interpolate(d.endAngle, prevEnd);
+                  return function (t) {
+                    d.endAngle = i(t);
+                    console.log(d.endAngle);
+                    console.log(d.startAngle);
+                    return arcPath(d);
+                  };
+                });
+                setTimeout(function () {
+                  that.parentNode.insertBefore(that, nextNode);
+                }, 20000);
               });
-            }, 3000);
+            }, 9000);
           }
         }).on('mouseover', function (d, i, n) {
           tip.show(d, n[i]);
@@ -34637,7 +34663,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54747" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60422" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

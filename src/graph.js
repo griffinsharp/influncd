@@ -108,19 +108,26 @@ function graph () {
                     .attr('stroke-width', 3)
                     .transition().duration(7000)
                     .attrTween("d", arcTweenEnter);
-                
+            let prevEnd;
             let trigger = 'true';
                 graph.selectAll('path')
                     .on('click', function (d, i, n) {
+                        
+                        let node = d3.select(n[i]);
+                        let nextNode = n[i+1]
                        if (trigger === 'true') {
                            trigger = 'false';
+                           let that = this;
                            this.parentNode.appendChild(this);
                            d3.select(n[i])
-                               .transition().duration(20000)
+                               .transition().duration(10000)
                                .attrTween("d", (d) => {
 
 
-                                   let i = d3.interpolate(d.endAngle, d.endAngle + 360);
+                                   let i = d3.interpolate(d.endAngle, d.endAngle + 6.25);
+                                   prevEnd = d.endAngle;
+                                   console.log(d.endAngle)
+                                   console.log(d.startAngle)
                                    return function (t) {
                                        d.endAngle = i(t);
                                        return arcPath(d);
@@ -168,11 +175,37 @@ function graph () {
 
                                // Handling removal of text-box, name-box, and remove-box itself.
                                el.addEventListener("click", function () {
-                                   document.querySelector("div.text-box").remove();
-                                   document.querySelector("div.name-box").remove();
-                                   document.querySelector('div.remove-box').remove();
-                                   trigger = 'true';
-                               });}, 3000);
+                                   document.querySelector("div.text-box").classList.add("fade-out");
+                                   document.querySelector("div.name-box").classList.add("fade-out");
+                                   document.querySelector('div.remove-box').classList.add("fade-out");
+                                   setTimeout( () => {
+                                       document.querySelector("div.text-box").remove();
+                                       document.querySelector("div.name-box").remove();
+                                       document.querySelector('div.remove-box').remove();
+                                       trigger = 'true';}, 1000 );
+                                   
+                
+                   
+                                   node.transition().duration(20000)
+                                       .attrTween("d", (d) => {
+                                           console.log(d.endAngle)
+                                           console.log(d.startAngle)
+                                           let i = d3.interpolate(d.endAngle, prevEnd);
+                                           return function (t) {
+                                               d.endAngle = i(t);
+                                               console.log(d.endAngle)
+                                               console.log(d.startAngle)
+                                               return arcPath(d);
+                                               
+                                           };
+                                        
+                                           
+                                       });
+                                   setTimeout(() => { that.parentNode.insertBefore(that, nextNode);}, 20000);
+                                
+                
+                               });
+                            }, 9000);
                            
 
                        }
