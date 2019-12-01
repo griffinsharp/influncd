@@ -160,9 +160,9 @@ function graph () {
 
                                }).then((response) => {
                                    if (response.data.extract.length > 678) {
-                                       textBoxDiv.innerHTML = `${response.data.extract.substring(0, 678)}... ` + `<a href=https://en.wikipedia.org/wiki/${d.data.artist}> Read More</a>`;
+                                       textBoxDiv.innerHTML = `${response.data.extract.substring(0, 678)}... ` + `<a target="_blank" href=https://en.wikipedia.org/wiki/${d.data.artist}> Read More</a>`;
                                    } else {
-                                       textBoxDiv.innerHTML = `${response.data.extract} ` + `<a href=https://en.wikipedia.org/wiki/${d.data.artist}> Read More</a>`;
+                                       textBoxDiv.innerHTML = `${response.data.extract} ` + `<a target="_blank" href=https://en.wikipedia.org/wiki/${d.data.artist}> Read More</a>`;
                                    }
                                    
 

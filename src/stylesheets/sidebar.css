@@ -1,5 +1,28 @@
 .sidebar-container {
     height: 100%;
     min-width: 255px;
-    background-color: #fafafa;;
+    background-color: #fafafa;
+}
+
+h1 {
+    color: black;
+    -webkit-text-fill-color: #fafafa;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    font-family: 'Bebas Neue', sans-serif;
+    text-align: center;
+    font-size: 60px;
+    margin: 15px;
+    border: 1px solid;
+    padding-top: 5px;
+    transition: all 5s ease;
+    
+}
+
+h1:hover {
+     -webkit-text-fill-color: black;
+     -webkit-text-stroke-width: 1px;
+     -webkit-text-stroke-color: #fafafa;
+     
+    
 }
