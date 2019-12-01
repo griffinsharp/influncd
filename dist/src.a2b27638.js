@@ -34448,7 +34448,7 @@ function graph() {
       var art = artist;
       getImg(artist.image).then(function (url) {
         var paths = graph.selectAll('path').data(pie(data));
-        var pattern = defs.append('pattern').attr('id', url).attr('x', 0).attr('y', 0).attr('width', 1).attr('height', 1); // .attr('patternUnits', 'userSpaceOnUse')
+        var pattern = defs.append('pattern').attr('id', url).attr('x', 0).attr('y', 0).attr('width', 1).attr('height', 1); // can use this for repeating patterns --> .attr('patternUnits', 'userSpaceOnUse')
 
         var image = pattern.append('svg:image').attr('xlink:href', function (d) {
           return url;
@@ -34668,7 +34668,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52347" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61562" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -88,7 +88,7 @@ function graph () {
                     .attr('y', 0)
                     .attr('width', 1)
                     .attr('height', 1)
-                    // .attr('patternUnits', 'userSpaceOnUse')
+                    // can use this for repeating patterns --> .attr('patternUnits', 'userSpaceOnUse')
 
                 let image = pattern.append('svg:image')
                     .attr('xlink:href', d => url)
