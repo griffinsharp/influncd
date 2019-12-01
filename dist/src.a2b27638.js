@@ -34514,6 +34514,7 @@ function graph() {
               el.addEventListener("click", function () {
                 document.querySelector("div.text-box").classList.add("fade-out");
                 document.querySelector("div.name-box").classList.add("fade-out");
+                document.querySelector('div.remove-box').classList.add("fade-out");
                 setTimeout(function () {
                   document.querySelector("div.text-box").remove();
                   document.querySelector("div.name-box").remove();
@@ -34663,7 +34664,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60422" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62342" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

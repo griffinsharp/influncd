@@ -69,6 +69,10 @@ path:hover {
     -webkit-animation: fadein 5s;
 }
 
+.remove-box {
+    -webkit-animation: fadein 5s;
+}
+
 .fade-out {
     -webkit-animation: fadeout 1s;
 }
