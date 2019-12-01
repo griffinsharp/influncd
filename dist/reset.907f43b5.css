@@ -17,6 +17,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	font-family: 'Montserrat', sans-serif;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -41,5 +42,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+/* fonts used:
+font-family: 'Montserrat', sans-serif;
+font-family: 'Bebas Neue', sans-serif; */
 
 /*# sourceMappingURL=/reset.907f43b5.css.map */

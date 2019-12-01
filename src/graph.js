@@ -55,7 +55,7 @@ function graph () {
         let artistName = d.data.artist.includes("_") ? d.data.artist.split("_").join(" ") : d.data.artist;
         let percentInfluence = (d.data.percentinfluence).toFixed(4);
         let content = `<div class="name">${artistName}</div>`;
-        content += `<div class="influence">${percentInfluence} %</div>`
+        content += `<div class="influence">${percentInfluence}%</div>`
         return content;
     });
 
@@ -168,7 +168,7 @@ function graph () {
                                let removeDiv = document.createElement('div');
                                removeDiv.className = 'remove-box';
 
-                               removeDiv.innerHTML = `Click to go back to chart`;
+                               removeDiv.innerHTML = `I'm done here. Take me back!`;
                                document.querySelector("div.graph-container").append(removeDiv);
 
                                let el = document.querySelector('div.remove-box');

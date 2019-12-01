@@ -8,7 +8,7 @@
    
 position: absolute;
     transform: translate(-40%);
-    width: 175%;
+    width: 185%;
     
     
 }
@@ -47,12 +47,14 @@ path:hover {
 .text-box {
     position: absolute;
     height: auto;
-    width: 450px;
+    width: 447px;
     top: 330px;
     word-wrap: break-word;
-    left: 534px;
-     background-color: rgba(0,0,0,.5);
-    color: red;
+    left: 521px;
+    font-weight: 100;
+    padding: 15px;
+    background-color: rgba(0,0,0,.5);
+    color: white;
     -webkit-animation: fadein 5s;
 }
 .name-box {
@@ -60,17 +62,23 @@ path:hover {
     width: 450px;
     top: 230px;
     left: 534px;
-     background-color: rgba(0,0,0,.5);
-    color: red;
+    background-color: rgba(0,0,0,.5);
+    color: white;
     height: auto;
     text-align: center;
     padding-top: 0;
+    font-family: 'Bebas Neue', sans-serif;
     padding: 15px 0;
+    padding-bottom: 8px;
+    font-size: 50px;
     -webkit-animation: fadein 5s;
 }
 
 .remove-box {
     -webkit-animation: fadein 5s;
+    position: absolute;
+    left: 659px;
+    cursor: pointer;
 }
 
 .fade-out {

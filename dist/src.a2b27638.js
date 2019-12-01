@@ -34428,7 +34428,7 @@ function graph() {
     var artistName = d.data.artist.includes("_") ? d.data.artist.split("_").join(" ") : d.data.artist;
     var percentInfluence = d.data.percentinfluence.toFixed(4);
     var content = "<div class=\"name\">".concat(artistName, "</div>");
-    content += "<div class=\"influence\">".concat(percentInfluence, " %</div>");
+    content += "<div class=\"influence\">".concat(percentInfluence, "%</div>");
     return content;
   });
   graph.call(tip); // UDPATE FUNCTION - where I want to draw paths.
@@ -34507,7 +34507,7 @@ function graph() {
 
               var removeDiv = document.createElement('div');
               removeDiv.className = 'remove-box';
-              removeDiv.innerHTML = "Click to go back to chart";
+              removeDiv.innerHTML = "I'm done here. Take me back!";
               document.querySelector("div.graph-container").append(removeDiv);
               var el = document.querySelector('div.remove-box'); // Handling removal of text-box, name-box, and remove-box itself.
 
@@ -34664,7 +34664,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62342" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51830" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
