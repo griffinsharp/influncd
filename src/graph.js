@@ -104,7 +104,7 @@ function graph () {
                     .attr('class', 'arc')
                     // no longer need bc of our Tween for arcEnter 
                     // .attr('d', arcPath)
-                    .attr('stroke', '#ffffff')
+                    .attr('stroke', '#fafafa')
                     .attr('stroke-width', 3)
                     .transition().duration(7000)
                     .attrTween("d", arcTweenEnter);
@@ -158,7 +158,15 @@ function graph () {
                                    url: artistUrl,
                                    responseType: 'json'
 
-                               }).then((response) => textBoxDiv.innerHTML = `${response.data.extract}`);
+                               }).then((response) => {
+                                   if (response.data.extract.length > 678) {
+                                       textBoxDiv.innerHTML = `${response.data.extract.substring(0, 678)}... ` + `<a href=https://en.wikipedia.org/wiki/${d.data.artist}> Read More</a>`;
+                                   } else {
+                                       textBoxDiv.innerHTML = `${response.data.extract} ` + `<a href=https://en.wikipedia.org/wiki/${d.data.artist}> Read More</a>`;
+                                   }
+                                   
+
+                                });
 
                                // Append this text box in the graph container below the artist's name
                                document.querySelector("div.graph-container")

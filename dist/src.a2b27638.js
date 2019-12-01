@@ -34460,7 +34460,7 @@ function graph() {
         });
         var render = graph.selectAll("#".concat(art.id)).attr('fill', "url(#".concat(url, ")")).attr('class', 'arc') // no longer need bc of our Tween for arcEnter 
         // .attr('d', arcPath)
-        .attr('stroke', '#ffffff').attr('stroke-width', 3).transition().duration(7000).attrTween("d", arcTweenEnter);
+        .attr('stroke', '#fafafa').attr('stroke-width', 3).transition().duration(7000).attrTween("d", arcTweenEnter);
         var prevEnd;
         var trigger = 'true';
         graph.selectAll('path').on('click', function (d, i, n) {
@@ -34500,7 +34500,11 @@ function graph() {
                 url: artistUrl,
                 responseType: 'json'
               }).then(function (response) {
-                return textBoxDiv.innerHTML = "".concat(response.data.extract);
+                if (response.data.extract.length > 678) {
+                  textBoxDiv.innerHTML = "".concat(response.data.extract.substring(0, 678), "... ") + "<a href=https://en.wikipedia.org/wiki/".concat(d.data.artist, "> Read More</a>");
+                } else {
+                  textBoxDiv.innerHTML = "".concat(response.data.extract, " ") + "<a href=https://en.wikipedia.org/wiki/".concat(d.data.artist, "> Read More</a>");
+                }
               }); // Append this text box in the graph container below the artist's name
 
               document.querySelector("div.graph-container").append(textBoxDiv); // Making remove button
@@ -34664,7 +34668,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51830" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54461" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

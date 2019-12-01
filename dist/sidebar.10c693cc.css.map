@@ -1,1 +1,1 @@
-{"version":3,"sources":["src/stylesheets/sidebar.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA","file":"sidebar.10c693cc.css","sourceRoot":"..","sourcesContent":[".sidebar-container {\n    height: 100%;\n    min-width: 255px;\n    background-color: grey;\n}"]}
+{"version":3,"sources":["src/stylesheets/sidebar.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA","file":"sidebar.10c693cc.css","sourceRoot":"..","sourcesContent":[".sidebar-container {\n    height: 100%;\n    min-width: 255px;\n    background-color: #fafafa;;\n}"]}
