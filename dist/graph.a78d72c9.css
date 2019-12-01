@@ -22,6 +22,7 @@ position: absolute;
 .tip {
    top: 100px !important;
    left: 400px !important;
+   -webkit-animation: fadetip 5s;
 }
 
 /* path {
@@ -45,26 +46,39 @@ path:hover {
 
 .text-box {
     position: absolute;
+    height: auto;
     width: 450px;
-    height: 150px;
-    top: 400px;
+    top: 330px;
+    word-wrap: break-word;
     left: 534px;
     background-color: black;
     opacity: 50%;
     color: red;
+    -webkit-animation: fadein 5s;
 }
 .name-box {
     position: absolute;
     width: 450px;
-    height: 50px;
     top: 230px;
     left: 534px;
     background-color: black;
     opacity: 50%;
     color: red;
+    height: auto;
     text-align: center;
-    padding-top: 30px;
-    
+    padding-top: 0;
+    padding: 15px 0;
+    -webkit-animation: fadein 5s;
+
+}
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 0.5; }
+}
+
+@keyframes fadetip {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 /*# sourceMappingURL=/graph.a78d72c9.css.map */
