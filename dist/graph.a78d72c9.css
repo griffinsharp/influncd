@@ -34,7 +34,7 @@ position: absolute;
 
 .tip {
    top: 100px !important;
-   left: 400px !important;
+   left: 1020px !important;
    -webkit-animation: fadetip 5s;
    transition: opacity 2s;
 }
@@ -73,7 +73,7 @@ position: absolute;
 .remove-box {
     -webkit-animation: fadein 5s;
     position: absolute;
-    left: 659px;
+    left: 644px;
     cursor: pointer;
     left: 646px;
 }

@@ -34427,8 +34427,8 @@ function graph() {
   var tip = (0, _d3Tip.default)().attr('class', 'tip card').html(function (d) {
     var artistName = d.data.artist.includes("_") ? d.data.artist.split("_").join(" ") : d.data.artist;
     var percentInfluence = d.data.percentinfluence.toFixed(4);
-    var content = "<div class=\"name\">".concat(artistName, "</div>");
-    content += "<div class=\"influence\">".concat(percentInfluence, "%</div>");
+    var content = "<div class=\"name\">artist: ".concat(artistName, "</div>");
+    content += "<div class=\"influence\">relative influence: ".concat(percentInfluence, "%</div>");
     return content;
   });
   graph.call(tip); // UDPATE FUNCTION - where I want to draw paths.
@@ -34668,7 +34668,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60449" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61929" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
