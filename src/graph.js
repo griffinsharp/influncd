@@ -109,68 +109,69 @@ function graph () {
                     .transition().duration(7000)
                     .attrTween("d", arcTweenEnter);
                 
-            
+            let trigger = 'true';
                 graph.selectAll('path')
-                    
-                // handle first onClick
                     .on('click', function (d, i, n) {
-                       
-                        this.parentNode.appendChild(this);
-                        d3.select(n[i])
-                            .transition().duration(7000)
-                            .attrTween("d", (d) => {
-                           
+                       if (trigger === 'true') {
+                           trigger = 'false';
+                           this.parentNode.appendChild(this);
+                           d3.select(n[i])
+                               .transition().duration(7000)
+                               .attrTween("d", (d) => {
 
-                                let i = d3.interpolate(d.endAngle, d.endAngle + 360);
-                                return function (t) {
-                                    d.endAngle = i(t);
-                                    return arcPath(d);
-                                };
-                            });
-                        // Create div, set contents to artist name.
-                        let nameDiv = document.createElement('div');
-                        nameDiv.className = 'name-box';
-                        let artistName = d.data.artist.includes("_") ? d.data.artist.split("_").join(" ") : d.data.artist;
-                        nameDiv.innerHTML = `${artistName}`;
-                        document.querySelector("div.graph-container")
-                            .append(nameDiv);
 
-                        // Create div, fetch bio from Wikipedia API, set contents to response.
-                        let textBoxDiv = document.createElement('div');
-                        textBoxDiv.className = 'text-box';
+                                   let i = d3.interpolate(d.endAngle, d.endAngle + 360);
+                                   return function (t) {
+                                       d.endAngle = i(t);
+                                       return arcPath(d);
+                                   };
+                               });
+                           // Create div, set contents to artist name.
+                           let nameDiv = document.createElement('div');
+                           nameDiv.className = 'name-box';
+                           let artistName = d.data.artist.includes("_") ? d.data.artist.split("_").join(" ") : d.data.artist;
+                           nameDiv.innerHTML = `${artistName}`;
+                           document.querySelector("div.graph-container")
+                               .append(nameDiv);
 
-                        // Dynamically create the API endpoint for each artist.
-                        let artistUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${d.data.artist}`;
+                           // Create div, fetch bio from Wikipedia API, set contents to response.
+                           let textBoxDiv = document.createElement('div');
+                           textBoxDiv.className = 'text-box';
 
-                        // Specify axios request formatting (get, to artist url, response in json)
-                        // Specify how to handle response once promise resolves.
+                           // Dynamically create the API endpoint for each artist.
+                           let artistUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${d.data.artist}`;
 
-                            axios({
-                                method: 'get',
-                                url: artistUrl,
-                                responseType: 'json'
+                           // Specify axios request formatting (get, to artist url, response in json)
+                           // Specify how to handle response once promise resolves.
 
-                            }).then((response) => textBoxDiv.innerHTML = `${response.data.extract}`);
+                           axios({
+                               method: 'get',
+                               url: artistUrl,
+                               responseType: 'json'
 
-                        // Append this text box in the graph container below the artist's name
-                        document.querySelector("div.graph-container")
-                            .append(textBoxDiv);
+                           }).then((response) => textBoxDiv.innerHTML = `${response.data.extract}`);
 
-                        // Making remove button
-                        let removeDiv = document.createElement('div');
-                        removeDiv.className = 'remove-box';
+                           // Append this text box in the graph container below the artist's name
+                           document.querySelector("div.graph-container")
+                               .append(textBoxDiv);
 
-                        removeDiv.innerHTML = `Click to go back to chart`;
-                        document.querySelector("div.graph-container").append(removeDiv);
-                        
-                        let el = document.querySelector('div.remove-box');
+                           // Making remove button
+                           let removeDiv = document.createElement('div');
+                           removeDiv.className = 'remove-box';
 
-                        // Handling removal of text-box, name-box, and remove-box itself.
-                        el.addEventListener("click", function() {
-                            document.querySelector("div.text-box").remove();
-                            document.querySelector("div.name-box").remove();
-                            document.querySelector('div.remove-box').remove();
-                        });
+                           removeDiv.innerHTML = `Click to go back to chart`;
+                           document.querySelector("div.graph-container").append(removeDiv);
+
+                           let el = document.querySelector('div.remove-box');
+
+                           // Handling removal of text-box, name-box, and remove-box itself.
+                           el.addEventListener("click", function () {
+                               document.querySelector("div.text-box").remove();
+                               document.querySelector("div.name-box").remove();
+                               document.querySelector('div.remove-box').remove();
+                               trigger = 'true';
+                           });
+                       }
 
                                       
                     })

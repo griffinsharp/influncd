@@ -34461,49 +34461,54 @@ function graph() {
         var render = graph.selectAll("#".concat(art.id)).attr('fill', "url(#".concat(url, ")")).attr('class', 'arc') // no longer need bc of our Tween for arcEnter 
         // .attr('d', arcPath)
         .attr('stroke', '#ffffff').attr('stroke-width', 3).transition().duration(7000).attrTween("d", arcTweenEnter);
-        graph.selectAll('path') // handle first onClick
-        .on('click', function (d, i, n) {
-          this.parentNode.appendChild(this);
-          d3.select(n[i]).transition().duration(7000).attrTween("d", function (d) {
-            var i = d3.interpolate(d.endAngle, d.endAngle + 360);
-            return function (t) {
-              d.endAngle = i(t);
-              return arcPath(d);
-            };
-          }); // Create div, set contents to artist name.
+        var trigger = 'true';
+        graph.selectAll('path').on('click', function (d, i, n) {
+          if (trigger === 'true') {
+            trigger = 'false';
+            this.parentNode.appendChild(this);
+            d3.select(n[i]).transition().duration(7000).attrTween("d", function (d) {
+              var i = d3.interpolate(d.endAngle, d.endAngle + 360);
+              return function (t) {
+                d.endAngle = i(t);
+                return arcPath(d);
+              };
+            }); // Create div, set contents to artist name.
 
-          var nameDiv = document.createElement('div');
-          nameDiv.className = 'name-box';
-          var artistName = d.data.artist.includes("_") ? d.data.artist.split("_").join(" ") : d.data.artist;
-          nameDiv.innerHTML = "".concat(artistName);
-          document.querySelector("div.graph-container").append(nameDiv); // Create div, fetch bio from Wikipedia API, set contents to response.
+            var nameDiv = document.createElement('div');
+            nameDiv.className = 'name-box';
+            var artistName = d.data.artist.includes("_") ? d.data.artist.split("_").join(" ") : d.data.artist;
+            nameDiv.innerHTML = "".concat(artistName);
+            document.querySelector("div.graph-container").append(nameDiv); // Create div, fetch bio from Wikipedia API, set contents to response.
 
-          var textBoxDiv = document.createElement('div');
-          textBoxDiv.className = 'text-box'; // Dynamically create the API endpoint for each artist.
+            var textBoxDiv = document.createElement('div');
+            textBoxDiv.className = 'text-box'; // Dynamically create the API endpoint for each artist.
 
-          var artistUrl = "https://en.wikipedia.org/api/rest_v1/page/summary/".concat(d.data.artist); // Specify axios request formatting (get, to artist url, response in json)
-          // Specify how to handle response once promise resolves.
+            var artistUrl = "https://en.wikipedia.org/api/rest_v1/page/summary/".concat(d.data.artist); // Specify axios request formatting (get, to artist url, response in json)
+            // Specify how to handle response once promise resolves.
 
-          (0, _axios.default)({
-            method: 'get',
-            url: artistUrl,
-            responseType: 'json'
-          }).then(function (response) {
-            return textBoxDiv.innerHTML = "".concat(response.data.extract);
-          }); // Append this text box in the graph container below the artist's name
+            (0, _axios.default)({
+              method: 'get',
+              url: artistUrl,
+              responseType: 'json'
+            }).then(function (response) {
+              return textBoxDiv.innerHTML = "".concat(response.data.extract);
+            }); // Append this text box in the graph container below the artist's name
 
-          document.querySelector("div.graph-container").append(textBoxDiv); // Making remove button
+            document.querySelector("div.graph-container").append(textBoxDiv); // Making remove button
 
-          var removeDiv = document.createElement('div');
-          removeDiv.className = 'remove-box';
-          removeDiv.innerHTML = "Click to go back to chart";
-          document.querySelector("div.graph-container").append(removeDiv);
-          var el = document.querySelector('div.remove-box');
-          el.addEventListener("click", function () {
-            document.querySelector("div.text-box").remove();
-            document.querySelector("div.name-box").remove();
-            document.querySelector('div.remove-box').remove();
-          });
+            var removeDiv = document.createElement('div');
+            removeDiv.className = 'remove-box';
+            removeDiv.innerHTML = "Click to go back to chart";
+            document.querySelector("div.graph-container").append(removeDiv);
+            var el = document.querySelector('div.remove-box'); // Handling removal of text-box, name-box, and remove-box itself.
+
+            el.addEventListener("click", function () {
+              document.querySelector("div.text-box").remove();
+              document.querySelector("div.name-box").remove();
+              document.querySelector('div.remove-box').remove();
+              trigger = 'true';
+            });
+          }
         }).on('mouseover', function (d, i, n) {
           tip.show(d, n[i]);
           handleMouseOver(d, i, n);
@@ -34630,7 +34635,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59653" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49456" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
