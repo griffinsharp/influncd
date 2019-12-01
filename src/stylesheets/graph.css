@@ -45,9 +45,10 @@ path:hover {
 
 .text-box {
     position: absolute;
+    height: auto;
     width: 450px;
-    height: 150px;
-    top: 400px;
+    top: 330px;
+    word-wrap: break-word;
     left: 534px;
     background-color: black;
     opacity: 50%;
@@ -56,13 +57,15 @@ path:hover {
 .name-box {
     position: absolute;
     width: 450px;
-    height: 50px;
     top: 230px;
     left: 534px;
     background-color: black;
     opacity: 50%;
     color: red;
+    height: auto;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 0;
+    padding: 15px 0;
+
     
 }
