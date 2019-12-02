@@ -28,7 +28,8 @@
     "firebase": "^7.5.0",
     "node": "^13.1.0",
     "reset.css": "^2.0.2",
-    "storage": "^0.2.0"
+    "storage": "^0.2.0",
+    "parcel": "^1.12.4"
   },
   "devDependencies": {
     "parcel": "^1.12.4"
