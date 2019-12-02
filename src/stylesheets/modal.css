@@ -1,0 +1,13 @@
+.background-modal {
+   width: 1300px;
+   height: 800px;
+   background-color: #000000c0;
+   -webkit-animation: fadetip 5s;
+   transition: opacity 2s;
+   z-index: 3;
+   left: 50%;
+   top: 50%;
+   margin-left: -650px;
+   margin-top: -350px;
+   position: absolute;
+}

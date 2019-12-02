@@ -1,8 +1,6 @@
 import * as d3 from 'd3';
 import d3Tip from "d3-tip";
 import axios from 'axios';
-import { strict } from 'assert';
-import { async } from 'q';
 
     // notes as I learn d3...
 
@@ -126,8 +124,6 @@ function graph () {
 
                                    let i = d3.interpolate(d.endAngle, d.endAngle + 6.25);
                                    prevEnd = d.endAngle;
-                                   console.log(d.endAngle)
-                                   console.log(d.startAngle)
                                    return function (t) {
                                        d.endAngle = i(t);
                                        return arcPath(d);
@@ -196,13 +192,9 @@ function graph () {
                    
                                    node.transition().duration(20000)
                                        .attrTween("d", (d) => {
-                                           console.log(d.endAngle)
-                                           console.log(d.startAngle)
                                            let i = d3.interpolate(d.endAngle, prevEnd);
                                            return function (t) {
                                                d.endAngle = i(t);
-                                               console.log(d.endAngle)
-                                               console.log(d.startAngle)
                                                return arcPath(d);
                                                
                                            };
