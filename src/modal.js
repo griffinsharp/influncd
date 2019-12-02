@@ -10,12 +10,30 @@ function modal() {
         modalBackground.className = 'background-modal';
 
 
+
         document.querySelector("div.project-container")
             .append(modalBackground);
+
+        let exitButton = document.createElement('div');
+        exitButton.className = 'exit-button';
+
+        exitButton.innerHTML = '<i class="far fa-times-circle"></i>'
+
+        document.querySelector("div.background-modal")
+            .append(exitButton);
+
+
+        exitButton.addEventListener("click", function () {
+            modalBackground.classList.add("fade-out-modal");
+            setTimeout(() => {
+                modalBackground.remove();
+            }, 2000);
+        })
 
         
     });
 
+    
     
 }
 

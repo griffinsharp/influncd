@@ -71,7 +71,6 @@ h1:hover {
 
 .fab:hover {
     color: grey; 
-  width: 120%;
   transition: all 0.5s;
   cursor: pointer;
 }

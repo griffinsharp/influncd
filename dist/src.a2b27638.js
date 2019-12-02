@@ -31208,6 +31208,16 @@ function modal() {
     var modalBackground = document.createElement('div');
     modalBackground.className = 'background-modal';
     document.querySelector("div.project-container").append(modalBackground);
+    var exitButton = document.createElement('div');
+    exitButton.className = 'exit-button';
+    exitButton.innerHTML = '<i class="far fa-times-circle"></i>';
+    document.querySelector("div.background-modal").append(exitButton);
+    exitButton.addEventListener("click", function () {
+      modalBackground.classList.add("fade-out-modal");
+      setTimeout(function () {
+        modalBackground.remove();
+      }, 2000);
+    });
   });
 }
 
@@ -31259,7 +31269,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61224" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51654" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
