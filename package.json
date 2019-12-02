@@ -32,5 +32,9 @@
   },
   "devDependencies": {
     "parcel": "^1.12.4"
+  },
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.4.1"
   }
 }
