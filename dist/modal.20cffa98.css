@@ -1,0 +1,2 @@
+.background-modal{width:1300px;height:800px;background-color:rgba(0,0,0,.75);-webkit-animation:drawin 1s;z-index:3;left:50%;top:50%;margin-left:-650px;margin-top:-350px;position:absolute;display:flex;flex-direction:column}.fade-out-modal{-webkit-animation:fadeout 2s}.exit-button{margin-left:97%;margin-right:0;margin-top:10px}.fa-times-circle{color:#fafafa;font-size:30px;cursor:pointer}.fa-times-circle:hover{color:#000;font-size:30px}@keyframes drawin{0%{top:20%}to{top:50%}0%{opacity:0}to{opacity:1}}
+/*# sourceMappingURL=/modal.20cffa98.css.map */
