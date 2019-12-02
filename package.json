@@ -7,9 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html",
-    "watch": "parcel watch index.html"
+    "start": "cross-env NODE_ENV=development parcel index.html ",
+    "build": "cross-env NODE_ENV=production parcel build index.html --no-minify --public-url /"
   },
   "repository": {
     "type": "git",
