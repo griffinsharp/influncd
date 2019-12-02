@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "build": "parcel build index.html"
+    "start": "parcel build index.js"
   },
   "repository": {
     "type": "git",
