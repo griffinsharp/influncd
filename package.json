@@ -7,8 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=development parcel index.html",
-    "build": "cross-env NODE_ENV=production parcel build index.html"
+    "start": "NODE_ENV=development parcel index.html",
+    "build": "NODE_ENV=production parcel build index.html"
   },
   "repository": {
     "type": "git",
