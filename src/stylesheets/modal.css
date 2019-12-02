@@ -2,7 +2,8 @@
    width: 1300px;
    height: 800px;
    background-color: #000000c0;
-   -webkit-animation: fadein 2s;
+   -webkit-animation: drawin 1s;
+  
    z-index: 3;
    left: 50%;
    top: 50%;
@@ -35,4 +36,11 @@
    color: #000000;
    font-size: 30px;
    
+}
+
+@keyframes drawin {
+    from { top: 20%; }
+    to   { top: 50%; }
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
