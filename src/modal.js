@@ -47,15 +47,23 @@ function modal() {
 
         let tutorial = document.createElement('div');
         tutorial.className = 'modal-tutorial';
-        tutorial.innerHTML = "Using INFLUNCD is simple. Hover over the slice of the graph to reveal the associated artist's name and their influence relative to the 99 other artists displayed. Click on the slice to trigger an animation, revealing specific information pertaining to the artist and a link to read more. Once you've concluded your research, simply click the text below the graph to return back to where you started.";
+        tutorial.innerHTML = "Using INFLUNCD is simple. Hover over a slice of the graph to reveal the associated artist's name and their influence relative to the 99 other artists. Then, click on the slice to reveal specific information pertaining to the artist with a link to continue reading. Once you've concluded your research, simply click the text below the graph to return back to where you started.";
         document.querySelector("div.modal-container")
             .append(tutorial);
 
         let links = document.createElement('div');
         links.className = 'modal-links';
-        links.innerHTML = "The data used for this project was provided via a blah blah by Quartz in blah. In short, they did blah using blah and saw blah. Something about the data/not to get confused by the numbers or the innacuracies. This being said, an artist on here may have a fraction of the graph attributed to them, but they are being compared to the other top 99, so keep that in mind. INFLUNCD is currently optimized to run on the Google Chrome browser due to the animations and libraries utilized in this visual.";
+        links.innerHTML = "The data utilized for this project was provided via <a class='quartz-allmusic' target='_blank' href=https://qz.com/1094962/a-definitive-list-of-the-musicians-who-influenced-our-lives-most/>Quartz</a> and <a class='quartz-allmusic' target='_blank' href=https://www.theatlas.com/charts/S1QdKOZ3- />AllMusic</a>. They '[collected data] on 53,630 artists, of which about 25,600 were listed as having influenced or been influenced by at least one other artist.' In short, they assembled connections between artists from research, interviews, or strong editor inference, and although this method may come with some inherent biases, it's said to be the most 'thorough examination of artist relationships to exist.'";
         document.querySelector("div.modal-container")
             .append(links);
+
+        let warning = document.createElement('div');
+        warning.className = 'modal-warning';
+        warning.innerHTML = "Having trouble viewing? INFLUNCD is currently optimized to run on the Google Chrome desktop browser due to animation and library performance.";
+        document.querySelector("div.modal-container")
+            .append(warning);
+        
+            
         
 
         

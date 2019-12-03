@@ -34,11 +34,13 @@
    cursor: pointer;
    margin-top: 10px;
    margin-right: 10px;
+   transition: color 0.5s;
 }
 
 .fa-times-circle:hover {
    color: #000000;
    font-size: 30px;
+   transition: color 0.5s;
    
 }
 
@@ -67,15 +69,56 @@
 }
 
 .modal-intro {
+    margin: 35px auto;
+    margin-top: 50px;
+    color: #fafafa;
+    font-size: 18px;
+    line-height: 30px;
    
 }
 
 .modal-tutorial {
-
+    margin: 35px auto;
+    color: #fafafa;
+    font-size: 18px;
+    line-height: 30px;
+    margin-top: 0;
 }
 
 .modal-links {
+    margin: 70px auto;
+    margin-top: 0px;
+    color: #fafafa;
+    font-size: 18px;
+    line-height: 30px;
+}
 
+.modal-warning {
+    margin: auto;
+    font-size: 11px;
+    color: #fafafa;
+
+}
+
+.quartz-allmusic {
+    color: #fafafa;
+    transition: color 0.5s;
+}
+
+.quartz-allmusic:hover {
+    color: black;
+    transition: color 0.5s;
+}
+
+
+@media (max-width: 1510px) {
+  .modal-links {
+   margin: 20px auto;
+    margin-top: 0px;
+    color: #fafafa;
+    font-size: 18px;
+    line-height: 30px;
+  }
 }
 
 @keyframes drawin {
