@@ -39,6 +39,30 @@
    
 }
 
+.modal-container {
+   height: 80%;
+   width: 80%;
+   display: flex;
+   flex-direction: column;
+   margin: 0 auto;
+}
+
+.modal-title{
+
+}
+
+.modal-subtitle {
+
+}
+
+.modal-tutorial {
+
+}
+
+.modal-links {
+
+}
+
 @keyframes drawin {
     from { top: -10px }
     to   { top: 50px; }

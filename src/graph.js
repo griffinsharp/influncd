@@ -103,14 +103,13 @@ function graph () {
                     // no longer need bc of our Tween for arcEnter 
                     // .attr('d', arcPath)
                     .attr('stroke', '#fafafa')
-                    .attr('stroke-width', 3)
+                    .attr('stroke-width', 1)
                     .transition().duration(7000)
                     .attrTween("d", arcTweenEnter);
             let prevEnd;
             let trigger = 'true';
                 graph.selectAll('path')
                     .on('click', function (d, i, n) {
-                        
                         let node = d3.select(n[i]);
                         let nextNode = n[i+1]
                        if (trigger === 'true') {

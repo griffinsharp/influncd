@@ -31027,7 +31027,7 @@ function graph() {
         });
         var render = graph.selectAll("#".concat(art.id)).attr('fill', "url(#".concat(url, ")")).attr('class', 'arc') // no longer need bc of our Tween for arcEnter 
         // .attr('d', arcPath)
-        .attr('stroke', '#fafafa').attr('stroke-width', 3).transition().duration(7000).attrTween("d", arcTweenEnter);
+        .attr('stroke', '#fafafa').attr('stroke-width', 1).transition().duration(7000).attrTween("d", arcTweenEnter);
         var prevEnd;
         var trigger = 'true';
         graph.selectAll('path').on('click', function (d, i, n) {
@@ -31212,6 +31212,23 @@ function modal() {
     exitButton.className = 'exit-button';
     exitButton.innerHTML = '<i class="far fa-times-circle"></i>';
     document.querySelector("div.background-modal").append(exitButton);
+    var modalContainer = document.createElement('div');
+    modalContainer.className = 'modal-container';
+    document.querySelector("div.background-modal").append(modalContainer);
+    var title = document.createElement('div');
+    title.className = 'modal-title';
+    title.innerHTML = "INFLUNCD";
+    document.querySelector("div.modal-container").append(title);
+    var subTitle = document.createElement('div');
+    subTitle.className = 'modal-subtitle';
+    subTitle.innerHTML = "A JavaScript data visualization by Griffin Sharp.";
+    document.querySelector("div.modal-container").append(subTitle);
+    var tutorial = document.createElement('div');
+    tutorial.className = 'modal-tutorial';
+    document.querySelector("div.modal-container").append(tutorial);
+    var links = document.createElement('div');
+    links.className = 'modal-links';
+    document.querySelector("div.modal-container").append(links);
     exitButton.addEventListener("click", function () {
       modalBackground.classList.add("fade-out-modal");
       setTimeout(function () {
@@ -31269,7 +31286,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61445" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49440" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
