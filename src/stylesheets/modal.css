@@ -1,14 +1,13 @@
 .background-modal {
-   width: 1300px;
+   width: 90%;
+   min-width: 1100px;
    height: 800px;
    background-color: #000000c0;
    -webkit-animation: drawin 1s;
   
    z-index: 3;
-   left: 50%;
-   top: 50%;
-   margin-left: -650px;
-   margin-top: -350px;
+   left: 5%;
+   top: 50px;
    position: absolute;
    display: flex;
    flex-direction: column;
@@ -20,9 +19,9 @@
 }
 
 .exit-button {
-   margin-left: 97%;
-   margin-right: 0%;
-   margin-top: 10px;
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-end;
 }
 
 
@@ -30,6 +29,8 @@
    color: #fafafa;
    font-size: 30px;
    cursor: pointer;
+   margin-top: 10px;
+   margin-right: 10px;
 }
 
 .fa-times-circle:hover {
@@ -39,8 +40,8 @@
 }
 
 @keyframes drawin {
-    from { top: 20%; }
-    to   { top: 50%; }
+    from { top: -10px }
+    to   { top: 50px; }
     from { opacity: 0; }
     to   { opacity: 1; }
 }
