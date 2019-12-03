@@ -53,7 +53,7 @@ function modal() {
 
         let links = document.createElement('div');
         links.className = 'modal-links';
-        links.innerHTML = "The data used for this project was provided via a blah blah by Quartz in blah. In short, they did blah using blah and saw blah. Something about the data/not to get confused by the numbers or the innacuracies. This being said, an artist on here may have a fraction of the graph attributed to them, but they are being compared to the other top 99, so keep that in mind.  ";
+        links.innerHTML = "The data used for this project was provided via a blah blah by Quartz in blah. In short, they did blah using blah and saw blah. Something about the data/not to get confused by the numbers or the innacuracies. This being said, an artist on here may have a fraction of the graph attributed to them, but they are being compared to the other top 99, so keep that in mind. INFLUNCD is currently optimized to run on the Google Chrome browser due to the animations and libraries utilized in this visual.";
         document.querySelector("div.modal-container")
             .append(links);
         

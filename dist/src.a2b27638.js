@@ -31223,11 +31223,17 @@ function modal() {
     subTitle.className = 'modal-subtitle';
     subTitle.innerHTML = "A JavaScript data visualization by Griffin Sharp.";
     document.querySelector("div.modal-container").append(subTitle);
+    var intro = document.createElement('div');
+    intro.className = 'modal-intro';
+    intro.innerHTML = "Data is a beautiful, incredibly powerful thing, but is far too often not presented as such. INFLUNCD hopes to help better visually represent who influenced, and to what degree, the current landscape of popular music in Western culture. Discovering more about your favorite musician's favorite musician is just a few clicks away.";
+    document.querySelector("div.modal-container").append(intro);
     var tutorial = document.createElement('div');
     tutorial.className = 'modal-tutorial';
+    tutorial.innerHTML = "Using INFLUNCD is simple. Hover over the slice of the graph to reveal the associated artist's name and their influence relative to the 99 other artists displayed. Click on the slice to trigger an animation, revealing specific information pertaining to the artist and a link to read more. Once you've concluded your research, simply click the text below the graph to return back to where you started.";
     document.querySelector("div.modal-container").append(tutorial);
     var links = document.createElement('div');
     links.className = 'modal-links';
+    links.innerHTML = "The data used for this project was provided via a blah blah by Quartz in blah. In short, they did blah using blah and saw blah. Something about the data/not to get confused by the numbers or the innacuracies. This being said, an artist on here may have a fraction of the graph attributed to them, but they are being compared to the other top 99, so keep that in mind. INFLUNCD is currently optimized to run on the Google Chrome browser due to the animations and libraries utilized in this visual.";
     document.querySelector("div.modal-container").append(links);
     exitButton.addEventListener("click", function () {
       modalBackground.classList.add("fade-out-modal");
@@ -31286,7 +31292,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49440" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53940" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
