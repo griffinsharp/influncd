@@ -3,7 +3,7 @@ Data is a beautiful, incredibly powerful thing, but is far too often not present
 
 Start by hovering over slices of the graph until you find an artist you're interested in. Then, give the slice a click, which will trigger an animation. Once the artist profile takes up the whole graph, feel free to check them out. Once you're done with your research, navigate back to the full graph by clicking on any blank space outside of the graph. For more on how I made this visualization, where I sourced the data, or any other questions, first check out the 'about' tab on the left side of the page. If you still have questions, or just would like to connect, my socials can be found right below the 'about' section. Enjoy!
 
-# Site Functionality 
+## Site Functionality 
 Here's a glimpse at INFLUNCD in 3 gifs. To really appreciate the details in its D3 animations, JavaScript DOM Manipulation, and CSS tricks, please visit it in browser and navigate around. 
 ![gif 1](https://github.com/griffinsharp/INFLUNCD/blob/master/assets/inanim.gif)
 ![gif 2](https://github.com/griffinsharp/INFLUNCD/blob/master/assets/outanim.gif)
@@ -18,9 +18,19 @@ This visualization will be a single page, with the circular data visualization i
 ![wireframe 4](https://github.com/griffinsharp/INFLUNCD/blob/master/assets/Window4.png)
 
 ## Code Snippets 
-Here are a few snippets from INFLUNCD's source code. 
+Here are a few snippets from INFLUNCD's source code with short blurbs to guide you through whats going on. 
 
 ![Snippet 1](https://github.com/griffinsharp/INFLUNCD/blob/master/assets/AnimationBackToFullCircle.png)
+
+### D3 Transitions + DOM Manipulation
+This is the code to handle when the "I'm done here. Take me back!" prompt is clicked. I have setup an event listener to listen for a click on this button element, set to the variable `el`. Upon a click, the musicians name, bio, and the button itself receive a class via `JavaScript` DOM manipulation, which give it a nice `CSS` fade out animation via @keyframes and mapping opacity from 1 to 0 (see `graph.css` for more on this). This solved the problem of having a fade-in and fade-out animation on the same element.
+
+The goal of the `trigger` variable is to limit when the user's click will actually fire the callback function, only to be ran when it's value is true. This was used to solve the problem of clicking several different slices or even the same slice multiple times, causing some unintended behavior.
+
+The last part is a `D3` transition from the full musician circle back to its respective slice of the graph, interpolating between the `endAngle`'s current value, and the `endAngle`'s original value. `D3`'s `interpolate()` method just takes a start and end value, which it transitions to over the time specified in `.duration()`, as we `return arcPath(d)` to repaint the outer path of the current slice back to its original, pre-clicked state.
+
+The final `setTimeout()` function puts the `D3` path node back in its previous spot, which I made sure to save reference to so I can use `insertBefore()`. Rearranging the order of paths was crucial in allowing the slices to cover/not cover the other slices and animate appropriately.
+
 ![Snippet 2](https://github.com/griffinsharp/INFLUNCD/blob/master/assets/ImageDownload.png)
 ![Snippet 3](https://github.com/griffinsharp/INFLUNCD/blob/master/assets/GraphRender.png)
 
