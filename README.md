@@ -7,6 +7,7 @@ Start by hovering over slices of the graph until you find an artist you're inter
 Here's a glimpse at INFLUNCD in 3 gifs. To really appreciate the details in its D3 animations, JavaScript DOM Manipulation, and CSS tricks, please visit it in browser (Chrome for best performance) and navigate around. 
 
 <p align="center"> 
+  <img src="https://github.com/griffinsharp/INFLUNCD/blob/master/assets/hoverfunctionality.gif">
 <img src="https://github.com/griffinsharp/INFLUNCD/blob/master/assets/inanim.gif">
 <img src="https://github.com/griffinsharp/INFLUNCD/blob/master/assets/exitanim.gif">
 <img src="https://github.com/griffinsharp/INFLUNCD/blob/master/assets/modal.gif">
