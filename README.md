@@ -47,7 +47,7 @@ In order to keep my app very lightweight and increase scalability, INFLUNCD's im
 
 To bridge this gap, each artist in the database has a value of "image" pointing to an image url key. Upon loading the page, this `getImg(imgPath)` function dynamically requests (via axios routing) the correct image for all 100 artists, so then it can then be used as a svg pattern and mapped to the correct `D3` path. 
 
-### SVG Magic
+### SVG Magic ✨
 
 <p align="center"> 
 <img src="https://github.com/griffinsharp/INFLUNCD/blob/master/assets/GraphRender.png">
