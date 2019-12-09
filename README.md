@@ -27,12 +27,19 @@ This is the code to handle when the "I'm done here. Take me back!" prompt is cli
 
 The goal of the `trigger` variable is to limit when the user's click will actually fire the callback function, only to be ran when it's value is true. This was used to solve the problem of clicking several different slices or even the same slice multiple times, causing some unintended behavior.
 
-The last part is a `D3` transition from the full musician circle back to its respective slice of the graph, interpolating between the `endAngle`'s current value, and the `endAngle`'s original value. `D3`'s `interpolate()` method just takes a start and end value, which it transitions to over the time specified in `.duration()`, as we `return arcPath(d)` to repaint the outer path of the current slice back to its original, pre-clicked state.
+The last part is a `D3` transition from the full musician circle back to its respective slice of the graph, interpolating between the `endAngle`'s current value, and the `endAngle`'s original value. `D3`'s `.interpolate()` method just takes a start and end value, which it transitions to over the time specified in `.duration()`, as we `return arcPath(d)` to repaint the outer path of the current slice back to its original, pre-clicked state.
 
-The final `setTimeout()` function puts the `D3` path node back in its previous spot, which I made sure to save reference to so I can use `insertBefore()`. Rearranging the order of paths was crucial in allowing the slices to cover/not cover the other slices and animate appropriately.
+The final `setTimeout()` function puts the `D3` path node back in its previous spot, which I made sure to save reference to so I can use `.insertBefore()`. Rearranging the order of paths was crucial in allowing the slices to cover/not cover the other slices and animate appropriately.
 
 ![Snippet 2](https://github.com/griffinsharp/INFLUNCD/blob/master/assets/ImageDownload.png)
+In order to keep my app very lightweight and increase scalability, INFLUNCD's image assets are fully stored on a `Google Firebase` database. However, Google keeps its Firebase data seperate from its storage data, with the two agnostic of eachother.
+
+To bridge this gap, each artist in the database has a value of "image" pointing to an image url key. Upon loading the page, this `getImg(imgPath)` function dynamically requests (via axios routing) the correct image for all 100 artists, so then it can then be used as a svg pattern and mapped to the correct `D3` path. 
+
 ![Snippet 3](https://github.com/griffinsharp/INFLUNCD/blob/master/assets/GraphRender.png)
+Throughout all my research for this project, I really could not find one good example of what I was trying to do as far as mapping individual slices of a piechart to unique images. I tried many different solutions, but ulimately what I went with was saving each image to an svg 'pattern' with an id set to the image's unique url given from Firebase mentioned in the above snippet.
+
+As I iterate through each artist and select their slice on the DOM by unique ID, I give it a fill of `url(#${url})`. Since D3 paths are technically svgs, it finds the associated pattern/image under 'defs' with the matching ID, which is just `#firebase_url`, and it simply fills the path's background with the pattern/image. A path stroke is added, along with a `D3` `.transition()` + `duration()`, and a callback to `arcTweenEnter`, which is a function that handle's the initial loading animation of the slices when the graph first appears. 
 
 ## Architecture and Technologies
 This project will be implemented with the following technologies:
