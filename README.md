@@ -18,7 +18,7 @@ This visualization will be a single page, with the circular data visualization i
 ## Architecture and Technologies
 This project will be implemented with the following technologies:
 
-  - Vanilla `JavaScript` for underlying logic and functionality.
+  - `JavaScript` for underlying logic and functionality.
   - `D3.js` for data based DOM manipulation.
   - `Parcel` to bundle js files for the web.
   - `Babel` for backwards compatility for non-ECMAScript 2015+ engines.
