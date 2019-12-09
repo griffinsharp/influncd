@@ -4,9 +4,12 @@ Data is a beautiful, incredibly powerful thing, but is far too often not present
 Start by hovering over slices of the graph until you find an artist you're interested in. Then, give the slice a click, which will trigger an animation. Once the artist profile takes up the whole graph, feel free to check them out. Once you're done with your research, navigate back to the full graph by clicking on any blank space outside of the graph. For more on how I made this visualization, where I sourced the data, or any other questions, first check out the 'about' tab on the left side of the page. If you still have questions, or just would like to connect, my socials can be found right below the 'about' section. Enjoy!
 
 ## Site Functionality 
-Here's a glimpse at INFLUNCD in 3 gifs. To really appreciate the details in its D3 animations, JavaScript DOM Manipulation, and CSS tricks, please visit it in browser and navigate around. 
+Here's a glimpse at INFLUNCD in 3 gifs. To really appreciate the details in its D3 animations, JavaScript DOM Manipulation, and CSS tricks, please visit it in browser (Chrome for best performance) and navigate around. 
+
 ![gif 1](https://github.com/griffinsharp/INFLUNCD/blob/master/assets/inanim.gif)
-![gif 2](https://github.com/griffinsharp/INFLUNCD/blob/master/assets/outanim.gif)
+
+![gif 2](https://github.com/griffinsharp/INFLUNCD/blob/master/assets/exitanim.gif)
+
 ![gif 3](https://github.com/griffinsharp/INFLUNCD/blob/master/assets/modal.gif)
 
 ## Wireframes
