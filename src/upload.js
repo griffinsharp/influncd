@@ -1,17 +1,1 @@
-// ***DO-NOT UNCOMMENT***
-// import artists from '../artists.json';
-
-
-// function upload () {
-
-// artists.forEach((artist) => {
-//     let docRef = db.collection("musicians").doc();
-//     batch.set(docRef, artist);
-// });
-
-// batch.commit();
-
-// }
-
-// export default upload;
-
+// Code removed to prevent altering of database, but was used to batch upload from artists.json to Firebase.
