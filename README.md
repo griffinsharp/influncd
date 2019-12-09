@@ -7,10 +7,10 @@ Start by hovering over slices of the graph until you find an artist you're inter
 Here's a glimpse at INFLUNCD in 3 gifs. To really appreciate the details in its D3 animations, JavaScript DOM Manipulation, and CSS tricks, please visit it in browser (Chrome for best performance) and navigate around. 
 
 <p align="center"> 
-  <img src="https://github.com/griffinsharp/INFLUNCD/blob/master/assets/hoverfunctionality.gif">
-<img src="https://github.com/griffinsharp/INFLUNCD/blob/master/assets/inanim.gif">
-<img src="https://github.com/griffinsharp/INFLUNCD/blob/master/assets/exitanim.gif">
-<img src="https://github.com/griffinsharp/INFLUNCD/blob/master/assets/modal.gif">
+<img width="80%" src="https://github.com/griffinsharp/INFLUNCD/blob/master/assets/hoverfunctionality.gif">
+<img width="80%" src="https://github.com/griffinsharp/INFLUNCD/blob/master/assets/inanim.gif">
+<img width="80%" src="https://github.com/griffinsharp/INFLUNCD/blob/master/assets/exitanim.gif">
+<img width="80%" src="https://github.com/griffinsharp/INFLUNCD/blob/master/assets/modal.gif">
 </p>
 
 ## Wireframes
@@ -56,7 +56,7 @@ To bridge this gap, each artist in the database has a value of "image" pointing 
 
 Throughout all my research for this project, I really could not find one good example of what I was trying to do as far as mapping individual slices of a piechart to unique images. I tried many different solutions, but ulimately what I went with was saving each image to an svg 'pattern' with an id set to the image's unique url given from Firebase mentioned in the above snippet.
 
-As I iterate through each artist and select their slice on the DOM by unique ID, I give it a fill of `url(#${url})`. Since D3 paths are technically svgs, it finds the associated pattern/image under 'defs' with the matching ID, which is just `#firebase_url`, and it simply fills the path's background with the pattern/image. A path stroke is added, along with a `D3` `.transition()` + `duration()`, and a callback to `arcTweenEnter`, which is a function that handle's the initial loading animation of the slices when the graph first appears. 
+As I iterate through each artist and select their slice on the DOM by unique ID, I give it a fill of `url(#${url})` via `JS` interpolation to handle many different image urls. Since D3 paths are essentially [svgs](https://www.dashingd3js.com/svg-paths-and-d3js), it finds the associated pattern/image under 'defs' with the matching ID, which is just `#firebase_url`, and it simply fills the path's background with the pattern/image. A path stroke is added, along with a `D3` `.transition()` + `duration()`, and a callback to `arcTweenEnter`, which is a function that handle's the initial loading animation of the slices when the graph first appears. 
 
 ## Architecture and Technologies
 This project will be implemented with the following technologies:
