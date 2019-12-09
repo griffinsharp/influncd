@@ -36,7 +36,7 @@ The goal of the `trigger` variable is to limit when the user's click will actual
 
 The last part is a `D3` transition from the full musician circle back to its respective slice of the graph, interpolating between the `endAngle`'s current value, and the `endAngle`'s original value. `D3`'s `.interpolate()` method just takes a start and end value, which it transitions to over the time specified in `.duration()`, as we `return arcPath(d)` to repaint the outer path of the current slice back to its original, pre-clicked state.
 
-The final `setTimeout()` function puts the `D3` path node back in its previous spot, which I made sure to save reference to so I can use `.insertBefore()`. Rearranging the order of paths was crucial in allowing the slices to cover/not cover the other slices and animate appropriately.
+The final `setTimeout()` function puts the `D3` path node back in its previous spot, which I made sure to save reference to in order to utilize `.insertBefore()`. Rearranging the order of paths was crucial in allowing the slices to cover/not cover the other slices, animate appropriately, and maintain overall DOM integrity.
 
 ### Firebase Asset Management 
 
