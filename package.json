@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "start": "NODE_ENV=development parcel index.html",
+    "start": "NODE_ENV=development parcel index.html --no-hmr",
     "build": "NODE_ENV=production parcel build index.html"
   },
   "repository": {
