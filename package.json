@@ -15,7 +15,9 @@
     "url": "git+https://github.com/griffinsharp/INFLUNCD.git"
   },
   "babel": {
-    "presets": ["@babel/preset-env"]
+    "presets": [
+      "@babel/preset-env"
+    ]
   },
   "author": "",
   "license": "ISC",
@@ -36,6 +38,7 @@
     "storage": "^0.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.7.5",
     "@babel/preset-env": "^7.7.6",
     "parcel": "^1.12.4"
   }

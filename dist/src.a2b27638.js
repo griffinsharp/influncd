@@ -31201,7 +31201,6 @@ exports.default = void 0;
 
 function modal() {
   // set up var for the about-container
-  console.log('hi');
   var about = document.querySelector("div.about-container"); // on a click of the about
 
   about.addEventListener("click", function () {
@@ -31296,7 +31295,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59964" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65314" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

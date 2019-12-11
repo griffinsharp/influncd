@@ -1,7 +1,6 @@
 
 function modal() {
     // set up var for the about-container
-    console.log('hi');
     const about = document.querySelector("div.about-container");
 
     // on a click of the about
