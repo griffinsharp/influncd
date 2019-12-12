@@ -30771,7 +30771,7 @@ function graph() {
         }).each(function (d) {
           this._current = d;
         });
-        var render = graph.selectAll("#".concat(art.id)).attr('fill', "url(#".concat(url, ")")).attr('class', 'arc') // no longer need bc of our Tween for arcEnter 
+        var render = graph.selectAll("#".concat(art.id)).attr('fill', "url(#".concat(url, ")")).attr('class', 'arc').attr('class', 'pointer') // no longer need bc of our Tween for arcEnter 
         // .attr('d', arcPath)
         .attr('stroke', '#fafafa').attr('stroke-width', 1).transition().duration(7000).attrTween("d", arcTweenEnter);
         var prevEnd;
@@ -30783,8 +30783,9 @@ function graph() {
           if (trigger === 'true') {
             trigger = 'false';
             var that = this;
+            this.classList.remove("pointer");
             this.parentNode.appendChild(this);
-            d3.select(n[i]).transition().duration(10000).attrTween("d", function (d) {
+            d3.select(n[i]).transition().duration(9000).attrTween("d", function (d) {
               var i = d3.interpolate(d.endAngle, d.endAngle + 6.25);
               prevEnd = d.endAngle;
               return function (t) {
@@ -30836,7 +30837,7 @@ function graph() {
                   document.querySelector('div.remove-box').remove();
                   trigger = 'true';
                 }, 1000);
-                node.transition().duration(20000).attrTween("d", function (d) {
+                node.transition().duration(8500).attrTween("d", function (d) {
                   var i = d3.interpolate(d.endAngle, prevEnd);
                   return function (t) {
                     d.endAngle = i(t);
@@ -30845,9 +30846,10 @@ function graph() {
                 });
                 setTimeout(function () {
                   that.parentNode.insertBefore(that, nextNode);
-                }, 20000);
+                  that.classList.add("pointer");
+                }, 8500);
               });
-            }, 9000);
+            }, 8000);
           }
         }).on('mouseover', function (d, i, n) {
           tip.show(d, n[i]);

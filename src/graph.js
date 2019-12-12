@@ -100,6 +100,7 @@ function graph () {
                 let render = graph.selectAll(`#${art.id}`)
                     .attr('fill', `url(#${url})`)
                     .attr('class', 'arc')
+                    .attr('class', 'pointer')
                     // no longer need bc of our Tween for arcEnter 
                     // .attr('d', arcPath)
                     .attr('stroke', '#fafafa')
@@ -115,9 +116,10 @@ function graph () {
                        if (trigger === 'true') {
                            trigger = 'false';
                            let that = this;
+                           this.classList.remove("pointer");
                            this.parentNode.appendChild(this);
                            d3.select(n[i])
-                               .transition().duration(10000)
+                               .transition().duration(9000)
                                .attrTween("d", (d) => {
 
 
@@ -189,7 +191,7 @@ function graph () {
                                    
                 
                    
-                                   node.transition().duration(20000)
+                                   node.transition().duration(8500)
                                        .attrTween("d", (d) => {
                                            let i = d3.interpolate(d.endAngle, prevEnd);
                                            return function (t) {
@@ -200,11 +202,14 @@ function graph () {
                                         
                                            
                                        });
-                                   setTimeout(() => { that.parentNode.insertBefore(that, nextNode);}, 20000);
-                                
+                                   setTimeout(() => {
+                                       that.parentNode.insertBefore(that, nextNode);
+                                       that.classList.add("pointer");
+                                    }, 8500);
+                                       
                 
                                });
-                            }, 9000);
+                            }, 8000);
                            
 
                        }
