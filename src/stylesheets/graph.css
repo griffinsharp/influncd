@@ -6,30 +6,25 @@
 
 path {
     -webkit-animation: fadein 1s;
-    transition: transform 0.5s;
-    
+    transition: transform 0.5s;  
 }
 
 path:hover {
-   position: relative; 
-  transform: scale(1.02);
-  transition: transform 0.5s;
-  
+    position: relative; 
+    transform: scale(1.05);
+    transition: transform 0.5s;
 }
 
 .artist {
-   
-position: absolute;
+    position: absolute;
     transform: translate(-40%);
-    width: 185%;
-    
-    
+    width: 185%;  
 }
 
 .circle-svg {
     /* just to center circle up a tad */
-    margin-left: 100px;
-    margin-top: 100px;
+    margin-left: 80px;
+    margin-top: 80px;
 }
 
 .tip {
@@ -73,9 +68,8 @@ position: absolute;
 .remove-box {
     -webkit-animation: fadein 5s;
     position: absolute;
-    left: 644px;
     cursor: pointer;
-    left: 646px;
+    left: 642px;
 }
 
 .fade-out {
@@ -89,7 +83,6 @@ position: absolute;
 .bio-link:hover {
     color: #fafafa;
 }
-
 
 @keyframes fadein {
     from { opacity: 0; }

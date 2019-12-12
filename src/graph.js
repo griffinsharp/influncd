@@ -24,7 +24,7 @@ function graph () {
     const defs = svg.append('defs')
 
     const graph = svg.append('g')
-    .attr('transform', `translate(${cent.x}, ${cent.y})`);
+    .attr('transform', `translate(${325}, ${325})`);
 
     
 

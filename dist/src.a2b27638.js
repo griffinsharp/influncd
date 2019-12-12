@@ -30724,7 +30724,7 @@ function graph() {
   // translate to the center of the svg container
 
   var defs = svg.append('defs');
-  var graph = svg.append('g').attr('transform', "translate(".concat(cent.x, ", ").concat(cent.y, ")")); // pie generator for slices 
+  var graph = svg.append('g').attr('transform', "translate(".concat(325, ", ", 325, ")")); // pie generator for slices 
   // returns a function which will generate the angles for our slices
   // don't re-sort data (null)
   // takes in our data and determines how big each slice should be automatically
