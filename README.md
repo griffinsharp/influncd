@@ -73,8 +73,11 @@ This project will be implemented with the following technologies:
 In addition to the entry file, there will be three scripts involved in this project:
 
 `graph.js`: Majority of the d3 logic.
+
 `modal.js`: DOM manipulation for creation and deletion of modal on 'click'.
+
 `upload.js`: Single use, batch upload data to firebase via json (artists.json).
+
 `index.js`: Script entry file.
 
 ## Bonus Features
