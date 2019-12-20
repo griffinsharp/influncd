@@ -2,8 +2,6 @@ import * as d3 from 'd3';
 import d3Tip from "d3-tip";
 import axios from 'axios';
 
-    // notes as I learn d3...
-
 function graph () {
     // svg container, set width and height of container (with extra space of 50px)
     // dimensions of graph

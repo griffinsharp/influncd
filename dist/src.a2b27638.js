@@ -30705,7 +30705,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-// notes as I learn d3...
 function graph() {
   // svg container, set width and height of container (with extra space of 50px)
   // dimensions of graph
