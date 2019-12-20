@@ -11,7 +11,7 @@ path {
 
 path:hover {
     position: relative; 
-    transform: scale(1.05);
+    transform: scale(1.07);
     transition: transform 0.5s;
 }
 
@@ -34,8 +34,8 @@ path:hover {
 .tip {
    top: 100px !important;
    left: 1020px !important;
-   -webkit-animation: fadetip 5s;
-   transition: opacity 2s;
+   -webkit-animation: fadetip 1s;
+   transition: opacity 1s;
 }
 
 .text-box {
@@ -73,7 +73,20 @@ path:hover {
     -webkit-animation: fadein 5s;
     position: absolute;
     cursor: pointer;
-    left: 642px;
+    left: 634px;
+    text-align: center;
+    border: 1px solid;
+    width: fit-content;
+    padding: 8px;
+    margin-top: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.remove-box:hover {
+    box-shadow: 3px 2px 2px rgba(0,0,0,0.55);
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.01, 1.01);
+    cursor: pointer;
 }
 
 .fade-out {

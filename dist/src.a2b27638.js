@@ -30773,7 +30773,7 @@ function graph() {
         });
         var render = graph.selectAll("#".concat(art.id)).attr('fill', "url(#".concat(url, ")")).attr('class', 'arc').attr('class', 'pointer') // no longer need bc of our Tween for arcEnter 
         // .attr('d', arcPath)
-        .attr('stroke', '#fafafa').attr('stroke-width', 1).transition().duration(7000).attrTween("d", arcTweenEnter);
+        .attr('stroke', '#fafafa').attr('stroke-width', 1).transition().duration(3000).attrTween("d", arcTweenEnter);
         var prevEnd;
         var trigger = 'true';
         graph.selectAll('path').on('click', function (d, i, n) {
@@ -30785,7 +30785,7 @@ function graph() {
             var that = this;
             this.classList.remove("pointer");
             this.parentNode.appendChild(this);
-            d3.select(n[i]).transition().duration(9000).attrTween("d", function (d) {
+            d3.select(n[i]).transition().duration(3000).attrTween("d", function (d) {
               var i = d3.interpolate(d.endAngle, d.endAngle + 6.25);
               prevEnd = d.endAngle;
               return function (t) {
@@ -30837,7 +30837,7 @@ function graph() {
                   document.querySelector('div.remove-box').remove();
                   trigger = 'true';
                 }, 1000);
-                node.transition().duration(8500).attrTween("d", function (d) {
+                node.transition().duration(3500).attrTween("d", function (d) {
                   var i = d3.interpolate(d.endAngle, prevEnd);
                   return function (t) {
                     d.endAngle = i(t);
@@ -30847,9 +30847,9 @@ function graph() {
                 setTimeout(function () {
                   that.parentNode.insertBefore(that, nextNode);
                   that.classList.add("pointer");
-                }, 8500);
+                }, 3500);
               });
-            }, 8000);
+            }, 2500);
           }
         }).on('mouseover', function (d, i, n) {
           tip.show(d, n[i]);
@@ -30857,17 +30857,7 @@ function graph() {
         }).on('mouseout', function (d, i, n) {
           tip.hide();
           handleMouseOut(d, i, n);
-        }); // .on("mouseout", function(d, i, n ) {
-        //     d3.select(n[i])
-        //         .transition().duration(7000)
-        //         .attrTween("d", (d) => { 
-        //             let i = d3.interpolate(d.endAngle, d.endAngle - 360);
-        //             return function (t) {
-        //                 d.endAngle = i(t);
-        //                 return arcPath(d);
-        //             };
-        //         });
-        // })
+        });
       });
     });
   }; // DATA ARRAY AND FIRESTONE

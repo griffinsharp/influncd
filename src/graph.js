@@ -105,21 +105,21 @@ function graph () {
                     // .attr('d', arcPath)
                     .attr('stroke', '#fafafa')
                     .attr('stroke-width', 1)
-                    .transition().duration(7000)
+                    .transition().duration(3000)
                     .attrTween("d", arcTweenEnter);
             let prevEnd;
             let trigger = 'true';
                 graph.selectAll('path')
                     .on('click', function (d, i, n) {
                         let node = d3.select(n[i]);
-                        let nextNode = n[i+1]
+                        let nextNode = n[i+1];
                        if (trigger === 'true') {
                            trigger = 'false';
                            let that = this;
                            this.classList.remove("pointer");
                            this.parentNode.appendChild(this);
                            d3.select(n[i])
-                               .transition().duration(9000)
+                               .transition().duration(3000)
                                .attrTween("d", (d) => {
 
 
@@ -191,7 +191,7 @@ function graph () {
                                    
                 
                    
-                                   node.transition().duration(8500)
+                                   node.transition().duration(3500)
                                        .attrTween("d", (d) => {
                                            let i = d3.interpolate(d.endAngle, prevEnd);
                                            return function (t) {
@@ -205,11 +205,11 @@ function graph () {
                                    setTimeout(() => {
                                        that.parentNode.insertBefore(that, nextNode);
                                        that.classList.add("pointer");
-                                    }, 8500);
+                                    }, 3500);
                                        
                 
                                });
-                            }, 8000);
+                            }, 2500);
                            
 
                        }
@@ -223,25 +223,9 @@ function graph () {
                     .on('mouseout', (d, i, n) => {
                         tip.hide();
                         handleMouseOut(d, i, n);
-                    })
-                    // .on("mouseout", function(d, i, n ) {
-                    //     d3.select(n[i])
-                    //         .transition().duration(7000)
-                    //         .attrTween("d", (d) => { 
-                           
-                    //             let i = d3.interpolate(d.endAngle, d.endAngle - 360);
-                    //             return function (t) {
-                    //                 d.endAngle = i(t);
-                    //                 return arcPath(d);
-                    //             };
-                    //         });
-                    // })
-
-                
+                    });
             });
-
-        })
-           
+        });
     };  
 
 
@@ -276,11 +260,8 @@ function graph () {
                 default:
                     break;    
             }    
-
         });
-        
         update(data);
-
     });
 
 
