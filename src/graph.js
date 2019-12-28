@@ -103,7 +103,7 @@ function graph () {
                     // .attr('d', arcPath)
                     .attr('stroke', '#fafafa')
                     .attr('stroke-width', 1)
-                    .transition().duration(3000)
+                    .transition().duration(1500)
                     .attrTween("d", arcTweenEnter);
             let prevEnd;
             let trigger = 'true';

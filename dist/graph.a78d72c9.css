@@ -34,8 +34,8 @@ path:hover {
 .tip {
    top: 100px !important;
    left: 1020px !important;
-   -webkit-animation: fadetip 1s;
-   transition: opacity 1s;
+   -webkit-animation: fadetip 0.3s;
+   transition: opacity 0.3s;
 }
 
 .text-box {
@@ -52,6 +52,7 @@ path:hover {
     -webkit-animation: fadein 5s;
     top: 320px;
 }
+
 .name-box {
     position: absolute;
     width: 450px;

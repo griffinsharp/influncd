@@ -30772,7 +30772,7 @@ function graph() {
         });
         var render = graph.selectAll("#".concat(art.id)).attr('fill', "url(#".concat(url, ")")).attr('class', 'arc').attr('class', 'pointer') // no longer need bc of our Tween for arcEnter 
         // .attr('d', arcPath)
-        .attr('stroke', '#fafafa').attr('stroke-width', 1).transition().duration(3000).attrTween("d", arcTweenEnter);
+        .attr('stroke', '#fafafa').attr('stroke-width', 1).transition().duration(1500).attrTween("d", arcTweenEnter);
         var prevEnd;
         var trigger = 'true';
         graph.selectAll('path').on('click', function (d, i, n) {
