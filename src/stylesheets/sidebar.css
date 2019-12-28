@@ -52,7 +52,7 @@ h1:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    -webkit-animation: fadein 7s;
+    -webkit-animation: fadein 5s;
 
 }
 
