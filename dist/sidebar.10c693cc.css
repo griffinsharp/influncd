@@ -25,6 +25,7 @@ h1:hover {
      -webkit-text-fill-color: black;
      -webkit-text-stroke-width: 1px;
      -webkit-text-stroke-color: #fafafa;
+     cursor: default;
 }
 
 .about-container {
