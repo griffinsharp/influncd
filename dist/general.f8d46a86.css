@@ -1,8 +1,12 @@
 .project-container {
     display: flex;
     flex-direction: row;
-    height: 1000px;
+    height: 820px;
     width: auto;
+}
+
+body {
+    background-color: #fafafa;
 }
 
 /*# sourceMappingURL=/general.f8d46a86.css.map */
