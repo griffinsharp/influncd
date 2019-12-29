@@ -73,7 +73,7 @@ function modal() {
             modalBackground.classList.add("fade-out-modal");
             setTimeout(() => {
                 modalBackground.remove();
-            }, 2000);
+            }, 400);
         })
 
         

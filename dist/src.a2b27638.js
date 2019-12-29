@@ -30979,7 +30979,7 @@ function modal() {
       modalBackground.classList.add("fade-out-modal");
       setTimeout(function () {
         modalBackground.remove();
-      }, 2000);
+      }, 400);
     });
   });
 }

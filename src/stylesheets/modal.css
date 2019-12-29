@@ -15,7 +15,7 @@
 }
 
 .fade-out-modal {
-    -webkit-animation: fadeout 2s;
+    -webkit-animation: fadeout 0.5s;
 }
 
 .exit-button {
