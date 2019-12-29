@@ -30784,7 +30784,7 @@ function graph() {
             var that = this;
             this.classList.remove("pointer");
             this.parentNode.appendChild(this);
-            d3.select(n[i]).transition().duration(3000).attrTween("d", function (d) {
+            d3.select(n[i]).transition().duration(1500).attrTween("d", function (d) {
               var i = d3.interpolate(d.endAngle, d.endAngle + 6.25);
               prevEnd = d.endAngle;
               return function (t) {
@@ -30835,8 +30835,8 @@ function graph() {
                   document.querySelector("div.name-box").remove();
                   document.querySelector('div.remove-box').remove();
                   trigger = 'true';
-                }, 1000);
-                node.transition().duration(3500).attrTween("d", function (d) {
+                }, 290);
+                node.transition().duration(1800).attrTween("d", function (d) {
                   var i = d3.interpolate(d.endAngle, prevEnd);
                   return function (t) {
                     d.endAngle = i(t);
@@ -30846,9 +30846,9 @@ function graph() {
                 setTimeout(function () {
                   that.parentNode.insertBefore(that, nextNode);
                   that.classList.add("pointer");
-                }, 3500);
+                }, 1800);
               });
-            }, 2500);
+            }, 1300);
           }
         }).on('mouseover', function (d, i, n) {
           tip.show(d, n[i]);

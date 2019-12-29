@@ -117,7 +117,7 @@ function graph () {
                            this.classList.remove("pointer");
                            this.parentNode.appendChild(this);
                            d3.select(n[i])
-                               .transition().duration(3000)
+                               .transition().duration(1500)
                                .attrTween("d", (d) => {
 
 
@@ -185,11 +185,11 @@ function graph () {
                                        document.querySelector("div.text-box").remove();
                                        document.querySelector("div.name-box").remove();
                                        document.querySelector('div.remove-box').remove();
-                                       trigger = 'true';}, 1000 );
+                                       trigger = 'true';}, 290 );
                                    
                 
                    
-                                   node.transition().duration(3500)
+                                   node.transition().duration(1800)
                                        .attrTween("d", (d) => {
                                            let i = d3.interpolate(d.endAngle, prevEnd);
                                            return function (t) {
@@ -203,11 +203,11 @@ function graph () {
                                    setTimeout(() => {
                                        that.parentNode.insertBefore(that, nextNode);
                                        that.classList.add("pointer");
-                                    }, 3500);
+                                    }, 1800);
                                        
                 
                                });
-                            }, 2500);
+                            }, 1300);
                            
 
                        }
