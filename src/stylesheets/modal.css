@@ -3,16 +3,15 @@
 .background-greeting {
     width: 90%;
     min-width: 1100px;
-    height: 400px;
+    height: 528px;
     background-color: #000000c0;
-    -webkit-animation: drawin 1s;
+    -webkit-animation: drawingreeting 1s;
     z-index: 3;
     left: 5%;
-    top: 20px;
+    top: 60px;
     position: absolute;
     display: flex;
     flex-direction: column;
-    height: 590px;
 }
 
 .greeting-container {
@@ -207,6 +206,13 @@
 @keyframes drawin {
     from { top: -10px }
     to   { top: 20px; }
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes drawingreeting {
+    from { top: -10px }
+    to   { top: 60px; }
     from { opacity: 0; }
     to   { opacity: 1; }
 }
