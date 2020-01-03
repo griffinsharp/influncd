@@ -46,20 +46,20 @@ function greeting() {
 
         let tutorial = document.createElement('div');
         tutorial.className = 'greeting-tutorial';
-        tutorial.innerHTML = "2. Click on a slice to learn more about the artist.";
+        tutorial.innerHTML = "2. Click on a slice to learn more about that artist.";
         document.querySelector("div.greeting-container")
             .append(tutorial);
             
 
         let links = document.createElement('div');
         links.className = 'greeting-links';
-        links.innerHTML = "3. Done? Click the button below the chart to return to the starting position.";
+        links.innerHTML = "3. Done? Click the button below the chart to return back to the starting position.";
         document.querySelector("div.greeting-container")
             .append(links);
 
     let links2 = document.createElement('div');
     links2.className = 'greeting-footer-top';
-    links2.innerHTML = "Want to learn more about the data or the technologies used?";
+    links2.innerHTML = "Want to learn more about the technologies used or how 'relative influence' is calculated?";
     document.querySelector("div.greeting-container")
         .append(links2);
         
