@@ -117,7 +117,133 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"node_modules/d3/dist/package.js":[function(require,module,exports) {
+})({"src/modal.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function modal() {
+  // set up var for the about-container
+  var about = document.querySelector("div.about-container"); // on a click of the about
+
+  about.addEventListener("click", function () {
+    var modalBackground = document.createElement('div');
+    modalBackground.className = 'background-modal';
+    document.querySelector("div.project-container").append(modalBackground);
+    var exitButton = document.createElement('div');
+    exitButton.className = 'exit-button';
+    exitButton.innerHTML = '<i class="far fa-times-circle"></i>';
+    document.querySelector("div.background-modal").append(exitButton);
+    var modalContainer = document.createElement('div');
+    modalContainer.className = 'modal-container';
+    document.querySelector("div.background-modal").append(modalContainer);
+    var title = document.createElement('div');
+    title.className = 'modal-title';
+    title.innerHTML = "INFLUNCD";
+    document.querySelector("div.modal-container").append(title);
+    var subTitle = document.createElement('div');
+    subTitle.className = 'modal-subtitle';
+    subTitle.innerHTML = "A JavaScript data visualization by Griffin Sharp.";
+    document.querySelector("div.modal-container").append(subTitle);
+    var intro = document.createElement('div');
+    intro.className = 'modal-intro';
+    intro.innerHTML = "Data is a beautiful, incredibly powerful thing, but is far too often not presented as such. INFLUNCD hopes to help better visually represent who influenced, and to what degree, the current landscape of popular music in Western culture. Discovering more about your favorite musician's favorite musician is just a few clicks away.";
+    document.querySelector("div.modal-container").append(intro);
+    var tutorial = document.createElement('div');
+    tutorial.className = 'modal-tutorial';
+    tutorial.innerHTML = "Using INFLUNCD is simple. Hover over a slice of the graph to reveal the associated artist's name and their influence relative to the 99 other artists. Then, click on the slice to reveal specific information pertaining to the artist with a link to continue reading. Once you've concluded your research, simply click the text below the graph to return back to where you started.";
+    document.querySelector("div.modal-container").append(tutorial);
+    var links = document.createElement('div');
+    links.className = 'modal-links';
+    links.innerHTML = "The data utilized for this project was provided via <a class='quartz-allmusic' target='_blank' href=https://qz.com/1094962/a-definitive-list-of-the-musicians-who-influenced-our-lives-most/>Quartz</a> and <a class='quartz-allmusic' target='_blank' href=https://www.theatlas.com/charts/S1QdKOZ3- />AllMusic</a>. They '[collected data] on 53,630 artists, of which about 25,600 were listed as having influenced or been influenced by at least one other artist.' In short, they assembled connections between artists from research, interviews, or strong editor inference, and although this method may come with some inherent biases, it's said to be the most 'thorough examination of artist relationships to exist.'";
+    document.querySelector("div.modal-container").append(links);
+    var warning = document.createElement('div');
+    warning.className = 'modal-warning';
+    warning.innerHTML = "Having trouble viewing? INFLUNCD is currently optimized to run on the Google Chrome desktop browser due to animation and library performance.";
+    document.querySelector("div.modal-container").append(warning);
+    exitButton.addEventListener("click", function () {
+      modalBackground.classList.add("fade-out-modal");
+      setTimeout(function () {
+        modalBackground.remove();
+      }, 400);
+    });
+  });
+}
+
+var _default = modal; // let nameDiv = document.createElement('div');
+// nameDiv.className = 'name-box';
+// let artistName = d.data.artist.includes("_") ? d.data.artist.split("_").join(" ") : d.data.artist;
+// nameDiv.innerHTML = `${artistName}`;
+// document.querySelector("div.project-container")
+//     .append(about);
+
+exports.default = _default;
+},{}],"src/greeting.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _modal = _interopRequireDefault(require("./modal.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function greeting() {
+  var modalBackground = document.createElement('div');
+  modalBackground.className = 'background-greeting';
+  document.querySelector("div.project-container").append(modalBackground);
+  var exitButton = document.createElement('div');
+  exitButton.className = 'exit-button';
+  exitButton.innerHTML = '<i class="far fa-times-circle"></i>';
+  document.querySelector("div.background-greeting").append(exitButton);
+  var modalContainer = document.createElement('div');
+  modalContainer.className = 'greeting-container';
+  document.querySelector("div.background-greeting").append(modalContainer);
+  var title = document.createElement('div');
+  title.className = 'greeting-title';
+  title.innerHTML = "Welcome to INFLUNCD";
+  document.querySelector("div.greeting-container").append(title);
+  var subTitle = document.createElement('div');
+  subTitle.className = 'greeting-subtitle';
+  subTitle.innerHTML = "Let's get started:";
+  document.querySelector("div.greeting-container").append(subTitle);
+  var intro = document.createElement('div');
+  intro.className = 'greeting-intro';
+  intro.innerHTML = "1. Hover your cursor over a slice of the chart. Each slice represents an artist.";
+  document.querySelector("div.greeting-container").append(intro);
+  var tutorial = document.createElement('div');
+  tutorial.className = 'greeting-tutorial';
+  tutorial.innerHTML = "2. Click on a slice to learn more about that artist.";
+  document.querySelector("div.greeting-container").append(tutorial);
+  var links = document.createElement('div');
+  links.className = 'greeting-links';
+  links.innerHTML = "3. Done? Click the button below the chart to return back to the starting position.";
+  document.querySelector("div.greeting-container").append(links);
+  var links2 = document.createElement('div');
+  links2.className = 'greeting-footer-top';
+  links2.innerHTML = "Want to learn more about the technologies used or how 'relative influence' is calculated?";
+  document.querySelector("div.greeting-container").append(links2);
+  var links3 = document.createElement('div');
+  links3.className = 'greeting-footer';
+  links3.innerHTML = "Click on the 'about' tab (left side of the page) or checkout the <a class='quartz-allmusic' target='_blank' href=https://github.com/griffinsharp/INFLUNCD>github repo.</a>";
+  document.querySelector("div.greeting-container").append(links3);
+  exitButton.addEventListener("click", function () {
+    modalBackground.classList.add("fade-out-modal");
+    (0, _modal.default)();
+    setTimeout(function () {
+      modalBackground.remove();
+    }, 400);
+  });
+}
+
+var _default = greeting;
+exports.default = _default;
+},{"./modal.js":"src/modal.js"}],"node_modules/d3/dist/package.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30928,142 +31054,16 @@ function graph() {
 
 var _default = graph;
 exports.default = _default;
-},{"d3":"node_modules/d3/index.js","d3-tip":"node_modules/d3-tip/index.js","axios":"node_modules/axios/index.js"}],"src/modal.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-function modal() {
-  // set up var for the about-container
-  var about = document.querySelector("div.about-container"); // on a click of the about
-
-  about.addEventListener("click", function () {
-    var modalBackground = document.createElement('div');
-    modalBackground.className = 'background-modal';
-    document.querySelector("div.project-container").append(modalBackground);
-    var exitButton = document.createElement('div');
-    exitButton.className = 'exit-button';
-    exitButton.innerHTML = '<i class="far fa-times-circle"></i>';
-    document.querySelector("div.background-modal").append(exitButton);
-    var modalContainer = document.createElement('div');
-    modalContainer.className = 'modal-container';
-    document.querySelector("div.background-modal").append(modalContainer);
-    var title = document.createElement('div');
-    title.className = 'modal-title';
-    title.innerHTML = "INFLUNCD";
-    document.querySelector("div.modal-container").append(title);
-    var subTitle = document.createElement('div');
-    subTitle.className = 'modal-subtitle';
-    subTitle.innerHTML = "A JavaScript data visualization by Griffin Sharp.";
-    document.querySelector("div.modal-container").append(subTitle);
-    var intro = document.createElement('div');
-    intro.className = 'modal-intro';
-    intro.innerHTML = "Data is a beautiful, incredibly powerful thing, but is far too often not presented as such. INFLUNCD hopes to help better visually represent who influenced, and to what degree, the current landscape of popular music in Western culture. Discovering more about your favorite musician's favorite musician is just a few clicks away.";
-    document.querySelector("div.modal-container").append(intro);
-    var tutorial = document.createElement('div');
-    tutorial.className = 'modal-tutorial';
-    tutorial.innerHTML = "Using INFLUNCD is simple. Hover over a slice of the graph to reveal the associated artist's name and their influence relative to the 99 other artists. Then, click on the slice to reveal specific information pertaining to the artist with a link to continue reading. Once you've concluded your research, simply click the text below the graph to return back to where you started.";
-    document.querySelector("div.modal-container").append(tutorial);
-    var links = document.createElement('div');
-    links.className = 'modal-links';
-    links.innerHTML = "The data utilized for this project was provided via <a class='quartz-allmusic' target='_blank' href=https://qz.com/1094962/a-definitive-list-of-the-musicians-who-influenced-our-lives-most/>Quartz</a> and <a class='quartz-allmusic' target='_blank' href=https://www.theatlas.com/charts/S1QdKOZ3- />AllMusic</a>. They '[collected data] on 53,630 artists, of which about 25,600 were listed as having influenced or been influenced by at least one other artist.' In short, they assembled connections between artists from research, interviews, or strong editor inference, and although this method may come with some inherent biases, it's said to be the most 'thorough examination of artist relationships to exist.'";
-    document.querySelector("div.modal-container").append(links);
-    var warning = document.createElement('div');
-    warning.className = 'modal-warning';
-    warning.innerHTML = "Having trouble viewing? INFLUNCD is currently optimized to run on the Google Chrome desktop browser due to animation and library performance.";
-    document.querySelector("div.modal-container").append(warning);
-    exitButton.addEventListener("click", function () {
-      modalBackground.classList.add("fade-out-modal");
-      setTimeout(function () {
-        modalBackground.remove();
-      }, 400);
-    });
-  });
-}
-
-var _default = modal; // let nameDiv = document.createElement('div');
-// nameDiv.className = 'name-box';
-// let artistName = d.data.artist.includes("_") ? d.data.artist.split("_").join(" ") : d.data.artist;
-// nameDiv.innerHTML = `${artistName}`;
-// document.querySelector("div.project-container")
-//     .append(about);
-
-exports.default = _default;
-},{}],"src/greeting.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _graph = _interopRequireDefault(require("./graph.js"));
-
-var _modal = _interopRequireDefault(require("./modal.js"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function greeting() {
-  (0, _graph.default)();
-  var modalBackground = document.createElement('div');
-  modalBackground.className = 'background-greeting';
-  document.querySelector("div.project-container").append(modalBackground);
-  var exitButton = document.createElement('div');
-  exitButton.className = 'exit-button';
-  exitButton.innerHTML = '<i class="far fa-times-circle"></i>';
-  document.querySelector("div.background-greeting").append(exitButton);
-  var modalContainer = document.createElement('div');
-  modalContainer.className = 'greeting-container';
-  document.querySelector("div.background-greeting").append(modalContainer);
-  var title = document.createElement('div');
-  title.className = 'greeting-title';
-  title.innerHTML = "Welcome to INFLUNCD";
-  document.querySelector("div.greeting-container").append(title);
-  var subTitle = document.createElement('div');
-  subTitle.className = 'greeting-subtitle';
-  subTitle.innerHTML = "Let's get started:";
-  document.querySelector("div.greeting-container").append(subTitle);
-  var intro = document.createElement('div');
-  intro.className = 'greeting-intro';
-  intro.innerHTML = "1. Hover your cursor over a slice of the chart. Each slice represents an artist.";
-  document.querySelector("div.greeting-container").append(intro);
-  var tutorial = document.createElement('div');
-  tutorial.className = 'greeting-tutorial';
-  tutorial.innerHTML = "2. Click on a slice to learn more about that artist.";
-  document.querySelector("div.greeting-container").append(tutorial);
-  var links = document.createElement('div');
-  links.className = 'greeting-links';
-  links.innerHTML = "3. Done? Click the button below the chart to return back to the starting position.";
-  document.querySelector("div.greeting-container").append(links);
-  var links2 = document.createElement('div');
-  links2.className = 'greeting-footer-top';
-  links2.innerHTML = "Want to learn more about the technologies used or how 'relative influence' is calculated?";
-  document.querySelector("div.greeting-container").append(links2);
-  var links3 = document.createElement('div');
-  links3.className = 'greeting-footer';
-  links3.innerHTML = "Click on the 'about' tab (left side of the page) or checkout the <a class='quartz-allmusic' target='_blank' href=https://github.com/griffinsharp/INFLUNCD>github repo.</a>";
-  document.querySelector("div.greeting-container").append(links3);
-  exitButton.addEventListener("click", function () {
-    modalBackground.classList.add("fade-out-modal");
-    (0, _modal.default)();
-    setTimeout(function () {
-      modalBackground.remove();
-    }, 400);
-  });
-}
-
-var _default = greeting;
-exports.default = _default;
-},{"./graph.js":"src/graph.js","./modal.js":"src/modal.js"}],"src/index.js":[function(require,module,exports) {
+},{"d3":"node_modules/d3/index.js","d3-tip":"node_modules/d3-tip/index.js","axios":"node_modules/axios/index.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _greeting = _interopRequireDefault(require("./greeting.js"));
 
+var _graph = _interopRequireDefault(require("./graph.js"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _greeting.default)(); // import upload from './upload.js';
-},{"./greeting.js":"src/greeting.js"}]},{},["src/index.js"], null)
+(0, _greeting.default)();
+(0, _graph.default)(); // import upload from './upload.js';
+},{"./greeting.js":"src/greeting.js","./graph.js":"src/graph.js"}]},{},["src/index.js"], null)
 //# sourceMappingURL=/src.a2b27638.js.map

@@ -1,9 +1,6 @@
-import graph from './graph.js';
 import modal from './modal.js';
 
 function greeting() {
-    
-    graph();
 
         let modalBackground = document.createElement('div');
         modalBackground.className = 'background-greeting';
