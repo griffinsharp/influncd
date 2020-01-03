@@ -31,6 +31,10 @@ path:hover {
     margin-top: 80px;
 }
 
+.hidden {
+    display: none;
+}
+
 .tip {
    top: 100px !important;
    left: 1020px !important;

@@ -30992,8 +30992,13 @@ var _default = modal; // let nameDiv = document.createElement('div');
 //     .append(about);
 
 exports.default = _default;
-},{}],"src/index.js":[function(require,module,exports) {
+},{}],"src/greeting.js":[function(require,module,exports) {
 "use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
 
 var _graph = _interopRequireDefault(require("./graph.js"));
 
@@ -31001,8 +31006,64 @@ var _modal = _interopRequireDefault(require("./modal.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import upload from './upload.js';
-(0, _graph.default)();
-(0, _modal.default)();
-},{"./graph.js":"src/graph.js","./modal.js":"src/modal.js"}]},{},["src/index.js"], null)
+function greeting() {
+  (0, _graph.default)();
+  var modalBackground = document.createElement('div');
+  modalBackground.className = 'background-greeting';
+  document.querySelector("div.project-container").append(modalBackground);
+  var exitButton = document.createElement('div');
+  exitButton.className = 'exit-button';
+  exitButton.innerHTML = '<i class="far fa-times-circle"></i>';
+  document.querySelector("div.background-greeting").append(exitButton);
+  var modalContainer = document.createElement('div');
+  modalContainer.className = 'greeting-container';
+  document.querySelector("div.background-greeting").append(modalContainer);
+  var title = document.createElement('div');
+  title.className = 'greeting-title';
+  title.innerHTML = "Welcome to INFLUNCD";
+  document.querySelector("div.greeting-container").append(title);
+  var subTitle = document.createElement('div');
+  subTitle.className = 'greeting-subtitle';
+  subTitle.innerHTML = "Let's get started:";
+  document.querySelector("div.greeting-container").append(subTitle);
+  var intro = document.createElement('div');
+  intro.className = 'greeting-intro';
+  intro.innerHTML = "1. Hover your cursor over a slice of the chart. Each slice represents an artist.";
+  document.querySelector("div.greeting-container").append(intro);
+  var tutorial = document.createElement('div');
+  tutorial.className = 'greeting-tutorial';
+  tutorial.innerHTML = "2. Click on a slice to learn more about the artist.";
+  document.querySelector("div.greeting-container").append(tutorial);
+  var links = document.createElement('div');
+  links.className = 'greeting-links';
+  links.innerHTML = "3. Done? Click the button below the chart to return to the starting position.";
+  document.querySelector("div.greeting-container").append(links);
+  var links2 = document.createElement('div');
+  links2.className = 'greeting-footer-top';
+  links2.innerHTML = "Want to learn more about the data or the technologies used?";
+  document.querySelector("div.greeting-container").append(links2);
+  var links3 = document.createElement('div');
+  links3.className = 'greeting-footer';
+  links3.innerHTML = "Click on the 'about' tab (left side of the page) or checkout the <a class='quartz-allmusic' target='_blank' href=https://github.com/griffinsharp?tab=repositories>github repo.</a>";
+  document.querySelector("div.greeting-container").append(links3);
+  exitButton.addEventListener("click", function () {
+    modalBackground.classList.add("fade-out-modal");
+    (0, _modal.default)();
+    setTimeout(function () {
+      modalBackground.remove();
+    }, 400);
+  });
+}
+
+var _default = greeting;
+exports.default = _default;
+},{"./graph.js":"src/graph.js","./modal.js":"src/modal.js"}],"src/index.js":[function(require,module,exports) {
+"use strict";
+
+var _greeting = _interopRequireDefault(require("./greeting.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _greeting.default)(); // import upload from './upload.js';
+},{"./greeting.js":"src/greeting.js"}]},{},["src/index.js"], null)
 //# sourceMappingURL=/src.a2b27638.js.map

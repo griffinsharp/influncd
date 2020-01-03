@@ -1,8 +1,8 @@
-import graph from './graph.js';
-import modal from './modal.js';
+import greeting from './greeting.js';
+
+greeting();
 
 // import upload from './upload.js';
 
-graph();
-modal();
+
 
