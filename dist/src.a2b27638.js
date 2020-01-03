@@ -31044,7 +31044,7 @@ function greeting() {
   document.querySelector("div.greeting-container").append(links2);
   var links3 = document.createElement('div');
   links3.className = 'greeting-footer';
-  links3.innerHTML = "Click on the 'about' tab (left side of the page) or checkout the <a class='quartz-allmusic' target='_blank' href=https://github.com/griffinsharp?tab=repositories>github repo.</a>";
+  links3.innerHTML = "Click on the 'about' tab (left side of the page) or checkout the <a class='quartz-allmusic' target='_blank' href=https://github.com/griffinsharp/INFLUNCD>github repo.</a>";
   document.querySelector("div.greeting-container").append(links3);
   exitButton.addEventListener("click", function () {
     modalBackground.classList.add("fade-out-modal");
