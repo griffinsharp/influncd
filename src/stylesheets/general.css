@@ -1,10 +1,10 @@
 .project-container {
-    display: flex;
-    flex-direction: row;
-    height: 840px;
-    width: auto;
+  display: flex;
+  flex-direction: row;
+  height: 840px;
+  width: auto;
 }
 
 body {
-    background-color: #fafafa;
+  background-color: #fafafa;
 }

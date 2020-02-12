@@ -1,51 +1,82 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>INFLUNCD</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="./src/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./src/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./src/favicon/favicon-16x16.png">
-    <link rel="manifest" href="./src/favicon/site.webmanifest">
-    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat:200,400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
-    <link rel="stylesheet" href="./src/stylesheets/reset.css">
-    <link rel="stylesheet" href="./src/stylesheets/general.css">
-    <link rel="stylesheet" href="./src/stylesheets/sidebar.css">
-    <link rel="stylesheet" href="./src/stylesheets/graph.css">
-    <link rel="stylesheet" href="./src/stylesheets/modal.css">
-</head>
-<body>
-
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./src/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./src/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./src/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./src/favicon/site.webmanifest" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat:200,400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="//use.fontawesome.com/releases/v5.0.7/css/all.css"
+    />
+    <link rel="stylesheet" href="./src/stylesheets/reset.css" />
+    <link rel="stylesheet" href="./src/stylesheets/general.css" />
+    <link rel="stylesheet" href="./src/stylesheets/sidebar.css" />
+    <link rel="stylesheet" href="./src/stylesheets/graph.css" />
+    <link rel="stylesheet" href="./src/stylesheets/modal.css" />
+  </head>
+  <body>
     <div class="project-section">
-        <div class="project-container">
-            <div class="sidebar-container">
-                <div class="sidebar-inner-container">
-                <div class="header-container">
-                    <h1>INFLUNCD</h1>
-                </div>
-                <div class="about-container">
-                    about
-                </div>
-                <div class="socials-container">
-                    <div class="github">
-                        <a target="_blank" class="icon-link" href="https://github.com/griffinsharp"><i class="fab fa-github"></i></a>
-                    </div>
-                    <div class="linkedin">
-                        <a target="_blank" class="icon-link" href="https://www.linkedin.com/in/griffinesharp/"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                    <div class="angellist">
-                        <a target="_blank" class="icon-link" href="https://angel.co/griffinesharp"><i class="fab fa-angellist"></i></a>
-                    </div>
-                </div>
-                </div>
+      <div class="project-container">
+        <div class="sidebar-container">
+          <div class="sidebar-inner-container">
+            <div class="header-container">
+              <h1>INFLUNCD</h1>
             </div>
-            <div class="graph-container">
-               
-            
+            <div class="about-container">
+              about
             </div>
+            <div class="socials-container">
+              <div class="github">
+                <a
+                  target="_blank"
+                  class="icon-link"
+                  href="https://github.com/griffinsharp"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </div>
+              <div class="linkedin">
+                <a
+                  target="_blank"
+                  class="icon-link"
+                  href="https://www.linkedin.com/in/griffinesharp/"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </div>
+              <div class="angellist">
+                <a
+                  target="_blank"
+                  class="icon-link"
+                  href="https://angel.co/griffinesharp"
+                  ><i class="fab fa-angellist"></i
+                ></a>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="graph-container"></div>
+      </div>
     </div>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -53,29 +84,27 @@
     <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-storage.js"></script>
     <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyAtRHXwpRacMgxrIxk7YHxtHEp8_Ws7BXI",
-            authDomain: "influncd.firebaseapp.com",
-            databaseURL: "https://influncd.firebaseio.com",
-            projectId: "influncd",
-            storageBucket: "influncd.appspot.com",
-            messagingSenderId: "492237214107",
-            appId: "1:492237214107:web:8819fd9db9c6b2e66e913e",
-            measurementId: "G-RJ5C0VGYVH"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        let db = firebase.firestore();
-        let storage = firebase.storage();
-        let batch = db.batch();
-        
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAtRHXwpRacMgxrIxk7YHxtHEp8_Ws7BXI",
+        authDomain: "influncd.firebaseapp.com",
+        databaseURL: "https://influncd.firebaseio.com",
+        projectId: "influncd",
+        storageBucket: "influncd.appspot.com",
+        messagingSenderId: "492237214107",
+        appId: "1:492237214107:web:8819fd9db9c6b2e66e913e",
+        measurementId: "G-RJ5C0VGYVH"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      let db = firebase.firestore();
+      let storage = firebase.storage();
+      let batch = db.batch();
     </script>
     <script src="https://d3js.org/d3.v5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
     <script src="https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
     <script src="./src/index.js"></script>
-    
-</body>
+  </body>
 </html>

@@ -1,201 +1,192 @@
 /* greeting modal */
 
 .background-greeting {
-    width: 90%;
-    min-width: 1100px;
-    height: 528px;
-    background-color: #000000c0;
-    -webkit-animation: drawingreeting 1s;
-    z-index: 3;
-    left: 5%;
-    top: 60px;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
+  width: 90%;
+  min-width: 1100px;
+  height: 528px;
+  background-color: #000000c0;
+  -webkit-animation: drawingreeting 1s;
+  z-index: 3;
+  left: 5%;
+  top: 60px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
 }
 
 .greeting-container {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .greeting-title {
-    margin: 0 auto;
-    margin-top: 25px;
-    color: #fafafa;
-    font-size: 76px;
+  margin: 0 auto;
+  margin-top: 25px;
+  color: #fafafa;
+  font-size: 76px;
 }
 
 .greeting-footer {
-
-    color: #fafafa;
-    font-size: 15px;
-    line-height: 30px;
+  color: #fafafa;
+  font-size: 15px;
+  line-height: 30px;
 }
 
-.greeting-footer-top{
-
-    margin-top: 45px;
-    color: #fafafa;
-    font-size: 15px;
-    line-height: 30px;
+.greeting-footer-top {
+  margin-top: 45px;
+  color: #fafafa;
+  font-size: 15px;
+  line-height: 30px;
 }
 
 /* about modal */
 .background-modal {
-    width: 90%;
-    min-width: 1100px;
-    height: 800px;
-    background-color: #000000c0;
-    -webkit-animation: drawin 1s;
-    z-index: 3;
-    left: 5%;
-    top: 20px;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-   
+  width: 90%;
+  min-width: 1100px;
+  height: 800px;
+  background-color: #000000c0;
+  -webkit-animation: drawin 1s;
+  z-index: 3;
+  left: 5%;
+  top: 20px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
 }
 
 .fade-out-modal {
-    -webkit-animation: fadeout 0.5s;
+  -webkit-animation: fadeout 0.5s;
 }
 
 .exit-button {
-   display: flex;
-   flex-direction: row;
-   justify-content: flex-end;
-   margin: 0 auto;
-   margin-right: 0;
-   
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 0 auto;
+  margin-right: 0;
 }
 
-
 .fa-times-circle {
-   color: #fafafa;
-   font-size: 30px;
-   cursor: pointer;
-   margin-top: 10px;
-   margin-right: 10px;
-   transition: color 0.3s;
+  color: #fafafa;
+  font-size: 30px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-right: 10px;
+  transition: color 0.3s;
 }
 
 .fa-times-circle:hover {
-   color: #000000;
-   font-size: 30px;
-   transition: color 0.3s;
-   
+  color: #000000;
+  font-size: 30px;
+  transition: color 0.3s;
 }
 
 .modal-container {
-   height: 80%;
-   width: 80%;
-   display: flex;
-   flex-direction: column;
-   margin: 0 auto;
+  height: 80%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
 .modal-title {
-    margin: 0 auto;
-    margin-top: 40px;
-    color: #fafafa;
-    font-size: 100px;
+  margin: 0 auto;
+  margin-top: 40px;
+  color: #fafafa;
+  font-size: 100px;
 }
 
 .greeting-subtitle {
-    margin: 0 auto;
-    margin-top: 45px;
-    color: #fafafa;
-    font-size: 25px;
-    font-weight: 100;
-    letter-spacing: 5px;
+  margin: 0 auto;
+  margin-top: 45px;
+  color: #fafafa;
+  font-size: 25px;
+  font-weight: 100;
+  letter-spacing: 5px;
 }
 .modal-subtitle {
-    margin: 0 auto;
-    margin-top: 30px;
-    color: #fafafa;
-    font-size: 25px;
-    font-weight: 100;
-    letter-spacing: 5px;
+  margin: 0 auto;
+  margin-top: 30px;
+  color: #fafafa;
+  font-size: 25px;
+  font-weight: 100;
+  letter-spacing: 5px;
 }
 
 .modal-intro {
-    margin: 35px auto;
-    margin-top: 50px;
-    color: #fafafa;
-    font-size: 18px;
-    line-height: 30px;
-   
+  margin: 35px auto;
+  margin-top: 50px;
+  color: #fafafa;
+  font-size: 18px;
+  line-height: 30px;
 }
 
 .greeting-intro {
-    margin-top: 35px;
-    margin-bottom: 10px;
-    color: #fafafa;
-    font-size: 18px;
-    line-height: 30px;
-    margin-right: auto;
-    margin-left: 114px;
+  margin-top: 35px;
+  margin-bottom: 10px;
+  color: #fafafa;
+  font-size: 18px;
+  line-height: 30px;
+  margin-right: auto;
+  margin-left: 114px;
 }
 
 .modal-tutorial {
-    margin: 35px auto;
-    color: #fafafa;
-    font-size: 18px;
-    line-height: 30px;
-    margin-top: 0;
+  margin: 35px auto;
+  color: #fafafa;
+  font-size: 18px;
+  line-height: 30px;
+  margin-top: 0;
 }
 
 .greeting-tutorial {
-    margin-right: auto;
-    margin-left: 111px;
-    margin-bottom: 10px;
-    color: #fafafa;
-    font-size: 18px;
-    line-height: 30px;
-    margin-top: 0;
+  margin-right: auto;
+  margin-left: 111px;
+  margin-bottom: 10px;
+  color: #fafafa;
+  font-size: 18px;
+  line-height: 30px;
+  margin-top: 0;
 }
 
 .greeting-links {
-    margin-right: auto;
-    margin-left: 114px;
-    margin-bottom: 0px;
-    color: #fafafa;
-    font-size: 18px;
-    line-height: 30px;
+  margin-right: auto;
+  margin-left: 114px;
+  margin-bottom: 0px;
+  color: #fafafa;
+  font-size: 18px;
+  line-height: 30px;
 }
 
 .modal-links {
-    margin: 70px auto;
-    margin-top: 0px;
-    color: #fafafa;
-    font-size: 18px;
-    line-height: 30px;
+  margin: 70px auto;
+  margin-top: 0px;
+  color: #fafafa;
+  font-size: 18px;
+  line-height: 30px;
 }
 
 .modal-warning {
-    margin: auto;
-    font-size: 11px;
-    color: #fafafa;
-
+  margin: auto;
+  font-size: 11px;
+  color: #fafafa;
 }
 
 .quartz-allmusic {
-    color: #fafafa;
-    transition: color 0.2s;
+  color: #fafafa;
+  transition: color 0.2s;
 }
 
 .quartz-allmusic:hover {
-    color: black;
-    transition: color 0.2s;
+  color: black;
+  transition: color 0.2s;
 }
-
 
 @media (max-width: 1510px) {
   .modal-links {
-   margin: 20px auto;
+    margin: 20px auto;
     margin-top: 0px;
     color: #fafafa;
     font-size: 18px;
@@ -204,15 +195,31 @@
 }
 
 @keyframes drawin {
-    from { top: -10px }
-    to   { top: 20px; }
-    from { opacity: 0; }
-    to   { opacity: 1; }
+  from {
+    top: -10px;
+  }
+  to {
+    top: 20px;
+  }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes drawingreeting {
-    from { top: -10px }
-    to   { top: 60px; }
-    from { opacity: 0; }
-    to   { opacity: 1; }
+  from {
+    top: -10px;
+  }
+  to {
+    top: 60px;
+  }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

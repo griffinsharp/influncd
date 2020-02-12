@@ -1,1 +1,1 @@
-// Code removed to prevent altering of database, but was used to batch upload from artists.json to Firebase.
+// WARNING - Code removed to prevent altering of database, but was used to batch upload from artists.json to Firebase.
