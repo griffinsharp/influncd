@@ -4,7 +4,7 @@ Data is a beautiful, incredibly powerful thing, but is far too often not present
 Start by hovering over slices of the graph until you find an artist you're interested in. Then, give the slice a click, which will trigger an animation. Once the artist profile takes up the whole graph, feel free to check them out. Once you're done with your research, navigate back to the full graph by clicking on any blank space outside of the graph. For more on how I made this visualization, where I sourced the data, or any other questions, first check out the 'about' tab on the left side of the page. If you still have questions, or just would like to connect, my socials can be found right below the 'about' section. Enjoy!
 
 ## Site Functionality 
-Here's a glimpse at INFLUNCD in 3 gifs. To really appreciate the details in its D3 animations, JavaScript DOM Manipulation, and CSS tricks, please visit it in browser (Chrome for best performance) and navigate around. 
+Here's a glimpse at INFLUNCD in 3 gifs. To really appreciate the details in its D3 animations, JavaScript DOM Manipulation, and CSS tricks, please visit it in browser (Chrome for best performance) and navigate around. Note that I've changed the speed and optimized overall UI/UX a bit since these gifs were made, but the core functionality is more or less the same. 
 
 <p align="center"> 
 <img width="80%" src="https://github.com/griffinsharp/INFLUNCD/blob/master/assets/hoverfunctionality.gif">
@@ -26,9 +26,34 @@ Here are a few snippets from INFLUNCD's source code with short blurbs to guide y
 
 ### D3 Transitions + DOM Manipulation
 
-<p align="center"> 
-<img src="https://github.com/griffinsharp/INFLUNCD/blob/master/assets/AnimationBackToFullCircle.png">
-</p>
+```javascript
+el.addEventListener("click", function() {
+  document.querySelector("div.text-box").classList.add("fade-out");
+  document.querySelector("div.name-box").classList.add("fade-out");
+  document.querySelector("div.remove-box").classList.add("fade-out");
+  setTimeout(() => {
+    document.querySelector("div.text-box").remove();
+    document.querySelector("div.name-box").remove();
+    document.querySelector("div.remove-box").remove();
+    trigger = "true";
+  }, 290);
+
+  node
+    .transition()
+    .duration(1800)
+    .attrTween("d", d => {
+      let i = d3.interpolate(d.endAngle, prevEnd);
+      return function(t) {
+        d.endAngle = i(t);
+        return arcPath(d);
+      };
+    });
+  setTimeout(() => {
+    that.parentNode.insertBefore(that, nextNode);
+    that.classList.add("pointer");
+  }, 1800);
+});
+```
 
 This is the code to handle when the "I'm done here. Take me back!" prompt is clicked. I have setup an event listener to listen for a click on this button element, set to the variable `el`. Upon a click, the musicians name, bio, and the button itself receive a class via `JavaScript` DOM manipulation, which give it a nice `CSS` fade out animation via @keyframes and mapping opacity from 1 to 0 (see `graph.css` for more on this). This solved the problem of having a fade-in and fade-out animation on the same element.
 
@@ -40,9 +65,16 @@ The final `setTimeout()` function puts the `D3` path node back in its previous s
 
 ### Firebase Asset Management 
 
-<p align="center"> 
-<img src="https://github.com/griffinsharp/INFLUNCD/blob/master/assets/ImageDownload.png">
-</p>
+```javascript
+const getImg = function(imgPath) {
+  return storage
+    .refFromURL(`${imgPath}`)
+    .getDownloadURL()
+    .then(function(url) {
+      return axios.get(url).then(res => res.config.url);
+    });
+};
+```
 
 In order to keep my app very lightweight and increase scalability, INFLUNCD's image assets are fully stored on a `Google Firebase` database. However, Google keeps its Firebase data seperate from its storage data, with the two agnostic of eachother.
 
@@ -50,9 +82,35 @@ To bridge this gap, each artist in the database has a value of "image" pointing 
 
 ### SVG Magic ✨
 
-<p align="center"> 
-<img src="https://github.com/griffinsharp/INFLUNCD/blob/master/assets/GraphRender.png">
-</p>
+```javascript
+let render = graph
+  .selectAll(`#${art.id}`)
+  .attr("fill", `url(#${url})`)
+  .attr("class", "arc")
+  .attr("class", "pointer")
+  .attr("stroke", "#fafafa")
+  .attr("stroke-width", 1)
+  .transition()
+  .duration(1500)
+  .attrTween("d", arcTweenEnter);
+
+// more code...
+
+node
+  .transition()
+  .duration(1800)
+  .attrTween("d", d => {
+    let i = d3.interpolate(d.endAngle, prevEnd);
+    return function(t) {
+      d.endAngle = i(t);
+      return arcPath(d);
+    };
+  });
+setTimeout(() => {
+  that.parentNode.insertBefore(that, nextNode);
+  that.classList.add("pointer");
+}, 1800);
+```
 
 Throughout all my research for this project, I really could not find one good example of what I was trying to do as far as mapping individual slices of a piechart to unique images. I tried many different solutions, but ulimately what I went with was saving each image to an svg 'pattern' with an id set to the image's unique url given from Firebase mentioned in the above snippet.
 
